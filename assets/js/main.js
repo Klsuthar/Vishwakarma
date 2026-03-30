@@ -460,9 +460,8 @@
     const categoryLabel = findCategoryLabel(product.category);
 
     let styleStr = '--product-accent:' + escapeAttribute(product.accent) + ';';
-    if (product.image) {
-      styleStr += ' --product-image: url(' + escapeAttribute(product.image) + ');';
-    }
+    let imgUrl = product.image ? escapeAttribute(product.image) : 'assets/img/products/product-showcase.png';
+    styleStr += ' background: linear-gradient(140deg, color-mix(in srgb, var(--product-accent, var(--accent)) 25%, transparent) 0%, rgba(255, 255, 255, 0.15) 100%), url(\'' + imgUrl + '\') center/cover no-repeat;';
 
     return [
       '<article class="product-card" data-category="' + escapeAttribute(product.category) + '">',

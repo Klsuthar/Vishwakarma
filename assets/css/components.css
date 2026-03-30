@@ -145,6 +145,7 @@
   font-size: 1.08rem;
   font-weight: 700;
   color: var(--text);
+  white-space: nowrap;
 }
 
 .brand-mark__subtitle {
@@ -152,6 +153,10 @@
   margin-top: 0.05rem;
   font-size: 0.82rem;
   color: var(--muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 360px;
 }
 
 .site-nav {
@@ -324,7 +329,8 @@ body.nav-open .nav-toggle__bar::after {
 .hero-card::before,
 .service-card::before,
 .product-card::before,
-.detail-card::before {
+.detail-card::before,
+.metric-card::before {
   position: absolute;
   inset: auto -3rem -3rem auto;
   width: 9rem;
@@ -370,14 +376,16 @@ body.nav-open .nav-toggle__bar::after {
 .metric-card strong {
   display: block;
   margin-bottom: 0.4rem;
-  font-size: 1.95rem;
+  font-size: clamp(1.15rem, 2vw, 1.4rem);
   font-family: var(--display-font);
-  color: var(--accent-strong);
+  color: var(--accent-deep);
 }
 
 .metric-card span {
+  display: block;
   color: var(--muted);
-  font-size: 0.95rem;
+  font-size: 0.88rem;
+  line-height: 1.5;
 }
 
 .feature-card h3,
@@ -456,9 +464,6 @@ body.nav-open .nav-toggle__bar::after {
   position: relative;
   min-height: 13.5rem;
   border-radius: 1.4rem;
-  background:
-    linear-gradient(140deg, color-mix(in srgb, var(--product-accent, var(--accent)) 25%, transparent) 0%, rgba(255, 255, 255, 0.15) 100%),
-    var(--product-image, url("../img/products/product-showcase.png")) center/cover no-repeat;
   box-shadow:
     inset 0 0 0 1px rgba(255, 255, 255, 0.45),
     inset 0 -2.5rem 4rem rgba(36, 24, 15, 0.12);

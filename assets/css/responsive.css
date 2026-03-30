@@ -63,8 +63,7 @@
   }
 
   .process-grid,
-  .contact-grid,
-  .stats-grid {
+  .contact-grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
@@ -83,8 +82,8 @@
   .site-nav ul {
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 0.25rem;
+    flex-wrap: nowrap;
+    gap: 0.15rem;
   }
 
   .nav-actions {
@@ -127,13 +126,15 @@
   }
 }
 
+@media (max-width: 1040px) {
+  .brand-mark__subtitle {
+    display: none;
+  }
+}
+
 @media (max-width: 679px) {
   .header-shell {
     border-radius: 1.5rem;
-  }
-
-  .brand-mark__subtitle {
-    display: none;
   }
 
   .hero__content,
