@@ -1,3 +1,24 @@
+function createProductGallery(slug, title) {
+  return [
+    {
+      src: "assets/img/products/gallery/" + slug + "-01.png",
+      alt: title + " showcase view 1"
+    },
+    {
+      src: "assets/img/products/gallery/" + slug + "-02.png",
+      alt: title + " showcase view 2"
+    },
+    {
+      src: "assets/img/products/gallery/" + slug + "-03.png",
+      alt: title + " showcase view 3"
+    },
+    {
+      src: "assets/img/products/gallery/" + slug + "-04.png",
+      alt: title + " showcase view 4"
+    }
+  ];
+}
+
 window.VISHWAKARMA_SITE = {
   brand: {
     name: "Vishwakarma Wood Art & CNC Work",
@@ -221,6 +242,8 @@ window.VISHWAKARMA_SITE = {
     {
       title: "The Royal Oak Platform Bed",
       category: "beds",
+      image: "assets/img/products/gallery/royal-oak-bed-01.png",
+      gallery: createProductGallery("royal-oak-bed", "The Royal Oak Platform Bed"),
       summary:
         "A low-profile, ultra-modern platform bed featuring a massive CNC-textured headboard that spans the entire width of the bedroom wall.",
       finish: "Natural Matte Oak Polish",
@@ -230,7 +253,8 @@ window.VISHWAKARMA_SITE = {
     {
       title: "Grand Entrance Carved Door",
       category: "doors",
-      image: "assets/img/products/carved-door.png",
+      image: "assets/img/products/gallery/grand-entrance-door-01.png",
+      gallery: createProductGallery("grand-entrance-door", "Grand Entrance Carved Door"),
       summary:
         "A heavy, double-leaf solid teak wood door featuring deep 3D floral CNC carving to make a spectacular first impression for your villa.",
       finish: "Dark Walnut Weatherproof Seal",
@@ -240,7 +264,8 @@ window.VISHWAKARMA_SITE = {
     {
       title: "Seamless Fluted Wardrobe",
       category: "wardrobes",
-      image: "assets/img/products/wardrobe.png",
+      image: "assets/img/products/gallery/fluted-wardrobe-01.png",
+      gallery: createProductGallery("fluted-wardrobe", "Seamless Fluted Wardrobe"),
       summary:
         "Floor-to-ceiling storage with elegant vertical fluting cut perfectly by our CNC machines, hiding the fact that it is a massive closet.",
       finish: "PU Paint Finish (Custom Colors)",
@@ -250,7 +275,8 @@ window.VISHWAKARMA_SITE = {
     {
       title: "Floating Media Console",
       category: "tv-units",
-      image: "assets/img/products/tv-unit.png",
+      image: "assets/img/products/gallery/floating-media-console-01.png",
+      gallery: createProductGallery("floating-media-console", "Floating Media Console"),
       summary:
         "A sleek, wall-mounted TV entertainment unit featuring slatted wood backing and hidden compartments for all your messy cables and routers.",
       finish: "Ash Wood veneer",
@@ -260,7 +286,8 @@ window.VISHWAKARMA_SITE = {
     {
       title: "The Heritage Teak Mandir",
       category: "mandir",
-      image: "assets/img/products/mandir.png",
+      image: "assets/img/products/gallery/heritage-teak-mandir-01.png",
+      gallery: createProductGallery("heritage-teak-mandir", "The Heritage Teak Mandir"),
       summary:
         "A beautifully enclosed pooja space featuring laser-cut jali doors that cast stunning shadow patterns when the internal warm LEDs are turned on.",
       finish: "Traditional High Gloss Teak",
@@ -270,6 +297,8 @@ window.VISHWAKARMA_SITE = {
     {
       title: "Geometric Room Divider",
       category: "cnc-panels",
+      image: "assets/img/products/gallery/geometric-room-divider-01.png",
+      gallery: createProductGallery("geometric-room-divider", "Geometric Room Divider"),
       summary:
         "A majestic ceiling-to-floor wooden screen used to elegantly separate an open-plan living and dining area without blocking natural sunlight.",
       finish: "Satin White Duco Paint",
@@ -279,6 +308,8 @@ window.VISHWAKARMA_SITE = {
     {
       title: "Boutique Display Shelving",
       category: "custom-work",
+      image: "assets/img/products/gallery/boutique-display-shelving-01.png",
+      gallery: createProductGallery("boutique-display-shelving", "Boutique Display Shelving"),
       summary:
         "Custom-built wooden display grids and lit shelving designed specifically to make high-end retail merchandise look even more luxurious.",
       finish: "Raw Industrial Wood & Metal mix",
@@ -288,6 +319,8 @@ window.VISHWAKARMA_SITE = {
     {
       title: "Chevron Wall Cladding",
       category: "custom-work",
+      image: "assets/img/products/gallery/chevron-wall-cladding-01.png",
+      gallery: createProductGallery("chevron-wall-cladding", "Chevron Wall Cladding"),
       summary:
         "Precision-machined wooden planks arranged in a perfect chevron pattern, transforming a boring office reception into a warm, inviting space.",
       finish: "Mixed Stain Woodgrains",

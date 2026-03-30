@@ -572,20 +572,36 @@
 
   function createProductCard(product) {
     const categoryLabel = findCategoryLabel(product.category);
-
-    let styleStr = '--product-accent:' + escapeAttribute(product.accent) + ';';
-    let imgUrl = product.image ? escapeAttribute(product.image) : 'assets/img/products/product-showcase.png';
-    styleStr += ' background: linear-gradient(140deg, color-mix(in srgb, var(--product-accent, var(--accent)) 25%, transparent) 0%, rgba(255, 255, 255, 0.15) 100%), url(\'' + imgUrl + '\') center/cover no-repeat;';
+    const galleryItems = Array.isArray(product.gallery) && product.gallery.length
+      ? product.gallery
+      : [
+          {
+            src: product.image || "assets/img/products/product-showcase.png",
+            alt: product.title + " showcase image"
+          }
+        ];
 
     return [
       '<article class="product-card" data-category="' + escapeAttribute(product.category) + '">',
-      '<div class="product-visual" style="' + styleStr + '">',
-      "<span>" + escapeHtml(categoryLabel) + "</span>",
+      '<div class="product-gallery" data-product-gallery data-gallery-title="' + escapeAttribute(product.title) + '">',
+      '<div class="product-gallery__grid">',
+      galleryItems
+        .map(function (image, index) {
+          return [
+            '<button class="product-gallery__item" type="button" data-gallery-item data-gallery-index="' + String(index) + '" data-gallery-src="' + escapeAttribute(image.src) + '" data-gallery-alt="' + escapeAttribute(image.alt || (product.title + " image " + String(index + 1))) + '" aria-label="Open ' + escapeAttribute(product.title) + " photo " + String(index + 1) + ' full screen">',
+            '<img src="' + escapeAttribute(image.src) + '" alt="' + escapeAttribute(image.alt || (product.title + " image " + String(index + 1))) + '" loading="lazy">',
+            "</button>"
+          ].join("");
+        })
+        .join(""),
+      "</div>",
+      '<span class="product-gallery__badge">' + String(galleryItems.length) + " photos</span>",
       "</div>",
       "<div>",
       '<p class="eyebrow">' + escapeHtml(categoryLabel) + "</p>",
       "<h3>" + escapeHtml(product.title) + "</h3>",
       "<p>" + escapeHtml(product.summary) + "</p>",
+      '<p class="product-gallery__hint">Tap any photo to open full screen.</p>',
       '<ul class="product-meta">',
       "<li>" + escapeHtml(product.finish) + "</li>",
       "<li>" + escapeHtml(product.tag) + "</li>",
