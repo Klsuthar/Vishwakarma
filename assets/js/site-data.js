@@ -44,11 +44,11 @@ window.VISHWAKARMA_SITE = {
     { label: "Contact", href: "contact.html" }
   ],
   contact: {
-    phoneDisplay: "+91 98765 43210",
-    phoneHref: "tel:+919876543210",
-    whatsappDisplay: "+91 98765 43210",
+    phoneDisplay: "+91 89493 2413",
+    phoneHref: "tel:+91894932413",
+    whatsappDisplay: "+91 89493 2413",
     whatsappHref:
-      "https://wa.me/919876543210?text=Hello%20Vishwakarma%20Wood%20Art%20%26%20CNC%20Work,%20I%20want%20to%20discuss%20a%20project.",
+      "https://wa.me/91894932413?text=Hello%20Vishwakarma%20Wood%20Art%20%26%20CNC%20Work,%20I%20want%20to%20discuss%20a%20project.",
     emailDisplay: "contact@vishwakarmawoodart.in",
     emailHref: "mailto:contact@vishwakarmawoodart.in",
     addressTitle: "Our Workshop Studio",
@@ -76,7 +76,7 @@ window.VISHWAKARMA_SITE = {
     {
       label: "WhatsApp",
       href:
-        "https://wa.me/919876543210?text=Hello%20Vishwakarma%20Wood%20Art"
+        "https://wa.me/91894932413?text=Hello%20Vishwakarma%20Wood%20Art"
     },
     { label: "Instagram", href: "#" },
     { label: "Facebook", href: "#" }
