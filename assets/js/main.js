@@ -457,9 +457,14 @@
   function createProductCard(product) {
     const categoryLabel = findCategoryLabel(product.category);
 
+    let styleStr = '--product-accent:' + escapeAttribute(product.accent) + ';';
+    if (product.image) {
+      styleStr += ' --product-image: url(\'' + escapeAttribute(product.image) + '\');';
+    }
+
     return [
       '<article class="product-card" data-category="' + escapeAttribute(product.category) + '">',
-      '<div class="product-visual" style="--product-accent:' + escapeAttribute(product.accent) + ';">',
+      '<div class="product-visual" style="' + styleStr + '">',
       "<span>" + escapeHtml(categoryLabel) + "</span>",
       "</div>",
       "<div>",

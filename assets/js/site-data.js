@@ -230,6 +230,7 @@ window.VISHWAKARMA_SITE = {
     {
       title: "Grand Entrance Carved Door",
       category: "doors",
+      image: "assets/img/products/carved-door.png",
       summary:
         "A heavy, double-leaf solid teak wood door featuring deep 3D floral CNC carving to make a spectacular first impression for your villa.",
       finish: "Dark Walnut Weatherproof Seal",
@@ -239,6 +240,7 @@ window.VISHWAKARMA_SITE = {
     {
       title: "Seamless Fluted Wardrobe",
       category: "wardrobes",
+      image: "assets/img/products/wardrobe.png",
       summary:
         "Floor-to-ceiling storage with elegant vertical fluting cut perfectly by our CNC machines, hiding the fact that it is a massive closet.",
       finish: "PU Paint Finish (Custom Colors)",
@@ -248,6 +250,7 @@ window.VISHWAKARMA_SITE = {
     {
       title: "Floating Media Console",
       category: "tv-units",
+      image: "assets/img/products/tv-unit.png",
       summary:
         "A sleek, wall-mounted TV entertainment unit featuring slatted wood backing and hidden compartments for all your messy cables and routers.",
       finish: "Ash Wood veneer",
@@ -257,6 +260,7 @@ window.VISHWAKARMA_SITE = {
     {
       title: "The Heritage Teak Mandir",
       category: "mandir",
+      image: "assets/img/products/mandir.png",
       summary:
         "A beautifully enclosed pooja space featuring laser-cut jali doors that cast stunning shadow patterns when the internal warm LEDs are turned on.",
       finish: "Traditional High Gloss Teak",
