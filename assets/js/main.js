@@ -20,6 +20,7 @@
     renderHours();
     bindMapEmbeds();
     setCurrentYear();
+    activateReveals();
   });
 
   function injectSharedShell() {
@@ -296,6 +297,45 @@
 
   function setCurrentYear() {
     setText("[data-current-year]", String(new Date().getFullYear()));
+  }
+
+  function activateReveals() {
+    const revealTargets = queryAll(
+      ".hero__content, .hero__aside > *, .craft-ribbon__item, .section-panel, .feature-card, .service-card, .product-card, .testimonial-card, .faq-item, .contact-card, .detail-card, .cta-band, .page-hero__frame > *, .map-shell"
+    );
+
+    revealTargets.forEach(function (element, index) {
+      element.classList.add("reveal");
+      element.style.setProperty("--reveal-order", String(index % 8));
+    });
+
+    if (!("IntersectionObserver" in window)) {
+      revealTargets.forEach(function (element) {
+        element.classList.add("is-visible");
+      });
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) {
+            return;
+          }
+
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        });
+      },
+      {
+        threshold: 0.12,
+        rootMargin: "0px 0px -40px 0px"
+      }
+    );
+
+    revealTargets.forEach(function (element) {
+      observer.observe(element);
+    });
   }
 
   function createHeader() {

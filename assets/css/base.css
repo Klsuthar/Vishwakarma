@@ -1,26 +1,31 @@
 :root {
-  --bg: #f5ecdf;
-  --bg-deep: #eadac4;
-  --surface: rgba(255, 250, 244, 0.88);
-  --surface-strong: #f9f1e6;
-  --surface-dark: #2d2118;
-  --text: #2f231a;
-  --muted: #6e5848;
-  --accent: #9b602f;
-  --accent-strong: #6e3d17;
-  --accent-soft: #d79f66;
-  --line: rgba(111, 81, 53, 0.18);
-  --line-strong: rgba(111, 81, 53, 0.34);
+  --bg: #f7efe4;
+  --bg-deep: #ebdac2;
+  --surface: rgba(255, 249, 242, 0.8);
+  --surface-strong: rgba(255, 252, 247, 0.94);
+  --surface-elevated: rgba(255, 248, 239, 0.92);
+  --surface-dark: #24180f;
+  --text: #231811;
+  --muted: #695445;
+  --accent: #b56a2f;
+  --accent-strong: #7a4218;
+  --accent-soft: #e3b47d;
+  --accent-deep: #4c2710;
+  --glow: rgba(229, 177, 118, 0.24);
+  --line: rgba(92, 63, 35, 0.14);
+  --line-strong: rgba(92, 63, 35, 0.3);
   --success: #2f7f55;
-  --shadow-soft: 0 20px 60px rgba(68, 45, 20, 0.12);
-  --shadow-card: 0 18px 38px rgba(68, 45, 20, 0.1);
+  --shadow-soft: 0 26px 70px rgba(58, 34, 13, 0.12);
+  --shadow-card: 0 20px 44px rgba(58, 34, 13, 0.1);
+  --shadow-pop: 0 28px 54px rgba(58, 34, 13, 0.16);
   --radius-sm: 14px;
   --radius-md: 24px;
-  --radius-lg: 36px;
-  --container: min(1180px, calc(100vw - 2rem));
-  --display-font: "Palatino Linotype", "Book Antiqua", Georgia, serif;
-  --body-font: "Trebuchet MS", "Segoe UI", sans-serif;
-  --transition: 180ms ease;
+  --radius-lg: 38px;
+  --radius-xl: 52px;
+  --container: min(1200px, calc(100vw - 2rem));
+  --display-font: "Baskerville Old Face", "Palatino Linotype", Georgia, serif;
+  --body-font: "Verdana", "Trebuchet MS", "Segoe UI", sans-serif;
+  --transition: 220ms ease;
 }
 
 *,
@@ -37,11 +42,12 @@ body {
   margin: 0;
   color: var(--text);
   font-family: var(--body-font);
-  line-height: 1.6;
+  line-height: 1.65;
   background:
-    radial-gradient(circle at top right, rgba(215, 159, 102, 0.24), transparent 24rem),
-    radial-gradient(circle at bottom left, rgba(155, 96, 47, 0.12), transparent 28rem),
-    linear-gradient(180deg, #fbf7f2 0%, var(--bg) 56%, #f0e3d1 100%);
+    radial-gradient(circle at top right, rgba(229, 177, 118, 0.34), transparent 26rem),
+    radial-gradient(circle at top left, rgba(92, 63, 35, 0.08), transparent 24rem),
+    radial-gradient(circle at bottom left, rgba(181, 106, 47, 0.12), transparent 30rem),
+    linear-gradient(180deg, #fcf6ef 0%, var(--bg) 44%, #f1e2cf 100%);
 }
 
 body::before {
@@ -50,11 +56,22 @@ body::before {
   content: "";
   pointer-events: none;
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.22) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.22) 1px, transparent 1px);
-  background-size: 42px 42px;
-  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.38), transparent 80%);
-  opacity: 0.26;
+    linear-gradient(rgba(255, 255, 255, 0.16) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.16) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.52), transparent 78%);
+  opacity: 0.24;
+}
+
+body::after {
+  position: fixed;
+  inset: 0;
+  content: "";
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 12% 15%, rgba(255, 255, 255, 0.8), transparent 14rem),
+    radial-gradient(circle at 85% 12%, rgba(255, 255, 255, 0.42), transparent 18rem);
+  opacity: 0.85;
 }
 
 img {
@@ -111,25 +128,26 @@ h3,
 h4 {
   margin: 0 0 0.75rem;
   font-family: var(--display-font);
-  line-height: 1.1;
-  letter-spacing: -0.02em;
+  line-height: 0.98;
+  letter-spacing: -0.03em;
 }
 
 h1 {
-  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-size: clamp(2.9rem, 8vw, 5.8rem);
 }
 
 h2 {
-  font-size: clamp(2rem, 5vw, 3.4rem);
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
 }
 
 h3 {
-  font-size: clamp(1.3rem, 3vw, 1.8rem);
+  font-size: clamp(1.34rem, 3vw, 1.9rem);
 }
 
 p {
   margin: 0 0 1rem;
   color: var(--muted);
+  font-size: 0.98rem;
 }
 
 ul,
@@ -144,23 +162,30 @@ ol {
   align-items: center;
   gap: 0.55rem;
   margin-bottom: 1rem;
-  font-size: 0.78rem;
+  width: fit-content;
+  padding: 0.42rem 0.78rem;
+  border: 1px solid rgba(122, 66, 24, 0.14);
+  border-radius: 999px;
+  font-size: 0.73rem;
   font-weight: 700;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--accent-strong);
+  background: rgba(255, 252, 247, 0.72);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
 }
 
 .eyebrow::before {
-  width: 2.5rem;
-  height: 1px;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 999px;
   content: "";
-  background: var(--accent-soft);
+  background: linear-gradient(135deg, var(--accent-soft), var(--accent));
 }
 
 .lead {
-  font-size: 1.05rem;
-  line-height: 1.75;
+  font-size: clamp(1.06rem, 2vw, 1.18rem);
+  line-height: 1.85;
 }
 
 .section-title {
@@ -174,8 +199,10 @@ ol {
 .surface-panel {
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
-  background: var(--surface);
-  backdrop-filter: blur(16px);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.58), transparent),
+    var(--surface);
+  backdrop-filter: blur(18px);
   box-shadow: var(--shadow-soft);
 }
 
@@ -191,7 +218,8 @@ ol {
   border-radius: 999px;
   font-size: 0.9rem;
   color: var(--text);
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.68);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
 .muted {
@@ -218,4 +246,39 @@ ol {
   overflow: hidden;
   border: 0;
   clip: rect(0 0 0 0);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px) scale(0.985);
+  transition:
+    opacity 650ms ease,
+    transform 650ms ease;
+  transition-delay: calc(var(--reveal-order, 0) * 60ms);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal,
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
 }

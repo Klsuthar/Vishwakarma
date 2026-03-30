@@ -27,17 +27,21 @@
   .hero__content {
     padding: 2.3rem 1.6rem 1.8rem;
   }
+
+  .craft-ribbon {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
 @media (min-width: 900px) {
   .site-main {
-    gap: 5.5rem;
+    gap: 6rem;
   }
 
   .hero__frame {
     grid-template-columns: minmax(0, 1.35fr) minmax(22rem, 0.9fr);
     align-items: stretch;
-    min-height: 42rem;
+    min-height: 44rem;
   }
 
   .page-hero__frame,
@@ -96,15 +100,19 @@
   .header-shell {
     padding-inline: 1.1rem;
   }
+
+  .hero__micro-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
 @media (min-width: 1180px) {
   .hero__content {
-    padding: 3rem 2.3rem 2rem;
+    padding: 3.3rem 2.5rem 2.2rem;
   }
 
   .hero__aside {
-    padding: 1.8rem;
+    padding: 1.95rem 1.6rem 1.5rem;
   }
 
   .page-hero__frame,
@@ -137,5 +145,17 @@
 
   .floating-cta__link span {
     display: none;
+  }
+
+  .hero__micro-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .quote-slab__stat {
+    grid-template-columns: 1fr;
+  }
+
+  .atelier-board__swatches {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
