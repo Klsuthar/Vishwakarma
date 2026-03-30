@@ -421,18 +421,28 @@
   }
 
   function createFooter() {
+    const hoursMarkup = site.contact.hours
+      .map(function (item) {
+        return "<li><strong>" + escapeHtml(item.days) + ":</strong> " + escapeHtml(item.time) + "</li>";
+      })
+      .join("");
+
     return [
       '<footer class="site-footer">',
       '<div class="container">',
       '<div class="footer-shell">',
-      '<div class="footer-grid">',
-      '<div class="stack-md">',
+      '<div class="footer-grid footer-grid--enhanced">',
+      '<div class="footer-lead">',
       '<div class="footer-brand">',
       '<img src="assets/img/brand/luxury_logo.png" alt="Vishwakarma Wood Art & CNC Work logo">',
       "<div>",
       "<strong>" + escapeHtml(site.brand.name) + "</strong>",
-      "<p>" + escapeHtml(site.brand.footerCopy) + "</p>",
       "</div>",
+      "</div>",
+      '<p class="footer-lead__copy">' + escapeHtml(site.brand.footerCopy) + "</p>",
+      '<div class="footer-action-row">',
+      '<a class="footer-action footer-action--primary" href="' + escapeAttribute(site.contact.phoneHref) + '">Call Now</a>',
+      '<a class="footer-action footer-action--secondary" href="' + escapeAttribute(site.contact.whatsappHref) + '">WhatsApp</a>',
       "</div>",
       '<div class="chip-list">',
       site.services
@@ -443,9 +453,22 @@
         .join(""),
       "</div>",
       "</div>",
-      '<div class="grid-2">',
+      '<div class="grid-2 footer-detail-grid">',
+      '<article class="footer-card">',
+      '<p class="footer-kicker">Workshop</p>',
+      "<h3>Visit Our Ramsara Workshop</h3>",
+      '<ul class="footer-links footer-links--tight">',
+      site.contact.addressLines
+        .map(function (line) {
+          return "<li>" + escapeHtml(line) + "</li>";
+        })
+        .join(""),
+      "</ul>",
+      '<p class="footer-inline-note">' + escapeHtml(site.contact.note) + "</p>",
+      "</article>",
       '<div class="footer-card">',
-      "<h3>Quick links</h3>",
+      '<p class="footer-kicker">Quick Links</p>',
+      "<h3>Browse the Website</h3>",
       '<ul class="footer-links">',
       site.navigation
         .map(function (item) {
@@ -455,18 +478,27 @@
       "</ul>",
       "</div>",
       '<div class="footer-card">',
-      "<h3>Contact</h3>",
-      '<ul class="footer-links">',
-      "<li><a href=\"" + escapeAttribute(site.contact.phoneHref) + "\">" + escapeHtml(site.contact.phoneDisplay) + "</a></li>",
-      "<li><a href=\"" + escapeAttribute(site.contact.whatsappHref) + "\">" + escapeHtml(site.contact.whatsappDisplay) + "</a></li>",
-      "<li><a href=\"" + escapeAttribute(site.contact.emailHref) + "\">" + escapeHtml(site.contact.emailDisplay) + "</a></li>",
-      "<li>" + escapeHtml(site.contact.addressLines.join(", ")) + "</li>",
+      '<p class="footer-kicker">Contact</p>',
+      "<h3>Call, WhatsApp, or Email</h3>",
+      '<ul class="footer-links footer-links--contact">',
+      "<li><strong>Call</strong><a href=\"" + escapeAttribute(site.contact.phoneHref) + "\">" + escapeHtml(site.contact.phoneDisplay) + "</a></li>",
+      "<li><strong>WhatsApp</strong><a href=\"" + escapeAttribute(site.contact.whatsappHref) + "\">" + escapeHtml(site.contact.whatsappDisplay) + "</a></li>",
+      "<li><strong>Email</strong><a href=\"" + escapeAttribute(site.contact.emailHref) + "\">" + escapeHtml(site.contact.emailDisplay) + "</a></li>",
       "</ul>",
+      "</div>",
+      '<div class="footer-card">',
+      '<p class="footer-kicker">Working Hours</p>',
+      "<h3>Best Time to Reach Us</h3>",
+      '<ul class="hours-list">',
+      hoursMarkup,
+      "</ul>",
+      '<p class="footer-inline-note">' + escapeHtml(site.brand.serviceArea.join(" | ")) + "</p>",
       "</div>",
       "</div>",
       "</div>",
       '<div class="footer-bottom">',
-      "<p>Copyright <span data-current-year></span> " + escapeHtml(site.brand.shortName) + ". Update placeholder business details before launch.</p>",
+      "<p>Copyright <span data-current-year></span> " + escapeHtml(site.brand.shortName) + ". All rights reserved.</p>",
+      "<p>" + escapeHtml(site.contact.addressLines.join(", ")) + "</p>",
       "</div>",
       "</div>",
       "</div>",

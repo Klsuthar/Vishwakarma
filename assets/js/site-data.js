@@ -9,14 +9,14 @@ window.VISHWAKARMA_SITE = {
       "We bring your interior design dreams to life with completely customized, made-to-order furniture and stunning CNC wood carving. Experience unmatched craftsmanship tailored perfectly for your home or business.",
     introCopy:
       "At Vishwakarma Wood Art, we blend traditional woodworking mastery with modern CNC technology to deliver breathtaking bespoke interior elements. From luxurious bedrooms to captivating commercial showrooms, our woodwork stands apart.",
-    serviceAreaTitle: "Our Service Areas",
+    serviceAreaTitle: "Where We Work",
     serviceArea: [
-      "Major City & Metropolitan Region",
-      "Suburbs & Surrounding Districts",
-      "On-site measurement for premium projects"
+      "Ramsara workshop visits",
+      "Nearby areas for custom furniture and CNC projects",
+      "On-site measurement support for made-to-order work"
     ],
     footerCopy:
-      "The premier destination for bespoke solid wood furniture, intricate CNC paneling, and luxury home interiors.",
+      "Custom solid wood furniture, CNC carving, wall panels, and interior woodwork crafted from our Ramsara workshop with a direct call-and-WhatsApp inquiry experience.",
     stats: [
       {
         value: "100% Custom",
@@ -51,19 +51,19 @@ window.VISHWAKARMA_SITE = {
       "https://wa.me/91894932413?text=Hello%20Vishwakarma%20Wood%20Art%20%26%20CNC%20Work,%20I%20want%20to%20discuss%20a%20project.",
     emailDisplay: "contact@vishwakarmawoodart.in",
     emailHref: "mailto:contact@vishwakarmawoodart.in",
-    addressTitle: "Our Workshop Studio",
+    addressTitle: "Ramsara Workshop",
     addressLines: [
       "Vishwakarma Wood Art & CNC Work",
-      "Industrial Area, Phase 1, City Center"
+      "Ramsara"
     ],
     hours: [
       { days: "Monday - Saturday", time: "9:00 AM - 8:00 PM" },
       { days: "Sunday", time: "By Appointment" }
     ],
     mapEmbed:
-      "https://www.google.com/maps?q=Vishwakarma+Wood+Art+%26+CNC+Work&output=embed",
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d439.7822741128873!2d74.20079727021172!3d28.044244817810775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3915210001af0683%3A0xa6ef435682f27432!2sVishvkarma%20furniture%20house%20%F0%9F%8F%A0!5e1!3m2!1sen!2sin!4v1774887552998!5m2!1sen!2sin",
     note:
-      "Feel free to visit our workshop or send us your interior dimensions on WhatsApp for a quick estimate.",
+      "Visit our Ramsara workshop or share your room measurements and reference images on WhatsApp for a quick estimate.",
     inquiryChecklist: [
       "What type of furniture or CNC art do you need?",
       "Rough dimensions or wall sizing",

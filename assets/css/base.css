@@ -1,17 +1,21 @@
 :root {
-  --bg: #f7efe4;
-  --bg-deep: #ebdac2;
-  --surface: rgba(255, 249, 242, 0.8);
-  --surface-strong: rgba(255, 252, 247, 0.94);
-  --surface-elevated: rgba(255, 248, 239, 0.92);
+  --bg: #fbf0e3;
+  --bg-deep: #ebd0ad;
+  --surface: rgba(255, 247, 237, 0.82);
+  --surface-strong: rgba(255, 252, 246, 0.95);
+  --surface-elevated: rgba(255, 245, 232, 0.94);
   --surface-dark: #24180f;
   --text: #231811;
   --muted: #695445;
-  --accent: #b56a2f;
-  --accent-strong: #7a4218;
-  --accent-soft: #e3b47d;
-  --accent-deep: #4c2710;
-  --glow: rgba(229, 177, 118, 0.24);
+  --accent: #d37c38;
+  --accent-strong: #a14a1f;
+  --accent-soft: #f0b45d;
+  --accent-deep: #5b2814;
+  --accent-rose: #c95d4b;
+  --accent-gold: #e2a52f;
+  --accent-teal: #1f8a7a;
+  --accent-teal-soft: rgba(31, 138, 122, 0.16);
+  --glow: rgba(228, 146, 72, 0.26);
   --line: rgba(92, 63, 35, 0.14);
   --line-strong: rgba(92, 63, 35, 0.3);
   --success: #2f7f55;
@@ -44,10 +48,11 @@ body {
   font-family: var(--body-font);
   line-height: 1.65;
   background:
-    radial-gradient(circle at top right, rgba(229, 177, 118, 0.34), transparent 26rem),
-    radial-gradient(circle at top left, rgba(92, 63, 35, 0.08), transparent 24rem),
-    radial-gradient(circle at bottom left, rgba(181, 106, 47, 0.12), transparent 30rem),
-    linear-gradient(180deg, #fcf6ef 0%, var(--bg) 44%, #f1e2cf 100%);
+    radial-gradient(circle at top right, rgba(240, 180, 93, 0.38), transparent 25rem),
+    radial-gradient(circle at top left, rgba(201, 93, 75, 0.16), transparent 24rem),
+    radial-gradient(circle at 82% 34%, rgba(31, 138, 122, 0.14), transparent 20rem),
+    radial-gradient(circle at bottom left, rgba(211, 124, 56, 0.18), transparent 30rem),
+    linear-gradient(180deg, #fff8f0 0%, var(--bg) 44%, #f3dcc0 100%);
 }
 
 body::before {
@@ -69,8 +74,9 @@ body::after {
   content: "";
   pointer-events: none;
   background:
-    radial-gradient(circle at 12% 15%, rgba(255, 255, 255, 0.8), transparent 14rem),
-    radial-gradient(circle at 85% 12%, rgba(255, 255, 255, 0.42), transparent 18rem);
+    radial-gradient(circle at 12% 15%, rgba(255, 255, 255, 0.82), transparent 14rem),
+    radial-gradient(circle at 85% 12%, rgba(255, 225, 185, 0.44), transparent 18rem),
+    radial-gradient(circle at 75% 78%, rgba(31, 138, 122, 0.08), transparent 16rem);
   opacity: 0.85;
 }
 
@@ -164,15 +170,19 @@ ol {
   margin-bottom: 1rem;
   width: fit-content;
   padding: 0.42rem 0.78rem;
-  border: 1px solid rgba(122, 66, 24, 0.14);
+  border: 1px solid rgba(211, 124, 56, 0.18);
   border-radius: 999px;
   font-size: 0.73rem;
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--accent-strong);
-  background: rgba(255, 252, 247, 0.72);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(255, 236, 214, 0.76)),
+    rgba(255, 252, 247, 0.72);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.7),
+    0 10px 18px rgba(161, 74, 31, 0.06);
 }
 
 .eyebrow::before {
@@ -180,7 +190,7 @@ ol {
   height: 0.55rem;
   border-radius: 999px;
   content: "";
-  background: linear-gradient(135deg, var(--accent-soft), var(--accent));
+  background: linear-gradient(135deg, var(--accent-gold), var(--accent-rose));
 }
 
 .lead {
@@ -200,7 +210,8 @@ ol {
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.58), transparent),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.68), rgba(255, 239, 220, 0.45)),
+    radial-gradient(circle at top right, rgba(31, 138, 122, 0.08), transparent 12rem),
     var(--surface);
   backdrop-filter: blur(18px);
   box-shadow: var(--shadow-soft);
@@ -218,8 +229,12 @@ ol {
   border-radius: 999px;
   font-size: 0.9rem;
   color: var(--text);
-  background: rgba(255, 255, 255, 0.68);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(255, 235, 212, 0.72)),
+    rgba(255, 255, 255, 0.68);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.8),
+    0 8px 18px rgba(201, 93, 75, 0.05);
 }
 
 .muted {
