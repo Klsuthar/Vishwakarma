@@ -36,6 +36,8 @@
     queryAll("[data-floating-cta]").forEach(function (element) {
       element.innerHTML = createFloatingCta();
     });
+
+    injectMobileBottomNav();
   }
 
   function bindScrollHeader() {
@@ -372,7 +374,7 @@
       "<ul>",
       site.navigation
         .map(function (item) {
-          return '<li><a href="' + escapeAttribute(item.href) + '">' + escapeHtml(item.label) + "</a></li>";
+          return '<li><a href="' + escapeAttribute(item.href) + '" data-nav-link>' + escapeHtml(item.label) + "</a></li>";
         })
         .join(""),
       "</ul>",
@@ -384,6 +386,37 @@
       "</div>",
       "</div>",
       "</div>"
+    ].join("");
+  }
+
+  function injectMobileBottomNav() {
+    const siteShell = document.querySelector(".site-shell");
+
+    if (!siteShell || siteShell.querySelector("[data-mobile-bottom-nav]")) {
+      return;
+    }
+
+    siteShell.insertAdjacentHTML("beforeend", createMobileBottomNav());
+  }
+
+  function createMobileBottomNav() {
+    return [
+      '<nav class="mobile-bottom-nav" data-mobile-bottom-nav aria-label="Mobile navigation">',
+      '<ul class="mobile-bottom-nav__list">',
+      site.navigation
+        .map(function (item) {
+          return [
+            "<li>",
+            '<a class="mobile-bottom-nav__link" href="' + escapeAttribute(item.href) + '" data-nav-link>',
+            '<span class="mobile-bottom-nav__icon" aria-hidden="true">' + getMobileNavIcon(item.href) + "</span>",
+            '<span class="mobile-bottom-nav__label">' + escapeHtml(item.label) + "</span>",
+            "</a>",
+            "</li>"
+          ].join("");
+        })
+        .join(""),
+      "</ul>",
+      "</nav>"
     ].join("");
   }
 
@@ -454,6 +487,55 @@
       "</a>",
       "</div>"
     ].join("");
+  }
+
+  function getMobileNavIcon(href) {
+    const page = String(href).split("/").pop() || "index.html";
+
+    switch (page) {
+      case "about.html":
+        return [
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">',
+          '<path d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4Z"></path>',
+          '<path d="M4.75 19a7.25 7.25 0 0 1 14.5 0"></path>',
+          "</svg>"
+        ].join("");
+      case "services.html":
+        return [
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">',
+          '<rect x="4" y="4" width="6" height="6" rx="1.5"></rect>',
+          '<rect x="14" y="4" width="6" height="6" rx="1.5"></rect>',
+          '<rect x="4" y="14" width="6" height="6" rx="1.5"></rect>',
+          '<path d="M17 14v6"></path>',
+          '<path d="M14 17h6"></path>',
+          "</svg>"
+        ].join("");
+      case "products.html":
+        return [
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">',
+          '<path d="M12 3 4.5 7.2V17L12 21l7.5-4V7.2L12 3Z"></path>',
+          '<path d="M4.5 7.2 12 11l7.5-3.8"></path>',
+          '<path d="M12 11v10"></path>',
+          "</svg>"
+        ].join("");
+      case "contact.html":
+        return [
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">',
+          '<path d="M21 11.5A8.5 8.5 0 0 1 8.86 19L3 21l2-5.86A8.5 8.5 0 1 1 21 11.5Z"></path>',
+          '<path d="M9.5 10.5h5"></path>',
+          '<path d="M9.5 14h3.5"></path>',
+          "</svg>"
+        ].join("");
+      case "index.html":
+      default:
+        return [
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">',
+          '<path d="M3 10.5 12 3l9 7.5"></path>',
+          '<path d="M5.25 9.75V21h13.5V9.75"></path>',
+          '<path d="M9.5 21v-5.5h5V21"></path>',
+          "</svg>"
+        ].join("");
+    }
   }
 
   function createProductCard(product) {

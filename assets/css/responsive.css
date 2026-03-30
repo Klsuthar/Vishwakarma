@@ -33,6 +33,21 @@
   }
 }
 
+@media (max-width: 899px) {
+  .mobile-bottom-nav {
+    display: block;
+  }
+
+  .floating-cta {
+    right: 0.9rem;
+    bottom: calc(6.7rem + env(safe-area-inset-bottom, 0px));
+  }
+
+  .site-footer {
+    padding-bottom: calc(8rem + env(safe-area-inset-bottom, 0px));
+  }
+}
+
 @media (min-width: 900px) {
   .site-main {
     gap: 6rem;
@@ -135,6 +150,25 @@
 @media (max-width: 679px) {
   .header-shell {
     border-radius: 1.5rem;
+  }
+
+  .mobile-bottom-nav {
+    width: calc(100vw - 0.75rem);
+    padding-inline: 0.4rem;
+    border-radius: 1.5rem;
+  }
+
+  .mobile-bottom-nav__list {
+    gap: 0.2rem;
+  }
+
+  .mobile-bottom-nav__link {
+    font-size: 0.64rem;
+  }
+
+  .mobile-bottom-nav__icon {
+    width: 2.2rem;
+    height: 2.2rem;
   }
 
   .hero__content,
