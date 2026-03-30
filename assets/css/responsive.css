@@ -1,0 +1,141 @@
+@media (min-width: 680px) {
+  .hero__frame,
+  .page-hero__frame,
+  .split-layout,
+  .two-column-copy,
+  .cta-band,
+  .footer-grid,
+  .grid-2,
+  .grid-3,
+  .grid-4,
+  .feature-grid,
+  .service-grid,
+  .product-grid,
+  .testimonial-grid,
+  .contact-grid,
+  .process-grid,
+  .trust-grid,
+  .detail-grid,
+  .stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hero__frame {
+    padding: 1.4rem;
+  }
+
+  .hero__content {
+    padding: 2.3rem 1.6rem 1.8rem;
+  }
+}
+
+@media (min-width: 900px) {
+  .site-main {
+    gap: 5.5rem;
+  }
+
+  .hero__frame {
+    grid-template-columns: minmax(0, 1.35fr) minmax(22rem, 0.9fr);
+    align-items: stretch;
+    min-height: 42rem;
+  }
+
+  .page-hero__frame,
+  .split-layout,
+  .two-column-copy,
+  .cta-band,
+  .footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+  }
+
+  .feature-grid,
+  .service-grid,
+  .product-grid,
+  .testimonial-grid,
+  .trust-grid,
+  .detail-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .process-grid,
+  .contact-grid,
+  .stats-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .site-nav {
+    position: static;
+    inset: auto;
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .site-nav ul {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+  }
+
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .nav-toggle {
+    display: none;
+  }
+
+  .header-shell {
+    padding-inline: 1.1rem;
+  }
+}
+
+@media (min-width: 1180px) {
+  .hero__content {
+    padding: 3rem 2.3rem 2rem;
+  }
+
+  .hero__aside {
+    padding: 1.8rem;
+  }
+
+  .page-hero__frame,
+  .cta-band,
+  .footer-shell {
+    padding: 2rem;
+  }
+
+  .grid-4,
+  .service-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 679px) {
+  .header-shell {
+    border-radius: 1.5rem;
+  }
+
+  .brand-mark__subtitle {
+    display: none;
+  }
+
+  .hero__content,
+  .page-hero__frame,
+  .cta-band,
+  .footer-shell {
+    padding-inline: 1rem;
+  }
+
+  .floating-cta__link span {
+    display: none;
+  }
+}

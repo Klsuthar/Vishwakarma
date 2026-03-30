@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products | Vishwakarma Wood Art & CNC Work</title>
+    <meta
+      name="description"
+      content="Browse category-based product showcase items for beds, wardrobes, TV units, mandir work, CNC panels, and custom wood projects."
+    >
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/layout.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <script src="assets/js/site-data.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
+    <script src="assets/js/navigation.js" defer></script>
+    <script src="assets/js/gallery.js" defer></script>
+  </head>
+  <body data-page="products">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <div class="site-shell">
+      <header data-site-header></header>
+
+      <main id="main-content" class="site-main">
+        <section class="page-hero section section--flush">
+          <div class="container">
+            <div class="page-hero__frame">
+              <div>
+                <p class="eyebrow">Products</p>
+                <h1>Show the type of work now, then add real project photos later.</h1>
+                <p class="lead section-copy">
+                  The cards below are designed as elegant placeholders so the website already feels
+                  complete. Each item can later be paired with real images, dimensions, or project
+                  notes without changing the structure.
+                </p>
+              </div>
+
+              <div class="surface-panel cta-band">
+                <div>
+                  <p class="eyebrow">Catalog Direction</p>
+                  <h3>Category-based showcase</h3>
+                  <p>
+                    Visitors can filter by furniture type and decorative work, which keeps the page
+                    easy to scan on both phone and desktop.
+                  </p>
+                </div>
+                <div class="chip-list">
+                  <span class="chip">Beds</span>
+                  <span class="chip">Doors</span>
+                  <span class="chip">Wardrobes</span>
+                  <span class="chip">CNC Panels</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="container">
+            <div class="section__header">
+              <p class="eyebrow">Filter the Showcase</p>
+              <h2 class="section-title">Touch-friendly category filters are already active.</h2>
+              <p class="section-copy">
+                Real photos can be added later while keeping the same category flow and inquiry path.
+              </p>
+            </div>
+
+            <div class="filter-group" data-render="product-filters"></div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="container">
+            <div class="product-grid" data-render="products" data-mode="all"></div>
+            <div class="empty-state" data-gallery-empty>
+              No showcase items match this filter yet. Please try another category.
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="container">
+            <div class="split-layout">
+              <article class="surface-panel cta-band">
+                <div>
+                  <p class="eyebrow">Good to Know</p>
+                  <h2 class="section-title">The product grid is editable from one shared file.</h2>
+                  <p>
+                    Titles, categories, finishes, and card accents can all be updated without editing
+                    the HTML layout itself. That makes this page easy to maintain over time.
+                  </p>
+                </div>
+              </article>
+
+              <div>
+                <div class="section__header">
+                  <p class="eyebrow">Need a Quote?</p>
+                  <h2 class="section-title">Pair the showcase with a direct contact action.</h2>
+                </div>
+                <div class="contact-grid" data-render="contact-cards"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <div data-floating-cta></div>
+      <div data-site-footer></div>
+    </div>
+  </body>
+</html>
