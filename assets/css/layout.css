@@ -69,8 +69,8 @@
   border: 1px solid rgba(122, 66, 24, 0.12);
   border-radius: calc(var(--radius-xl) + 0.3rem);
   background:
-    linear-gradient(135deg, rgba(255, 253, 249, 0.86), rgba(234, 214, 188, 0.8)),
-    url("../img/hero/woodgrain-wave.svg") center/cover no-repeat;
+    linear-gradient(135deg, rgba(255, 253, 249, 0.45), rgba(234, 214, 188, 0.35)),
+    url("../img/hero/hero-bg.png") center/cover no-repeat;
   box-shadow: var(--shadow-pop);
 }
 
@@ -130,8 +130,8 @@
   padding: 2.2rem 1.5rem;
   border-radius: var(--radius-xl);
   background:
-    linear-gradient(130deg, rgba(255, 251, 246, 0.9), rgba(232, 211, 185, 0.84)),
-    url("../img/sections/cnc-grid.svg") right/contain no-repeat;
+    linear-gradient(130deg, rgba(255, 251, 246, 0.45), rgba(232, 211, 185, 0.35)),
+    url("../img/sections/cnc-pattern-bg.png") center/cover no-repeat;
   border: 1px solid var(--line);
   box-shadow: var(--shadow-pop);
 }
