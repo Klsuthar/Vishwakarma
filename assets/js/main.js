@@ -21,6 +21,7 @@
     bindMapEmbeds();
     setCurrentYear();
     activateReveals();
+    bindScrollHeader();
   });
 
   function injectSharedShell() {
@@ -35,6 +36,19 @@
     queryAll("[data-floating-cta]").forEach(function (element) {
       element.innerHTML = createFloatingCta();
     });
+  }
+
+  function bindScrollHeader() {
+    const headerWrap = document.querySelector(".header-wrap");
+    if (!headerWrap) return;
+    
+    window.addEventListener("scroll", function() {
+      if (window.scrollY > 20) {
+        headerWrap.classList.add("is-scrolled");
+      } else {
+        headerWrap.classList.remove("is-scrolled");
+      }
+    }, { passive: true });
   }
 
   function bindSharedText() {
