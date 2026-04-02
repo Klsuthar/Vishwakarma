@@ -224,21 +224,21 @@
     queryAll('[data-render="contact-cards"]').forEach(function (container) {
       const cards = [
         {
-          title: "Call for quick discussion",
+          title: "Call Us",
           body: site.contact.phoneDisplay,
           href: site.contact.phoneHref,
           icon: "CL",
-          action: "Tap to call"
+          action: "Call now"
         },
         {
-          title: "Chat on WhatsApp",
+          title: "WhatsApp",
           body: site.contact.whatsappDisplay,
           href: site.contact.whatsappHref,
           icon: "WA",
           action: "Open WhatsApp"
         },
         {
-          title: "Share references by email",
+          title: "Email",
           body: site.contact.emailDisplay,
           href: site.contact.emailHref,
           icon: "EM",
@@ -249,7 +249,7 @@
           body: site.contact.addressLines.join(", "),
           href: "contact.html",
           icon: "AD",
-          action: "View contact page"
+          action: "View details"
         }
       ];
 
@@ -456,7 +456,7 @@
       '<div class="grid-2 footer-detail-grid">',
       '<article class="footer-card">',
       '<p class="footer-kicker">Workshop</p>',
-      "<h3>Visit Our Ramsara Workshop</h3>",
+      "<h3>Ramsara Workshop</h3>",
       '<ul class="footer-links footer-links--tight">',
       site.contact.addressLines
         .map(function (line) {
@@ -468,7 +468,7 @@
       "</article>",
       '<div class="footer-card">',
       '<p class="footer-kicker">Quick Links</p>',
-      "<h3>Browse the Website</h3>",
+      "<h3>Pages</h3>",
       '<ul class="footer-links">',
       site.navigation
         .map(function (item) {
@@ -479,7 +479,7 @@
       "</div>",
       '<div class="footer-card">',
       '<p class="footer-kicker">Contact</p>',
-      "<h3>Call, WhatsApp, or Email</h3>",
+      "<h3>Call or WhatsApp</h3>",
       '<ul class="footer-links footer-links--contact">',
       "<li><strong>Call</strong><a href=\"" + escapeAttribute(site.contact.phoneHref) + "\">" + escapeHtml(site.contact.phoneDisplay) + "</a></li>",
       "<li><strong>WhatsApp</strong><a href=\"" + escapeAttribute(site.contact.whatsappHref) + "\">" + escapeHtml(site.contact.whatsappDisplay) + "</a></li>",
@@ -488,7 +488,7 @@
       "</div>",
       '<div class="footer-card">',
       '<p class="footer-kicker">Working Hours</p>',
-      "<h3>Best Time to Reach Us</h3>",
+      "<h3>Working Hours</h3>",
       '<ul class="hours-list">',
       hoursMarkup,
       "</ul>",
@@ -601,7 +601,7 @@
       '<p class="eyebrow">' + escapeHtml(categoryLabel) + "</p>",
       "<h3>" + escapeHtml(product.title) + "</h3>",
       "<p>" + escapeHtml(product.summary) + "</p>",
-      '<p class="product-gallery__hint">Tap any photo to open full screen.</p>',
+      '<p class="product-gallery__hint">Tap photo to view.</p>',
       '<ul class="product-meta">',
       "<li>" + escapeHtml(product.finish) + "</li>",
       "<li>" + escapeHtml(product.tag) + "</li>",

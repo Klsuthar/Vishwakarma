@@ -3,6 +3,18 @@
   min-height: 100vh;
 }
 
+.site-shell::before {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 34rem;
+  content: "";
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 20% 12%, rgba(255, 255, 255, 0.5), transparent 18rem),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.2), transparent);
+  opacity: 0.7;
+}
+
 .container {
   width: var(--container);
   margin: 0 auto;
@@ -10,13 +22,25 @@
 
 .site-main {
   display: grid;
-  gap: 5rem;
+  gap: 5.5rem;
   padding-bottom: 6rem;
 }
 
 .section {
   position: relative;
+  isolation: isolate;
   padding: 0 0 0.5rem;
+}
+
+.section:not(.section--flush)::before {
+  position: absolute;
+  top: -1.25rem;
+  left: 50%;
+  width: min(12rem, 32vw);
+  height: 1px;
+  content: "";
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, transparent, rgba(161, 74, 31, 0.34), transparent);
 }
 
 .section--flush {
@@ -27,6 +51,7 @@
   display: grid;
   gap: 1rem;
   margin-bottom: 1.75rem;
+  max-width: 44rem;
 }
 
 .stack-lg {
@@ -63,17 +88,20 @@
 .hero__frame {
   position: relative;
   overflow: hidden;
+  isolation: isolate;
   display: grid;
   gap: 2rem;
-  padding: 1.15rem;
-  border: 1px solid rgba(122, 66, 24, 0.12);
+  padding: 1.25rem;
+  border: 1px solid rgba(122, 66, 24, 0.14);
   border-radius: calc(var(--radius-xl) + 0.3rem);
   background:
+    url("../img/hero/woodgrain-wave.svg") right -4rem bottom -4rem / 24rem no-repeat,
+    url("../img/sections/cnc-grid.svg") center / 30rem repeat,
     radial-gradient(circle at top right, rgba(31, 138, 122, 0.16), transparent 20rem),
     radial-gradient(circle at bottom left, rgba(201, 93, 75, 0.12), transparent 18rem),
     linear-gradient(135deg, rgba(255, 251, 244, 0.5), rgba(244, 209, 158, 0.4)),
     url("../img/hero/hero-bg.png") center/cover no-repeat;
-  box-shadow: var(--shadow-pop);
+  box-shadow: var(--shadow-hero);
 }
 
 .hero__frame::before,
@@ -90,6 +118,7 @@
   top: -10rem;
   right: -8rem;
   background: radial-gradient(circle, rgba(255, 255, 255, 0.56), transparent 68%);
+  filter: blur(10px);
 }
 
 .hero__frame::after {
@@ -98,6 +127,7 @@
   bottom: -8rem;
   left: -6rem;
   background: radial-gradient(circle, var(--glow), transparent 70%);
+  filter: blur(6px);
 }
 
 .hero__content,
@@ -109,14 +139,15 @@
 .hero__content {
   display: grid;
   align-content: start;
-  gap: 1.35rem;
+  gap: 1.45rem;
   padding: 2.1rem 1.35rem 1.65rem;
+  max-width: 46rem;
 }
 
 .hero__aside {
   display: grid;
   align-content: start;
-  gap: 1rem;
+  gap: 1.15rem;
   padding: 1.25rem 1.1rem 1.2rem;
 }
 
@@ -127,11 +158,13 @@
 .page-hero__frame {
   position: relative;
   overflow: hidden;
+  isolation: isolate;
   display: grid;
   gap: 1.75rem;
   padding: 2.2rem 1.5rem;
   border-radius: var(--radius-xl);
   background:
+    url("../img/sections/cnc-grid.svg") center / 28rem repeat,
     radial-gradient(circle at top left, rgba(240, 180, 93, 0.18), transparent 16rem),
     radial-gradient(circle at bottom right, rgba(31, 138, 122, 0.12), transparent 20rem),
     linear-gradient(130deg, rgba(255, 251, 246, 0.5), rgba(239, 211, 172, 0.4)),
@@ -154,7 +187,7 @@
 
 .split-layout {
   display: grid;
-  gap: 1.5rem;
+  gap: 1.75rem;
 }
 
 .feature-grid,
@@ -168,7 +201,7 @@
 .detail-grid,
 .stats-grid {
   display: grid;
-  gap: 1.15rem;
+  gap: 1.25rem;
 }
 
 .two-column-copy {
@@ -176,10 +209,30 @@
   gap: 1.4rem;
 }
 
+.showcase-panel__top {
+  display: grid;
+  gap: 1.35rem;
+  margin-bottom: 1.5rem;
+}
+
+.showcase-panel__header {
+  margin-bottom: 0;
+}
+
 .cta-band {
   position: relative;
   overflow: hidden;
-  padding: 2.15rem 1.5rem;
+  padding: 2.25rem 1.6rem;
+}
+
+.cta-band::before {
+  position: absolute;
+  inset: 0;
+  content: "";
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.18), transparent 34%),
+    radial-gradient(circle at bottom left, rgba(255, 255, 255, 0.16), transparent 18rem);
 }
 
 .cta-band::after {
@@ -198,8 +251,9 @@
   overflow: hidden;
   border-radius: var(--radius-md);
   min-height: 320px;
+  border: 1px solid rgba(92, 63, 35, 0.16);
   background: #ede1d0;
-  box-shadow: var(--shadow-card);
+  box-shadow: var(--shadow-pop);
 }
 
 .map-shell iframe {
@@ -220,6 +274,8 @@
 }
 
 .craft-ribbon {
+  position: relative;
+  overflow: hidden;
   display: grid;
   gap: 1rem;
   padding: 1.2rem;
@@ -231,10 +287,20 @@
   box-shadow: var(--shadow-soft);
 }
 
+.craft-ribbon::before {
+  position: absolute;
+  inset: 0;
+  content: "";
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.18), transparent 45%),
+    radial-gradient(circle at right top, rgba(255, 255, 255, 0.3), transparent 14rem);
+}
+
 .section-panel {
   position: relative;
   overflow: hidden;
-  padding: 1.3rem;
+  padding: 1.55rem;
   border: 1px solid rgba(92, 63, 35, 0.12);
   border-radius: var(--radius-xl);
   background:
@@ -252,4 +318,14 @@
   height: 1px;
   content: "";
   background: linear-gradient(90deg, transparent, rgba(181, 106, 47, 0.32), transparent);
+}
+
+.section-panel::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  pointer-events: none;
+  background:
+    radial-gradient(circle at top right, rgba(255, 255, 255, 0.22), transparent 16rem),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 22%);
 }

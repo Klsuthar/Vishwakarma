@@ -23,37 +23,37 @@ window.VISHWAKARMA_SITE = {
   brand: {
     name: "Vishwakarma Wood Art & CNC Work",
     shortName: "Vishwakarma Wood Art",
-    tagLine: "Premium custom furniture, detailed wood art, and precision CNC-crafted interiors.",
-    heroBadge: "Custom Furniture | Precision CNC | Luxury Decor",
-    heroTitle: "Crafted woodwork that elevates your living spaces.",
+    tagLine: "Custom furniture and CNC interiors.",
+    heroBadge: "Custom Furniture | CNC Work | Wood Decor",
+    heroTitle: "Custom woodwork for homes and shops.",
     heroCopy:
-      "We bring your interior design dreams to life with completely customized, made-to-order furniture and stunning CNC wood carving. Experience unmatched craftsmanship tailored perfectly for your home or business.",
+      "We build furniture, panels, doors, mandirs, and CNC pieces to fit your space.",
     introCopy:
-      "At Vishwakarma Wood Art, we blend traditional woodworking mastery with modern CNC technology to deliver breathtaking bespoke interior elements. From luxurious bedrooms to captivating commercial showrooms, our woodwork stands apart.",
+      "Share size or reference photos on WhatsApp for a quick discussion.",
     serviceAreaTitle: "Where We Work",
     serviceArea: [
-      "Ramsara workshop visits",
-      "Nearby areas for custom furniture and CNC projects",
-      "On-site measurement support for made-to-order work"
+      "Ramsara workshop",
+      "Nearby site visits",
+      "Measurement support"
     ],
     footerCopy:
-      "Custom solid wood furniture, CNC carving, wall panels, and interior woodwork crafted from our Ramsara workshop with a direct call-and-WhatsApp inquiry experience.",
+      "Custom furniture, CNC work, wall panels, and wood decor from our Ramsara workshop.",
     stats: [
       {
         value: "100% Custom",
-        label: "Everything is precisely made-to-order for your space"
+        label: "Made for your room size"
       },
       {
-        value: "Top Quality",
-        label: "Premium teak, oak, and long-lasting commercial laminates"
+        value: "CNC Precision",
+        label: "Clean cuts and repeat accuracy"
       },
       {
-        value: "End-to-End",
-        label: "We handle the measurement, design, build, and installation"
+        value: "Site Support",
+        label: "Measurement to installation"
       },
       {
-        value: "Flawless Finish",
-        label: "Automated CNC precision meets hand-polished artistry"
+        value: "Strong Finish",
+        label: "Durable material and polish"
       }
     ]
   },
@@ -84,13 +84,13 @@ window.VISHWAKARMA_SITE = {
     mapEmbed:
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d439.7822741128873!2d74.20079727021172!3d28.044244817810775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3915210001af0683%3A0xa6ef435682f27432!2sVishvkarma%20furniture%20house%20%F0%9F%8F%A0!5e1!3m2!1sen!2sin!4v1774887552998!5m2!1sen!2sin",
     note:
-      "Visit our Ramsara workshop or share your room measurements and reference images on WhatsApp for a quick estimate.",
+      "Visit our Ramsara workshop or send measurements and reference photos on WhatsApp.",
     inquiryChecklist: [
-      "What type of furniture or CNC art do you need?",
-      "Rough dimensions or wall sizing",
-      "Your preferred wood finish (Gloss, Matte, Natural)",
-      "Location and floor number for delivery",
-      "Any Pinterest or Google reference images"
+      "Work type",
+      "Approx size",
+      "Finish choice",
+      "Location",
+      "Reference photo"
     ]
   },
   socialLinks: [
@@ -104,225 +104,225 @@ window.VISHWAKARMA_SITE = {
   ],
   highlights: [
     {
-      title: "Limitless Customization",
+      title: "Custom Size",
       copy:
-        "Unlike showrooms with fixed sizes, we build strictly to your floor plan ensuring zero wasted space and an exact match to your interior theme."
+        "Built to match your room and layout."
     },
     {
-      title: "Precision CNC Artistry",
+      title: "CNC Detail",
       copy:
-        "Our advanced CNC machines can cut, carve, and engrave complex jalis, 3D textures, and patterns that are impossible to do by hand."
+        "Clean jali, panel, and carving work."
     },
     {
-      title: "Commercial & Residential",
+      title: "Home & Shop",
       copy:
-        "Whether fitting out a luxury penthouse or building engaging retail display counters, our expertise scales to meet the aesthetic demands of any project."
+        "Suitable for homes, counters, and interiors."
     },
     {
-      title: "Transparent Process",
+      title: "Clear Process",
       copy:
-        "From the first WhatsApp photo you send us to the final polish, we keep you updated on timber selection, CNC progress, and installation dates."
+        "Quote, measure, build, and install."
     },
     {
-      title: "Unmatched Durability",
+      title: "Durable Build",
       copy:
-        "We never cut corners on joinery or hardware. We use heavy-duty hinges, premium adhesives, and weather-resistant sealants for lifetime durability."
+        "Strong hardware and long-lasting finish."
     },
     {
-      title: "Master Installation",
+      title: "Neat Fitting",
       copy:
-        "Our fitters make sure every wardrobe glides perfectly and every wall panel sits flush. We leave your site clean and the woodwork looking incredible."
+        "Clean final installation at your site."
     }
   ],
   process: [
     {
       step: "01",
-      title: "Consultation & Vision",
+      title: "Discuss Project",
       copy:
-        "Share your ideas, Pinterest boards, or architectural sketches with us. We'll discuss wood species, functionality, and provide a ballpark estimate."
+        "Share your idea, size, or reference photo."
     },
     {
       step: "02",
-      title: "Site Measurement",
+      title: "Measure Site",
       copy:
-        "For complex built-in furniture or large wall panels, our team visits your location to take exact millimeter-perfect measurements."
+        "We take proper measurements for custom work."
     },
     {
       step: "03",
-      title: "CNC & Crafting",
+      title: "Build & CNC",
       copy:
-        "We program your custom designs into our CNC routers for precision cutting, followed by expert manual assembly and detailing by our master carpenters."
+        "Cut, craft, assemble, and finish in the workshop."
     },
     {
       step: "04",
-      title: "Polishing & Fitting",
+      title: "Install",
       copy:
-        "The pieces receive premium sanding, staining, and sealing. Finally, our team securely installs the finished work directly at your site."
+        "Final polish and fitting at your location."
     }
   ],
   services: [
     {
       icon: "CF",
-      title: "Bespoke Furniture Built To Order",
+      title: "Custom Furniture",
       summary:
-        "Luxury beds, massive wall-to-wall wardrobes, and statement dining tables crafted to fit your lifestyle and your room's exact dimensions.",
+        "Beds, wardrobes, tables, and storage built to size.",
       points: [
-        "Choice of solid teak, oak, or engineered wood",
-        "Custom upholstery and headboards",
-        "Soft-close premium hardware integration"
+        "Size as per room",
+        "Wood and finish options",
+        "Premium hardware"
       ]
     },
     {
       icon: "CN",
-      title: "Advanced CNC Wood Carving",
+      title: "CNC Carving",
       summary:
-        "Millimeter-accurate 2D and 3D wood engraving for dramatic architectural panels, backlit screens, and structural interior decor.",
+        "Precise cutting for panels, patterns, and carved designs.",
       points: [
-        "Complex geometric & floral patterns",
-        "Relief carving & 3D texturing",
-        "Consistent batch production for commercial spaces"
+        "Jali and pattern work",
+        "2D and 3D carving",
+        "Batch work available"
       ]
     },
     {
       icon: "WA",
-      title: "Wooden Wall Art & Decor",
+      title: "Wood Decor",
       summary:
-        "Eye-catching woodwork meant to be the centerpiece of a room. Perfectly suited for hotel lobbies, living rooms, and grand entrances.",
+        "Feature pieces for living rooms, entrances, and shops.",
       points: [
-        "Layered multidimensional wood art",
-        "Custom family crests or business logos",
-        "Integrated LED backlight planning"
+        "Wall decor",
+        "Logo or motif work",
+        "LED-ready designs"
       ]
     },
     {
       icon: "JP",
-      title: "Jali Partitions & Screens",
+      title: "Jali & Partitions",
       summary:
-        "Beautifully carved room dividers that provide privacy while letting light and air flow freely through intricate traditional or modern lattice patterns.",
+        "Decorative dividers that add privacy and style.",
       points: [
-        "MDF, exact wood, or acrylic cutting",
-        "Ceiling suspended or floor anchored",
-        "Excellent for pooja rooms and dining areas"
+        "Wood or MDF options",
+        "Ceiling or floor fit",
+        "Ideal for rooms and pooja areas"
       ]
     },
     {
       icon: "IW",
-      title: "Complete Interior Paneling",
+      title: "Wall Panels & TV Units",
       summary:
-        "Transform flat drywall into luxurious spaces with floor-to-ceiling wooden cladding, fluted panels, and custom TV entertainment units.",
+        "Panels, cladding, and TV units for clean interiors.",
       points: [
-        "Fluted, slatted, and shaker style boards",
-        "Hidden doors and seamless storage",
-        "Acoustic dampening properties"
+        "Fluted and slatted panels",
+        "Hidden storage options",
+        "Modern wall styling"
       ]
     },
     {
       icon: "MD",
-      title: "Divine Mandir Creations",
+      title: "Mandir Work",
       summary:
-        "Fully customized, highly detailed wooden temples for your home, featuring intricate temple bells, domes, and step designs.",
+        "Custom wooden mandirs with practical storage and detail.",
       points: [
-        "Vaastu-compliant dimensions",
-        "Integrated lighting & storage drawers",
-        "Traditional hand-carved finishing touches"
+        "Custom size",
+        "Lighting and drawers",
+        "Traditional finish"
       ]
     }
   ],
   productCategories: [
-    { id: "all", label: "All Masterpieces" },
-    { id: "beds", label: "Luxury Beds" },
-    { id: "doors", label: "Carved Doors" },
+    { id: "all", label: "All" },
+    { id: "beds", label: "Beds" },
+    { id: "doors", label: "Doors" },
     { id: "wardrobes", label: "Wardrobes" },
-    { id: "tv-units", label: "TV & Media" },
+    { id: "tv-units", label: "TV Units" },
     { id: "mandir", label: "Mandirs" },
-    { id: "cnc-panels", label: "CNC & Jalis" },
-    { id: "custom-work", label: "Commercial" }
+    { id: "cnc-panels", label: "CNC Panels" },
+    { id: "custom-work", label: "Custom Work" }
   ],
   products: [
     {
-      title: "The Royal Oak Platform Bed",
+      title: "Royal Oak Bed",
       category: "beds",
       image: "assets/img/products/gallery/royal-oak-bed-01.png",
-      gallery: createProductGallery("royal-oak-bed", "The Royal Oak Platform Bed"),
+      gallery: createProductGallery("royal-oak-bed", "Royal Oak Bed"),
       summary:
-        "A low-profile, ultra-modern platform bed featuring a massive CNC-textured headboard that spans the entire width of the bedroom wall.",
+        "Modern bed with a wide CNC headboard and clean finish.",
       finish: "Natural Matte Oak Polish",
       tag: "Best Seller",
       accent: "#8f5529"
     },
     {
-      title: "Grand Entrance Carved Door",
+      title: "Carved Entrance Door",
       category: "doors",
       image: "assets/img/products/gallery/grand-entrance-door-01.png",
-      gallery: createProductGallery("grand-entrance-door", "Grand Entrance Carved Door"),
+      gallery: createProductGallery("grand-entrance-door", "Carved Entrance Door"),
       summary:
-        "A heavy, double-leaf solid teak wood door featuring deep 3D floral CNC carving to make a spectacular first impression for your villa.",
+        "Solid wood door with deep CNC carving and strong presence.",
       finish: "Dark Walnut Weatherproof Seal",
       tag: "Statement Piece",
       accent: "#6a3e1d"
     },
     {
-      title: "Seamless Fluted Wardrobe",
+      title: "Fluted Wardrobe",
       category: "wardrobes",
       image: "assets/img/products/gallery/fluted-wardrobe-01.png",
-      gallery: createProductGallery("fluted-wardrobe", "Seamless Fluted Wardrobe"),
+      gallery: createProductGallery("fluted-wardrobe", "Fluted Wardrobe"),
       summary:
-        "Floor-to-ceiling storage with elegant vertical fluting cut perfectly by our CNC machines, hiding the fact that it is a massive closet.",
+        "Floor-to-ceiling storage with a sharp fluted front.",
       finish: "PU Paint Finish (Custom Colors)",
       tag: "Modern Minimalist",
       accent: "#a46838"
     },
     {
-      title: "Floating Media Console",
+      title: "Floating TV Unit",
       category: "tv-units",
       image: "assets/img/products/gallery/floating-media-console-01.png",
-      gallery: createProductGallery("floating-media-console", "Floating Media Console"),
+      gallery: createProductGallery("floating-media-console", "Floating TV Unit"),
       summary:
-        "A sleek, wall-mounted TV entertainment unit featuring slatted wood backing and hidden compartments for all your messy cables and routers.",
+        "Wall-mounted TV unit with paneling and hidden storage.",
       finish: "Ash Wood veneer",
       tag: "Smart Living",
       accent: "#bb7f46"
     },
     {
-      title: "The Heritage Teak Mandir",
+      title: "Heritage Teak Mandir",
       category: "mandir",
       image: "assets/img/products/gallery/heritage-teak-mandir-01.png",
-      gallery: createProductGallery("heritage-teak-mandir", "The Heritage Teak Mandir"),
+      gallery: createProductGallery("heritage-teak-mandir", "Heritage Teak Mandir"),
       summary:
-        "A beautifully enclosed pooja space featuring laser-cut jali doors that cast stunning shadow patterns when the internal warm LEDs are turned on.",
+        "Detailed mandir with jali doors, lighting, and storage.",
       finish: "Traditional High Gloss Teak",
       tag: "High Demand",
       accent: "#b56f2d"
     },
     {
-      title: "Geometric Room Divider",
+      title: "Geometric Divider",
       category: "cnc-panels",
       image: "assets/img/products/gallery/geometric-room-divider-01.png",
-      gallery: createProductGallery("geometric-room-divider", "Geometric Room Divider"),
+      gallery: createProductGallery("geometric-room-divider", "Geometric Divider"),
       summary:
-        "A majestic ceiling-to-floor wooden screen used to elegantly separate an open-plan living and dining area without blocking natural sunlight.",
+        "Decorative divider that separates space without closing it.",
       finish: "Satin White Duco Paint",
       tag: "Interior Favorite",
       accent: "#7d4d25"
     },
     {
-      title: "Boutique Display Shelving",
+      title: "Boutique Display",
       category: "custom-work",
       image: "assets/img/products/gallery/boutique-display-shelving-01.png",
-      gallery: createProductGallery("boutique-display-shelving", "Boutique Display Shelving"),
+      gallery: createProductGallery("boutique-display-shelving", "Boutique Display"),
       summary:
-        "Custom-built wooden display grids and lit shelving designed specifically to make high-end retail merchandise look even more luxurious.",
+        "Custom retail shelving and display units for shops.",
       finish: "Raw Industrial Wood & Metal mix",
       tag: "Retail Specific",
       accent: "#9a6a45"
     },
     {
-      title: "Chevron Wall Cladding",
+      title: "Chevron Wall Panel",
       category: "custom-work",
       image: "assets/img/products/gallery/chevron-wall-cladding-01.png",
-      gallery: createProductGallery("chevron-wall-cladding", "Chevron Wall Cladding"),
+      gallery: createProductGallery("chevron-wall-cladding", "Chevron Wall Panel"),
       summary:
-        "Precision-machined wooden planks arranged in a perfect chevron pattern, transforming a boring office reception into a warm, inviting space.",
+        "Chevron panel design for warm feature walls.",
       finish: "Mixed Stain Woodgrains",
       tag: "Architectural Focus",
       accent: "#c38b52"
@@ -331,43 +331,43 @@ window.VISHWAKARMA_SITE = {
   testimonials: [
     {
       quote:
-        "Vishwakarma Wood Art completely transformed our living room. The TV unit and CNC wall panel they built fit to the exact millimeter. The finish is smoother than anything we saw in high-end showrooms.",
+        "Our TV unit and CNC panel fit perfectly. Clean work and great finish.",
       author: "Rahul Sharma",
-      role: "Homeowner, Luxury Villa"
+      role: "Homeowner"
     },
     {
       quote:
-        "We needed 15 custom carved doors for our boutique hotel under a tight deadline. Their CNC precision meant every single door was identical and flawless. Absolute professionals.",
+        "We needed multiple carved doors on time. The finish and consistency were excellent.",
       author: "Vikram Mehta",
-      role: "Boutique Hotel Developer"
+      role: "Hotel Project"
     },
     {
       quote:
-        "I sent them a Pinterest photo of a very complex wooden mandir I wanted. Not only did they replicate it completely, they actually improved the design to integrate hidden drawer storage!",
+        "I shared a reference photo for a mandir and got exactly what I wanted with better storage.",
       author: "Priya Patel",
-      role: "Interior Design Client"
+      role: "Client"
     }
   ],
   faq: [
     {
-      q: "Do you only make standard sizes or can you build anything?",
+      q: "Do you make custom sizes?",
       a:
-        "We specialize strictly in 100% custom sizing. Because everything is made-to-order in our own workshop, we can build it to fit the weirdest corner, the tallest ceiling, or the most exact dimensions you require."
+        "Yes. We build as per your room size and layout."
     },
     {
-      q: "Can I bring my own design or Pinterest photo?",
+      q: "Can I share my own design?",
       a:
-        "Absolutely. Show us your inspiration. We will tell you what wood works best for it, how we can modify it for better structural strength, and give you an estimate."
+        "Yes. Share a photo or design and we will guide you."
     },
     {
-      q: "What is CNC routing and why should I care?",
+      q: "Do you do CNC work?",
       a:
-        "CNC (Computer Numerical Control) routing means a computer guides the cutting blade instead of a human hand. This allows us to carve incredibly complex, mathematically perfect patterns (like jalis and 3D textures) that are impossible to do manually, while keeping the cost relatively low compared to hand carving."
+        "Yes. We handle jali, panel, texture, and carving work."
     },
     {
-      q: "How long does a custom furniture piece take to finish?",
+      q: "How long does work take?",
       a:
-        "It depends completely on complexity. A simple custom bed might take 10-14 days. A fully carved teak wood entrance door or a massive wall-to-wall library might take 3-5 weeks. We will give you a clear timeline before you confirm your order."
+        "Timeline depends on size and design. We share it before starting."
     }
   ]
 };

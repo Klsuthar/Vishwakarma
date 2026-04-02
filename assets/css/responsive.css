@@ -21,21 +21,33 @@
   }
 
   .hero__frame {
-    padding: 1.4rem;
+    padding: 1.55rem;
   }
 
   .hero__content {
-    padding: 2.3rem 1.6rem 1.8rem;
+    padding: 2.5rem 1.8rem 1.95rem;
   }
 
   .craft-ribbon {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .product-grid--featured-home {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 @media (max-width: 899px) {
   .mobile-bottom-nav {
     display: block;
+  }
+
+  .site-main {
+    gap: 4.5rem;
+  }
+
+  .section__header {
+    margin-bottom: 1.5rem;
   }
 
   .product-gallery__grid {
@@ -95,13 +107,13 @@
 
 @media (min-width: 900px) {
   .site-main {
-    gap: 6rem;
+    gap: 6.5rem;
   }
 
   .hero__frame {
     grid-template-columns: minmax(0, 1.35fr) minmax(22rem, 0.9fr);
     align-items: stretch;
-    min-height: 44rem;
+    min-height: 45rem;
   }
 
   .page-hero__frame,
@@ -157,27 +169,36 @@
   }
 
   .header-shell {
-    padding-inline: 1.1rem;
+    padding-inline: 1.25rem;
   }
 
   .hero__micro-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
+
+  .showcase-panel__top {
+    grid-template-columns: minmax(0, 1.2fr) minmax(18rem, 0.8fr);
+    align-items: end;
+  }
+
+  .product-grid--featured-home {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (min-width: 1180px) {
   .hero__content {
-    padding: 3.3rem 2.5rem 2.2rem;
+    padding: 3.55rem 2.75rem 2.35rem;
   }
 
   .hero__aside {
-    padding: 1.95rem 1.6rem 1.5rem;
+    padding: 2.1rem 1.75rem 1.6rem;
   }
 
   .page-hero__frame,
   .cta-band,
   .footer-shell {
-    padding: 2rem;
+    padding: 2.2rem;
   }
 
   .grid-4,
@@ -195,6 +216,14 @@
 @media (max-width: 679px) {
   .header-shell {
     border-radius: 1.5rem;
+  }
+
+  .site-main {
+    gap: 4rem;
+  }
+
+  .section:not(.section--flush)::before {
+    width: min(8rem, 40vw);
   }
 
   .product-gallery__item {
@@ -238,6 +267,19 @@
   .cta-band,
   .footer-shell {
     padding-inline: 1rem;
+  }
+
+  .hero__frame {
+    padding: 0.95rem;
+    border-radius: 2rem;
+  }
+
+  .showcase-panel {
+    padding: 1rem;
+  }
+
+  .showcase-panel__spotlight {
+    padding: 1rem;
   }
 
   .floating-cta__link span {
