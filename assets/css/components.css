@@ -1061,14 +1061,11 @@ body.product-lightbox-open {
   pointer-events: none;
 }
 
-.footer-shell p,
-.footer-shell li,
-.footer-shell a {
+:where(.footer-shell) :where(p, li, a) {
   color: rgba(255, 249, 242, 0.72);
 }
 
-.footer-shell h3,
-.footer-shell strong {
+:where(.footer-shell) :where(h3, strong) {
   color: #fff;
 }
 
@@ -1330,14 +1327,11 @@ body.product-lightbox-open {
   box-shadow: var(--shadow-card);
 }
 
-.quote-slab p,
-.quote-slab li,
-.quote-slab span {
+:where(.quote-slab) :where(p, li, span) {
   color: rgba(255, 249, 242, 0.72);
 }
 
-.quote-slab strong,
-.quote-slab h3 {
+:where(.quote-slab) :where(strong, h3) {
   color: #fff;
 }
 
@@ -1346,23 +1340,55 @@ body.product-lightbox-open {
   gap: 0.45rem;
 }
 
+.quote-slab__headline h3 {
+  max-width: 16ch;
+}
+
 .quote-slab__stat {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.85rem;
 }
 
 .quote-slab__stat li {
-  padding: 0.9rem 0.8rem;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  gap: 0.3rem;
+  min-height: 8.4rem;
+  padding: 1rem 0.95rem;
   border: 1px solid rgba(255, 249, 242, 0.08);
   border-radius: 1rem;
-  background: rgba(255, 255, 255, 0.04);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03)),
+    rgba(255, 255, 255, 0.04);
+}
+
+.quote-slab__stat li:last-child {
+  grid-column: 1 / -1;
+}
+
+.quote-slab__meta {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  margin-bottom: 0.1rem;
+  padding: 0.28rem 0.55rem;
+  border: 1px solid rgba(255, 249, 242, 0.1);
+  border-radius: 999px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 249, 242, 0.64);
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .quote-slab__stat strong {
   display: block;
-  margin-bottom: 0.25rem;
-  font-size: 1.15rem;
+  margin-bottom: 0.1rem;
+  font-size: 1.18rem;
+  line-height: 1.15;
   font-family: var(--display-font);
 }
 
