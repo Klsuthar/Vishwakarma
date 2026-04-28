@@ -339,3 +339,57 @@
     radial-gradient(circle at top right, rgba(255, 255, 255, 0.22), transparent 16rem),
     linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 22%);
 }
+
+/* UI refresh */
+.site-main {
+  gap: clamp(3.5rem, 6vw, 5.75rem);
+  padding-bottom: 5rem;
+}
+
+.section {
+  padding-bottom: 0.25rem;
+}
+
+.section:not(.section--flush)::before {
+  top: -1rem;
+  width: min(6rem, 24vw);
+  background: linear-gradient(90deg, transparent, rgba(122, 71, 37, 0.22), transparent);
+}
+
+.section__header {
+  gap: 0.8rem;
+  margin-bottom: 1.35rem;
+  max-width: 38rem;
+}
+
+.hero {
+  padding-top: 0.8rem;
+}
+
+.hero__frame,
+.page-hero__frame {
+  padding: 1.1rem;
+}
+
+.split-layout,
+.two-column-copy,
+.showcase-panel__top {
+  gap: 1.2rem;
+}
+
+.section-panel,
+.cta-band {
+  padding: 1.3rem;
+}
+
+.footer-grid {
+  gap: 1rem;
+}
+
+.footer-topline,
+.catalog-hero-panel__points,
+.page-hero__gallery,
+.hero-stage__gallery {
+  display: grid;
+  gap: 1rem;
+}

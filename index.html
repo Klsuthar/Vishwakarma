@@ -25,92 +25,52 @@
       <main id="main-content" class="site-main">
         <section class="hero section section--flush">
           <div class="container">
-            <div class="hero__frame">
-              <div class="hero__content">
+            <div class="hero__frame hero-stage">
+              <div class="hero__content hero-stage__copy">
                 <p class="hero-badge" data-brand-hero-badge></p>
                 <h1 data-brand-hero-title></h1>
                 <p class="lead section-copy" data-brand-hero-copy></p>
 
-                <div class="hero__micro-grid">
-                  <article class="hero__micro-card">
-                    <strong>Custom layouts</strong>
-                    <span>Built for your exact room size.</span>
-                  </article>
-                  <article class="hero__micro-card">
-                    <strong>CNC detailing</strong>
-                    <span>Clean jali, panel, and carving work.</span>
-                  </article>
-                  <article class="hero__micro-card">
-                    <strong>Quick quotes</strong>
-                    <span>Call or WhatsApp for fast discussion.</span>
-                  </article>
+                <div class="chip-list chip-list--hero">
+                  <span class="chip">Made to Size</span>
+                  <span class="chip">CNC Detail</span>
+                  <span class="chip">Fast Quotes</span>
                 </div>
 
                 <div class="hero-actions">
-                  <a class="btn" data-whatsapp-link href="#">Start on WhatsApp</a>
-                  <a class="btn-outline" href="products.html">View Product Showcase</a>
+                  <a class="btn" data-whatsapp-link href="#">WhatsApp</a>
+                  <a class="btn-outline" href="products.html">View Work</a>
                 </div>
 
-                <p class="page-note" data-brand-intro-copy></p>
+                <div class="hero-stage__mini">
+                  <p class="page-note" data-brand-intro-copy></p>
+                  <div class="hero-stage__signal">
+                    <strong>Ramsara Workshop</strong>
+                    <span>Homes, shops, and custom interiors</span>
+                  </div>
+                </div>
               </div>
 
-              <aside class="hero__aside">
-                <article class="quote-slab">
-                  <div class="quote-slab__headline">
-                    <p class="eyebrow">Why Choose Us</p>
-                    <h3>Thoughtful custom work with a clean finish.</h3>
-                    <p>
-                      Every project is planned for proper fit, premium finishing, and practical daily use.
-                    </p>
-                  </div>
-
-                  <ul class="quote-slab__stat">
-                    <li>
-                      <span class="quote-slab__meta">Experience</span>
-                      <strong>15+ Years</strong>
-                      <span>Craft-led woodworking legacy</span>
-                    </li>
-                    <li>
-                      <span class="quote-slab__meta">Customization</span>
-                      <strong>100% Tailored</strong>
-                      <span>Built around your size and style</span>
-                    </li>
-                    <li>
-                      <span class="quote-slab__meta">Material Choice</span>
-                      <strong>Premium Grade</strong>
-                      <span>Selected wood and finish guidance</span>
-                    </li>
-                  </ul>
-                </article>
-
-                <article class="atelier-board">
-                  <div>
-                    <p class="eyebrow" data-service-area-title></p>
-                    <h3>Work categories</h3>
-                    <p data-service-area-copy></p>
-                  </div>
-
-                  <div class="atelier-board__swatches" aria-hidden="true">
-                    <span class="atelier-board__swatch atelier-board__swatch--walnut"></span>
-                    <span class="atelier-board__swatch atelier-board__swatch--oak"></span>
-                    <span class="atelier-board__swatch atelier-board__swatch--sand"></span>
-                    <span class="atelier-board__swatch atelier-board__swatch--charcoal"></span>
-                  </div>
-
-                  <ul class="atelier-board__list">
-                    <li><strong>Furniture</strong><span>Beds, wardrobes, center tables</span></li>
-                    <li><strong>CNC Work</strong><span>Jali patterns, 3D textured panels</span></li>
-                    <li><strong>Wood Art</strong><span>Carved mandirs, luxury decor</span></li>
-                  </ul>
-
-                  <div class="chip-list">
-                    <span class="chip">Premium Teak & Oak</span>
-                    <span class="chip">Precision Engraving</span>
-                    <span class="chip">Timeless Durability</span>
-                  </div>
-                </article>
-
-                <div class="stats-grid" data-render="hero-stats"></div>
+              <aside class="hero__aside hero-stage__visual">
+                <div class="hero-stage__gallery">
+                  <figure class="hero-stage__card hero-stage__card--wide">
+                    <img src="assets/img/products/gallery/royal-oak-bed-01.png" alt="Custom carved bed sample">
+                    <figcaption>Custom Beds</figcaption>
+                  </figure>
+                  <figure class="hero-stage__card hero-stage__card--tall">
+                    <img src="assets/img/products/gallery/grand-entrance-door-01.png" alt="Carved entrance door sample">
+                    <figcaption>Doors</figcaption>
+                  </figure>
+                  <article class="hero-stage__note">
+                    <p class="eyebrow">Popular Work</p>
+                    <h3>Furniture, mandirs, doors, and CNC panels.</h3>
+                    <div class="stats-grid" data-render="hero-stats"></div>
+                  </article>
+                  <figure class="hero-stage__card">
+                    <img src="assets/img/products/gallery/heritage-teak-mandir-01.png" alt="Custom mandir sample">
+                    <figcaption>Mandirs</figcaption>
+                  </figure>
+                </div>
               </aside>
             </div>
           </div>
@@ -118,18 +78,18 @@
 
         <section class="section">
           <div class="container">
-            <div class="craft-ribbon">
+            <div class="craft-ribbon craft-ribbon--quiet">
               <article class="craft-ribbon__item">
-                <strong>Made to Size</strong>
-                <p>Furniture and panels built for your space.</p>
+                <strong>Custom</strong>
+                <p>Built for your space.</p>
               </article>
               <article class="craft-ribbon__item">
-                <strong>Precise CNC Work</strong>
-                <p>Sharp carving, jali, and panel detailing.</p>
+                <strong>Precise</strong>
+                <p>Sharp CNC detailing.</p>
               </article>
               <article class="craft-ribbon__item">
-                <strong>Durable Finish</strong>
-                <p>Strong material, hardware, and polish.</p>
+                <strong>Durable</strong>
+                <p>Neat finish and fitting.</p>
               </article>
             </div>
           </div>
@@ -139,10 +99,10 @@
           <div class="container">
             <div class="section-panel">
               <div class="section__header">
-                <p class="eyebrow">Our Capabilities</p>
-                <h2 class="section-title">Main services for custom woodwork.</h2>
+                <p class="eyebrow">Services</p>
+                <h2 class="section-title">Core work.</h2>
                 <p class="section-copy">
-                  Furniture, CNC panels, partitions, wall units, and mandirs.
+                  Furniture, CNC, decor, and interior woodwork.
                 </p>
               </div>
 
@@ -156,15 +116,15 @@
             <div class="section-panel showcase-panel">
               <div class="showcase-panel__top">
                 <div class="section__header showcase-panel__header">
-                  <p class="eyebrow">Featured Showcase</p>
-                  <h2 class="section-title">Explore popular furniture and CNC work.</h2>
+                  <p class="eyebrow">Featured Work</p>
+                  <h2 class="section-title">See the style.</h2>
                   <p class="section-copy">
-                    Quick examples of the styles we build. Size, finish, and detailing can all be customized.
+                    A quick look at our most asked designs.
                   </p>
                 </div>
 
                 <aside class="showcase-panel__spotlight">
-                  <p class="showcase-panel__kicker">Popular categories</p>
+                  <p class="showcase-panel__kicker">Popular</p>
                   <div class="chip-list">
                     <span class="chip">Beds</span>
                     <span class="chip">Wardrobes</span>
@@ -173,8 +133,8 @@
                   </div>
 
                   <div class="showcase-panel__cta">
-                    <p class="showcase-panel__note">Tap any photo to view full screen or open the full product page.</p>
-                    <a class="btn-outline" href="products.html">See All Products</a>
+                    <p class="showcase-panel__note">Open full gallery from products.</p>
+                    <a class="btn-outline" href="products.html">Open Products</a>
                   </div>
                 </aside>
               </div>
@@ -187,8 +147,8 @@
         <section class="section">
           <div class="container">
             <div class="section__header">
-              <p class="eyebrow">The Vishwakarma Edge</p>
-              <h2 class="section-title">Key reasons clients choose us.</h2>
+              <p class="eyebrow">Why Us</p>
+              <h2 class="section-title">Small edge. Big difference.</h2>
             </div>
 
             <div class="trust-grid" data-render="highlights"></div>
@@ -198,8 +158,8 @@
         <section class="section">
           <div class="container">
             <div class="section__header">
-              <p class="eyebrow">How We Work</p>
-              <h2 class="section-title">Simple project flow.</h2>
+              <p class="eyebrow">Process</p>
+              <h2 class="section-title">How it moves.</h2>
             </div>
 
             <div class="process-grid" data-render="process"></div>
@@ -212,15 +172,15 @@
               <div>
                 <div class="section__header">
                   <p class="eyebrow">Reviews</p>
-                  <h2 class="section-title">What clients say.</h2>
+                  <h2 class="section-title">Client words.</h2>
                 </div>
                 <div class="testimonial-grid" data-render="testimonials" data-limit="3"></div>
               </div>
 
               <div>
                 <div class="section__header">
-                  <p class="eyebrow">Quick Answers</p>
-                  <h2 class="section-title">Common questions.</h2>
+                  <p class="eyebrow">FAQ</p>
+                  <h2 class="section-title">Quick answers.</h2>
                 </div>
                 <div class="faq-grid" data-render="faq" data-limit="3"></div>
               </div>
@@ -232,10 +192,10 @@
           <div class="container">
             <div class="cta-band">
               <div>
-                <p class="eyebrow">Get a Quote</p>
-                <h2 class="section-title">Send your room photo or design on WhatsApp.</h2>
+                <p class="eyebrow">Start</p>
+                <h2 class="section-title">Send a photo. Get a quote.</h2>
                 <p class="section-copy">
-                  We will review it and guide you on the next step.
+                  WhatsApp is the fastest way to begin.
                 </p>
               </div>
 
@@ -245,7 +205,7 @@
                   <a class="btn-outline" data-whatsapp-link href="#">Open WhatsApp</a>
                 </div>
                 <p class="muted">
-                  Fast replies during working hours.
+                  Fast replies in working hours.
                 </p>
               </div>
             </div>

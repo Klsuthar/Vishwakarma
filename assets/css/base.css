@@ -320,3 +320,152 @@ select:focus-visible {
     transform: none;
   }
 }
+
+/* UI refresh */
+:root {
+  --bg: #f5efe6;
+  --bg-deep: #e5d5bf;
+  --surface: rgba(255, 252, 247, 0.88);
+  --surface-strong: #fffdf9;
+  --surface-elevated: #ffffff;
+  --surface-dark: #1e1a17;
+  --surface-soft: rgba(255, 249, 242, 0.82);
+  --text: #201a16;
+  --muted: #6c655d;
+  --accent: #ad6a39;
+  --accent-strong: #7a4725;
+  --accent-soft: #d6a16b;
+  --accent-deep: #34241a;
+  --accent-rose: #b56f50;
+  --accent-gold: #d49a57;
+  --accent-teal: #677b69;
+  --accent-teal-soft: rgba(103, 123, 105, 0.12);
+  --glow: rgba(173, 106, 57, 0.16);
+  --line: rgba(52, 36, 26, 0.1);
+  --line-strong: rgba(52, 36, 26, 0.22);
+  --ring: rgba(122, 71, 37, 0.16);
+  --success: #4f6b58;
+  --shadow-soft: 0 20px 48px rgba(48, 33, 21, 0.08);
+  --shadow-card: 0 16px 36px rgba(48, 33, 21, 0.08);
+  --shadow-pop: 0 24px 54px rgba(48, 33, 21, 0.12);
+  --shadow-hero: 0 26px 70px rgba(48, 33, 21, 0.12);
+  --shadow-glass:
+    0 12px 32px rgba(48, 33, 21, 0.08);
+  --radius-sm: 14px;
+  --radius-md: 22px;
+  --radius-lg: 30px;
+  --radius-xl: 40px;
+  --container: min(1240px, calc(100vw - 2rem));
+  --display-font: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  --body-font: "Trebuchet MS", "Gill Sans", "Segoe UI", sans-serif;
+  --transition: 220ms ease;
+}
+
+body {
+  line-height: 1.6;
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.92), transparent 18rem),
+    radial-gradient(circle at 85% 10%, rgba(214, 161, 107, 0.18), transparent 22rem),
+    radial-gradient(circle at 80% 80%, rgba(103, 123, 105, 0.08), transparent 20rem),
+    linear-gradient(180deg, #faf7f2 0%, #f5efe6 48%, #efe6da 100%);
+}
+
+body::before {
+  background-image:
+    linear-gradient(rgba(32, 26, 22, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(32, 26, 22, 0.04) 1px, transparent 1px);
+  background-size: 72px 72px;
+  opacity: 0.22;
+  mix-blend-mode: normal;
+}
+
+body::after {
+  background:
+    radial-gradient(circle at 12% 12%, rgba(255, 255, 255, 0.8), transparent 12rem),
+    radial-gradient(circle at 88% 0%, rgba(255, 243, 229, 0.68), transparent 18rem),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.18), transparent 24rem);
+  opacity: 1;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+h1 {
+  font-size: clamp(3rem, 7vw, 5.8rem);
+}
+
+h2 {
+  font-size: clamp(2rem, 4.8vw, 3.9rem);
+}
+
+h3 {
+  font-size: clamp(1.25rem, 2.6vw, 1.85rem);
+}
+
+p {
+  font-size: 0.98rem;
+  color: var(--muted);
+}
+
+.eyebrow {
+  gap: 0.45rem;
+  padding: 0.42rem 0.72rem;
+  border-color: rgba(122, 71, 37, 0.14);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: none;
+}
+
+.eyebrow::before {
+  width: 0.42rem;
+  height: 0.42rem;
+  background: var(--accent);
+}
+
+.lead {
+  font-size: clamp(1rem, 2vw, 1.12rem);
+  line-height: 1.7;
+}
+
+.section-title {
+  max-width: 13ch;
+}
+
+.section-copy {
+  max-width: 48ch;
+}
+
+.surface-panel {
+  border-radius: var(--radius-lg);
+  background: var(--surface-strong);
+  backdrop-filter: blur(12px);
+  box-shadow: var(--shadow-soft);
+}
+
+.chip-list {
+  gap: 0.55rem;
+}
+
+.chip {
+  padding: 0.55rem 0.82rem;
+  border-color: rgba(52, 36, 26, 0.08);
+  font-size: 0.8rem;
+  color: var(--accent-deep);
+  background: rgba(255, 255, 255, 0.84);
+  box-shadow: none;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid rgba(122, 71, 37, 0.28);
+  outline-offset: 3px;
+}

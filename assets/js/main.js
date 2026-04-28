@@ -132,17 +132,20 @@
       container.innerHTML = items
         .map(function (service) {
           return [
-            '<article class="service-card">',
+            '<article class="service-card service-card--minimal">',
+            '<div class="service-card__lead">',
             '<div class="card-icon">' + escapeHtml(service.icon) + "</div>",
+            '<span class="service-card__label">Service</span>',
+            "</div>",
             "<h3>" + escapeHtml(service.title) + "</h3>",
             "<p>" + escapeHtml(service.summary) + "</p>",
-            '<ul class="list-check">',
+            '<div class="service-card__tags">',
             service.points
               .map(function (point) {
-                return "<li>" + escapeHtml(point) + "</li>";
+                return '<span class="service-card__tag">' + escapeHtml(point) + "</span>";
               })
               .join(""),
-            "</ul>",
+            "</div>",
             "</article>"
           ].join("");
         })
@@ -291,11 +294,15 @@
       container.innerHTML = cards
         .map(function (card) {
           return [
-            '<article class="contact-card">',
+            '<article class="contact-card contact-card--action">',
+            '<div class="contact-card__row">',
             '<div class="card-icon">' + escapeHtml(card.icon) + "</div>",
+            "<div>",
             "<h3>" + escapeHtml(card.title) + "</h3>",
             "<p>" + escapeHtml(card.body) + "</p>",
-            '<a class="btn-ghost" href="' + escapeAttribute(card.href) + '">' + escapeHtml(card.action) + "</a>",
+            "</div>",
+            "</div>",
+            '<a class="btn-outline contact-card__link" href="' + escapeAttribute(card.href) + '">' + escapeHtml(card.action) + "</a>",
             "</article>"
           ].join("");
         })
@@ -456,17 +463,11 @@
   }
 
   function createFooter() {
-    const hoursMarkup = site.contact.hours
-      .map(function (item) {
-        return "<li><strong>" + escapeHtml(item.days) + ":</strong> " + escapeHtml(item.time) + "</li>";
-      })
-      .join("");
-
     return [
       '<footer class="site-footer">',
       '<div class="container">',
       '<div class="footer-shell">',
-      '<div class="footer-grid footer-grid--enhanced">',
+      '<div class="footer-topline">',
       '<div class="footer-lead">',
       '<div class="footer-brand">',
       '<img src="assets/img/brand/luxury_logo.png" alt="Vishwakarma Wood Art & CNC Work logo">',
@@ -475,20 +476,13 @@
       "</div>",
       "</div>",
       '<p class="footer-lead__copy">' + escapeHtml(site.brand.footerCopy) + "</p>",
+      "</div>",
       '<div class="footer-action-row">',
-      '<a class="footer-action footer-action--primary" href="' + escapeAttribute(site.contact.phoneHref) + '">Call Now</a>',
+      '<a class="footer-action footer-action--primary" href="' + escapeAttribute(site.contact.phoneHref) + '">Call</a>',
       '<a class="footer-action footer-action--secondary" href="' + escapeAttribute(site.contact.whatsappHref) + '">WhatsApp</a>',
       "</div>",
-      '<div class="chip-list">',
-      site.services
-        .slice(0, 4)
-        .map(function (service) {
-          return '<span class="chip">' + escapeHtml(service.title) + "</span>";
-        })
-        .join(""),
       "</div>",
-      "</div>",
-      '<div class="grid-2 footer-detail-grid">',
+      '<div class="footer-grid footer-grid--compact">',
       '<article class="footer-card">',
       '<p class="footer-kicker">Workshop</p>',
       "<h3>Ramsara Workshop</h3>",
@@ -499,11 +493,11 @@
         })
         .join(""),
       "</ul>",
-      '<p class="footer-inline-note">' + escapeHtml(site.contact.note) + "</p>",
+      '<p class="footer-inline-note">' + escapeHtml(site.brand.serviceArea.join(" | ")) + "</p>",
       "</article>",
-      '<div class="footer-card">',
+      '<article class="footer-card">',
       '<p class="footer-kicker">Quick Links</p>',
-      "<h3>Pages</h3>",
+      "<h3>Browse</h3>",
       '<ul class="footer-links">',
       site.navigation
         .map(function (item) {
@@ -511,25 +505,16 @@
         })
         .join(""),
       "</ul>",
-      "</div>",
-      '<div class="footer-card">',
+      "</article>",
+      '<article class="footer-card">',
       '<p class="footer-kicker">Contact</p>',
-      "<h3>Call or WhatsApp</h3>",
+      "<h3>Reach Us</h3>",
       '<ul class="footer-links footer-links--contact">',
       "<li><strong>Call</strong><a href=\"" + escapeAttribute(site.contact.phoneHref) + "\">" + escapeHtml(site.contact.phoneDisplay) + "</a></li>",
       "<li><strong>WhatsApp</strong><a href=\"" + escapeAttribute(site.contact.whatsappHref) + "\">" + escapeHtml(site.contact.whatsappDisplay) + "</a></li>",
       "<li><strong>Email</strong><a href=\"" + escapeAttribute(site.contact.emailHref) + "\">" + escapeHtml(site.contact.emailDisplay) + "</a></li>",
       "</ul>",
-      "</div>",
-      '<div class="footer-card">',
-      '<p class="footer-kicker">Working Hours</p>',
-      "<h3>Working Hours</h3>",
-      '<ul class="hours-list">',
-      hoursMarkup,
-      "</ul>",
-      '<p class="footer-inline-note">' + escapeHtml(site.brand.serviceArea.join(" | ")) + "</p>",
-      "</div>",
-      "</div>",
+      "</article>",
       "</div>",
       '<div class="footer-bottom">',
       "<p>Copyright <span data-current-year></span> " + escapeHtml(site.brand.shortName) + ". All rights reserved.</p>",
