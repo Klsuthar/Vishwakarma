@@ -18,14 +18,14 @@ document.addEventListener("DOMContentLoaded", function () {
     filterButtons.forEach(function (button) {
       button.addEventListener("click", function () {
         const value = button.getAttribute("data-filter-value") || "all";
+        const scrollTarget = button.getAttribute("data-filter-scroll");
 
-        filterButtons.forEach(function (item) {
-          const isActive = item === button;
-          item.classList.toggle("is-active", isActive);
-          item.setAttribute("aria-pressed", String(isActive));
-        });
-
+        setActiveFilter(value);
         applyFilter(value);
+
+        if (scrollTarget) {
+          scrollToSection(scrollTarget);
+        }
       });
     });
   }
@@ -33,6 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function bindGalleryEvents() {
     document.addEventListener("click", function (event) {
       const galleryItem = event.target.closest("[data-gallery-item]");
+      const galleryOpenButton = event.target.closest("[data-gallery-open]");
 
       if (galleryItem) {
         const gallery = galleryItem.closest("[data-product-gallery]");
@@ -43,6 +44,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
         event.preventDefault();
         openLightbox(gallery, Number(galleryItem.getAttribute("data-gallery-index") || "0"), galleryItem);
+        return;
+      }
+
+      if (galleryOpenButton) {
+        const productCard = galleryOpenButton.closest(".product-card");
+        const gallery = productCard ? productCard.querySelector("[data-product-gallery]") : null;
+
+        if (!gallery) {
+          return;
+        }
+
+        event.preventDefault();
+        openLightbox(gallery, 0, galleryOpenButton);
         return;
       }
 
@@ -114,6 +128,14 @@ document.addEventListener("DOMContentLoaded", function () {
     if (emptyState) {
       emptyState.classList.toggle("is-visible", visibleCount === 0);
     }
+  }
+
+  function setActiveFilter(value) {
+    filterButtons.forEach(function (item) {
+      const isActive = (item.getAttribute("data-filter-value") || "all") === value;
+      item.classList.toggle("is-active", isActive);
+      item.setAttribute("aria-pressed", String(isActive));
+    });
   }
 
   function openLightbox(gallery, index, triggerElement) {
@@ -191,6 +213,19 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     return (index + total) % total;
+  }
+
+  function scrollToSection(selector) {
+    const target = document.querySelector(selector);
+
+    if (!target) {
+      return;
+    }
+
+    target.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
   }
 
   function createLightbox() {

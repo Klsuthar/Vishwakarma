@@ -30,23 +30,31 @@
                 <p class="eyebrow">Products</p>
                 <h1>Browse product categories and sample work.</h1>
                 <p class="lead section-copy">
-                  Explore work types, finishes, and styles in one place.
+                  Simple category browsing with sample work that stays clean on every screen.
                 </p>
               </div>
 
-              <div class="surface-panel cta-band">
-                <div>
-                  <p class="eyebrow">Catalog</p>
-                  <h3>Simple category view</h3>
+              <div class="cta-band catalog-hero-panel">
+                <div class="catalog-hero-panel__intro">
+                  <p class="eyebrow">Catalog View</p>
+                  <h3>Choose a category, then open sample photos.</h3>
                   <p>
-                    Filter by category to find relevant work quickly.
+                    Cards are kept simple so the work stays easy to browse on mobile, tablet, and desktop.
                   </p>
                 </div>
-                <div class="chip-list">
-                  <span class="chip">Beds</span>
-                  <span class="chip">Doors</span>
-                  <span class="chip">Wardrobes</span>
-                  <span class="chip">CNC Panels</span>
+                <div class="catalog-hero-panel__points">
+                  <div class="catalog-point">
+                    <strong>Quick filters</strong>
+                    <span>Jump to the work type you want.</span>
+                  </div>
+                  <div class="catalog-point">
+                    <strong>Photo-first cards</strong>
+                    <span>Better fit for portrait and mixed-size images.</span>
+                  </div>
+                  <div class="catalog-point">
+                    <strong>Easy inquiry flow</strong>
+                    <span>Open samples and ask for similar work fast.</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -56,20 +64,31 @@
         <section class="section">
           <div class="container">
             <div class="section__header">
-              <p class="eyebrow">Filter Products</p>
-              <h2 class="section-title">Choose a category.</h2>
+              <p class="eyebrow">Product Categories</p>
+              <h2 class="section-title">Browse by category first.</h2>
               <p class="section-copy">
-                View only the work type you need.
+                Tap any category to jump to matching sample work.
               </p>
             </div>
 
-            <div class="filter-group" data-render="product-filters"></div>
+            <div class="category-browser" data-render="product-categories"></div>
           </div>
         </section>
 
-        <section class="section">
+        <section class="section" id="sample-work" data-product-gallery-section>
           <div class="container">
-            <div class="product-grid" data-render="products" data-mode="all"></div>
+            <div class="section__header section__header--inline">
+              <div>
+                <p class="eyebrow">Sample Work</p>
+                <h2 class="section-title">Open designs, finishes, and recent styles.</h2>
+                <p class="section-copy">
+                  Use the quick filters to narrow the gallery.
+                </p>
+              </div>
+              <div class="filter-group filter-group--compact" data-render="product-filters"></div>
+            </div>
+
+            <div class="product-grid product-grid--catalog" data-render="products" data-mode="all"></div>
             <div class="empty-state" data-gallery-empty>
               No showcase items match this filter yet. Please try another category.
             </div>
@@ -79,13 +98,18 @@
         <section class="section">
           <div class="container">
             <div class="split-layout">
-              <article class="surface-panel cta-band">
+              <article class="cta-band">
                 <div>
                   <p class="eyebrow">Need a Match?</p>
                   <h2 class="section-title">Share a reference and ask for similar work.</h2>
                   <p>
                     We can customize size, finish, and detailing.
                   </p>
+                </div>
+                <div class="chip-list">
+                  <span class="chip">Custom Size</span>
+                  <span class="chip">Finish Options</span>
+                  <span class="chip">CNC Detailing</span>
                 </div>
               </article>
 

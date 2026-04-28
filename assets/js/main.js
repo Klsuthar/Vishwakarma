@@ -13,6 +13,7 @@
     renderProcess();
     renderServices();
     renderProductFilters();
+    renderProductCategories();
     renderProducts();
     renderTestimonials();
     renderFaq();
@@ -161,6 +162,40 @@
             escapeHtml(category.id),
             '"' + activeState + ">",
             escapeHtml(category.label),
+            "</button>"
+          ].join("");
+        })
+        .join("");
+    });
+  }
+
+  function renderProductCategories() {
+    queryAll('[data-render="product-categories"]').forEach(function (container) {
+      container.innerHTML = site.productCategories
+        .filter(function (category) {
+          return category.id !== "all";
+        })
+        .map(function (category) {
+          const sampleProduct = findFirstProductByCategory(category.id);
+          const sampleCount = countProductsByCategory(category.id);
+          const countLabel = sampleCount === 1 ? "1 sample" : String(sampleCount) + " samples";
+
+          return [
+            '<button class="category-card" type="button" data-filter-button data-filter-value="',
+            escapeHtml(category.id),
+            '" data-filter-scroll="#sample-work" aria-pressed="false" aria-label="Show ',
+            escapeHtml(category.label),
+            ' sample work">',
+            '<span class="category-card__media">',
+            sampleProduct
+              ? '<img src="' + escapeAttribute(sampleProduct.image) + '" alt="' + escapeAttribute(sampleProduct.title) + '" loading="lazy">'
+              : '<span class="category-card__placeholder">' + escapeHtml(category.label.charAt(0)) + "</span>",
+            "</span>",
+            '<span class="category-card__content">',
+            '<span class="category-card__count">' + escapeHtml(countLabel) + "</span>",
+            "<strong>" + escapeHtml(category.label) + "</strong>",
+            '<span class="category-card__note">' + escapeHtml(sampleProduct ? sampleProduct.title : "View sample work") + "</span>",
+            "</span>",
             "</button>"
           ].join("");
         })
@@ -580,33 +615,63 @@
             alt: product.title + " showcase image"
           }
         ];
+    const previewImage = galleryItems[0];
+    const visibleThumbs = galleryItems.slice(1, 4);
+    const hiddenThumbs = galleryItems.slice(4);
 
     return [
       '<article class="product-card" data-category="' + escapeAttribute(product.category) + '">',
       '<div class="product-gallery" data-product-gallery data-gallery-title="' + escapeAttribute(product.title) + '">',
-      '<div class="product-gallery__grid">',
-      galleryItems
+      '<button class="product-gallery__hero" type="button" data-gallery-item data-gallery-index="0" data-gallery-src="' + escapeAttribute(previewImage.src) + '" data-gallery-alt="' + escapeAttribute(previewImage.alt || (product.title + " image 1")) + '" aria-label="Open ' + escapeAttribute(product.title) + ' photos full screen">',
+      '<span class="product-gallery__frame">',
+      '<img src="' + escapeAttribute(previewImage.src) + '" alt="' + escapeAttribute(previewImage.alt || (product.title + " image 1")) + '" loading="lazy">',
+      "</span>",
+      '<span class="product-gallery__overlay">Open photos</span>',
+      "</button>",
+      visibleThumbs.length
+        ? [
+            '<div class="product-gallery__thumbs">',
+            visibleThumbs
+              .map(function (image, index) {
+                const galleryIndex = index + 1;
+
+                return [
+                  '<button class="product-gallery__thumb" type="button" data-gallery-item data-gallery-index="' + String(galleryIndex) + '" data-gallery-src="' + escapeAttribute(image.src) + '" data-gallery-alt="' + escapeAttribute(image.alt || (product.title + " image " + String(galleryIndex + 1))) + '" aria-label="Open ' + escapeAttribute(product.title) + " photo " + String(galleryIndex + 1) + ' full screen">',
+                  '<img src="' + escapeAttribute(image.src) + '" alt="' + escapeAttribute(image.alt || (product.title + " image " + String(galleryIndex + 1))) + '" loading="lazy">',
+                  "</button>"
+                ].join("");
+              })
+              .join(""),
+            "</div>"
+          ].join("")
+        : "",
+      hiddenThumbs
         .map(function (image, index) {
+          const galleryIndex = index + 4;
+
           return [
-            '<button class="product-gallery__item" type="button" data-gallery-item data-gallery-index="' + String(index) + '" data-gallery-src="' + escapeAttribute(image.src) + '" data-gallery-alt="' + escapeAttribute(image.alt || (product.title + " image " + String(index + 1))) + '" aria-label="Open ' + escapeAttribute(product.title) + " photo " + String(index + 1) + ' full screen">',
-            '<img src="' + escapeAttribute(image.src) + '" alt="' + escapeAttribute(image.alt || (product.title + " image " + String(index + 1))) + '" loading="lazy">',
+            '<button class="product-gallery__item" type="button" hidden data-gallery-item data-gallery-index="' + String(galleryIndex) + '" data-gallery-src="' + escapeAttribute(image.src) + '" data-gallery-alt="' + escapeAttribute(image.alt || (product.title + " image " + String(galleryIndex + 1))) + '" aria-hidden="true" tabindex="-1">',
             "</button>"
           ].join("");
         })
         .join(""),
-      "</div>",
       '<span class="product-gallery__badge">' + String(galleryItems.length) + " photos</span>",
       "</div>",
-      "<div>",
+      '<div class="product-card__body">',
+      '<div class="product-card__header">',
       '<p class="eyebrow">' + escapeHtml(categoryLabel) + "</p>",
+      '<span class="product-card__tag">' + escapeHtml(product.tag) + "</span>",
+      "</div>",
       "<h3>" + escapeHtml(product.title) + "</h3>",
       "<p>" + escapeHtml(product.summary) + "</p>",
-      '<p class="product-gallery__hint">Tap photo to view.</p>',
       '<ul class="product-meta">',
-      "<li>" + escapeHtml(product.finish) + "</li>",
-      "<li>" + escapeHtml(product.tag) + "</li>",
+      "<li><strong>Finish</strong><span>" + escapeHtml(product.finish) + "</span></li>",
+      "<li><strong>Category</strong><span>" + escapeHtml(categoryLabel) + "</span></li>",
       "</ul>",
+      '<div class="product-card__actions">',
+      '<button class="btn-outline product-card__action" type="button" data-gallery-open>View sample work</button>',
       '<a class="btn-ghost" href="contact.html">Ask about this work</a>',
+      "</div>",
       "</div>",
       "</article>"
     ].join("");
@@ -618,6 +683,18 @@
     });
 
     return match ? match.label : "Custom Work";
+  }
+
+  function findFirstProductByCategory(categoryId) {
+    return site.products.find(function (product) {
+      return product.category === categoryId;
+    }) || null;
+  }
+
+  function countProductsByCategory(categoryId) {
+    return site.products.filter(function (product) {
+      return product.category === categoryId;
+    }).length;
   }
 
   function setText(selector, value) {

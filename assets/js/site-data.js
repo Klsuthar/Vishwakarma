@@ -23,13 +23,13 @@ window.VISHWAKARMA_SITE = {
   brand: {
     name: "Vishwakarma Wood Art & CNC Work",
     shortName: "Vishwakarma Wood Art",
-    tagLine: "Custom furniture and CNC interiors.",
-    heroBadge: "Custom Furniture | CNC Work | Wood Decor",
-    heroTitle: "Custom woodwork for homes and shops.",
+    tagLine: "Custom furniture and CNC interiors",
+    heroBadge: "Custom Woodwork",
+    heroTitle: "Warm woodwork for homes and shops.",
     heroCopy:
-      "We build furniture, panels, doors, mandirs, and CNC pieces to fit your space.",
+      "Furniture, doors, mandirs, panels, and CNC work made for your space.",
     introCopy:
-      "Share size or reference photos on WhatsApp for a quick discussion.",
+      "Send a size, photo, or idea on WhatsApp.",
     serviceAreaTitle: "Where We Work",
     serviceArea: [
       "Ramsara workshop",
@@ -37,23 +37,23 @@ window.VISHWAKARMA_SITE = {
       "Measurement support"
     ],
     footerCopy:
-      "Custom furniture, CNC work, wall panels, and wood decor from our Ramsara workshop.",
+      "Custom furniture and CNC work from our Ramsara workshop.",
     stats: [
       {
         value: "100% Custom",
-        label: "Made for your room size"
+        label: "Made to fit"
       },
       {
         value: "CNC Precision",
-        label: "Clean cuts and repeat accuracy"
+        label: "Sharp detailing"
       },
       {
         value: "Site Support",
-        label: "Measurement to installation"
+        label: "Measure to install"
       },
       {
         value: "Strong Finish",
-        label: "Durable material and polish"
+        label: "Built to last"
       }
     ]
   },
@@ -84,7 +84,7 @@ window.VISHWAKARMA_SITE = {
     mapEmbed:
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d439.7822741128873!2d74.20079727021172!3d28.044244817810775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3915210001af0683%3A0xa6ef435682f27432!2sVishvkarma%20furniture%20house%20%F0%9F%8F%A0!5e1!3m2!1sen!2sin!4v1774887552998!5m2!1sen!2sin",
     note:
-      "Visit our Ramsara workshop or send measurements and reference photos on WhatsApp.",
+      "Visit the workshop or send measurements and photos on WhatsApp.",
     inquiryChecklist: [
       "Work type",
       "Approx size",
@@ -106,32 +106,32 @@ window.VISHWAKARMA_SITE = {
     {
       title: "Custom Size",
       copy:
-        "Built to match your room and layout."
+        "Built for your layout."
     },
     {
       title: "CNC Detail",
       copy:
-        "Clean jali, panel, and carving work."
+        "Clean carving and panels."
     },
     {
       title: "Home & Shop",
       copy:
-        "Suitable for homes, counters, and interiors."
+        "Made for homes and shops."
     },
     {
       title: "Clear Process",
       copy:
-        "Quote, measure, build, and install."
+        "Simple step-by-step work."
     },
     {
       title: "Durable Build",
       copy:
-        "Strong hardware and long-lasting finish."
+        "Strong material and finish."
     },
     {
       title: "Neat Fitting",
       copy:
-        "Clean final installation at your site."
+        "Clean site fitting."
     }
   ],
   process: [
@@ -139,25 +139,25 @@ window.VISHWAKARMA_SITE = {
       step: "01",
       title: "Discuss Project",
       copy:
-        "Share your idea, size, or reference photo."
+        "Share size or reference."
     },
     {
       step: "02",
       title: "Measure Site",
       copy:
-        "We take proper measurements for custom work."
+        "We check exact dimensions."
     },
     {
       step: "03",
       title: "Build & CNC",
       copy:
-        "Cut, craft, assemble, and finish in the workshop."
+        "Cut, build, and finish."
     },
     {
       step: "04",
       title: "Install",
       copy:
-        "Final polish and fitting at your location."
+        "Final fitting on site."
     }
   ],
   services: [
@@ -165,32 +165,32 @@ window.VISHWAKARMA_SITE = {
       icon: "CF",
       title: "Custom Furniture",
       summary:
-        "Beds, wardrobes, tables, and storage built to size.",
+        "Beds, wardrobes, tables, and storage made to size.",
       points: [
-        "Size as per room",
-        "Wood and finish options",
-        "Premium hardware"
+        "Room-fit sizing",
+        "Finish options",
+        "Clean hardware"
       ]
     },
     {
       icon: "CN",
       title: "CNC Carving",
       summary:
-        "Precise cutting for panels, patterns, and carved designs.",
+        "Precise cutting for panels, jali, and carved designs.",
       points: [
-        "Jali and pattern work",
-        "2D and 3D carving",
-        "Batch work available"
+        "Jali work",
+        "2D and 3D cuts",
+        "Batch support"
       ]
     },
     {
       icon: "WA",
       title: "Wood Decor",
       summary:
-        "Feature pieces for living rooms, entrances, and shops.",
+        "Decor pieces for living rooms, entrances, and shops.",
       points: [
         "Wall decor",
-        "Logo or motif work",
+        "Logo work",
         "LED-ready designs"
       ]
     },
@@ -198,32 +198,32 @@ window.VISHWAKARMA_SITE = {
       icon: "JP",
       title: "Jali & Partitions",
       summary:
-        "Decorative dividers that add privacy and style.",
+        "Decorative dividers with privacy and style.",
       points: [
-        "Wood or MDF options",
+        "Wood or MDF",
         "Ceiling or floor fit",
-        "Ideal for rooms and pooja areas"
+        "Room zoning"
       ]
     },
     {
       icon: "IW",
       title: "Wall Panels & TV Units",
       summary:
-        "Panels, cladding, and TV units for clean interiors.",
+        "Panels, cladding, and TV units for modern interiors.",
       points: [
-        "Fluted and slatted panels",
-        "Hidden storage options",
-        "Modern wall styling"
+        "Fluted panels",
+        "Hidden storage",
+        "Modern styling"
       ]
     },
     {
       icon: "MD",
       title: "Mandir Work",
       summary:
-        "Custom wooden mandirs with practical storage and detail.",
+        "Custom mandirs with storage, lights, and detail.",
       points: [
         "Custom size",
-        "Lighting and drawers",
+        "Lights and drawers",
         "Traditional finish"
       ]
     }
@@ -245,7 +245,7 @@ window.VISHWAKARMA_SITE = {
       image: "assets/img/products/gallery/royal-oak-bed-01.png",
       gallery: createProductGallery("royal-oak-bed", "Royal Oak Bed"),
       summary:
-        "Modern bed with a wide CNC headboard and clean finish.",
+        "Modern bed with a carved CNC headboard.",
       finish: "Natural Matte Oak Polish",
       tag: "Best Seller",
       accent: "#8f5529"
@@ -256,7 +256,7 @@ window.VISHWAKARMA_SITE = {
       image: "assets/img/products/gallery/grand-entrance-door-01.png",
       gallery: createProductGallery("grand-entrance-door", "Carved Entrance Door"),
       summary:
-        "Solid wood door with deep CNC carving and strong presence.",
+        "Solid wood door with bold CNC carving.",
       finish: "Dark Walnut Weatherproof Seal",
       tag: "Statement Piece",
       accent: "#6a3e1d"
@@ -267,7 +267,7 @@ window.VISHWAKARMA_SITE = {
       image: "assets/img/products/gallery/fluted-wardrobe-01.png",
       gallery: createProductGallery("fluted-wardrobe", "Fluted Wardrobe"),
       summary:
-        "Floor-to-ceiling storage with a sharp fluted front.",
+        "Tall storage with a clean fluted front.",
       finish: "PU Paint Finish (Custom Colors)",
       tag: "Modern Minimalist",
       accent: "#a46838"
@@ -278,7 +278,7 @@ window.VISHWAKARMA_SITE = {
       image: "assets/img/products/gallery/floating-media-console-01.png",
       gallery: createProductGallery("floating-media-console", "Floating TV Unit"),
       summary:
-        "Wall-mounted TV unit with paneling and hidden storage.",
+        "Wall TV unit with paneling and hidden storage.",
       finish: "Ash Wood veneer",
       tag: "Smart Living",
       accent: "#bb7f46"
@@ -289,7 +289,7 @@ window.VISHWAKARMA_SITE = {
       image: "assets/img/products/gallery/heritage-teak-mandir-01.png",
       gallery: createProductGallery("heritage-teak-mandir", "Heritage Teak Mandir"),
       summary:
-        "Detailed mandir with jali doors, lighting, and storage.",
+        "Detailed mandir with jali, lights, and storage.",
       finish: "Traditional High Gloss Teak",
       tag: "High Demand",
       accent: "#b56f2d"
@@ -300,7 +300,7 @@ window.VISHWAKARMA_SITE = {
       image: "assets/img/products/gallery/geometric-room-divider-01.png",
       gallery: createProductGallery("geometric-room-divider", "Geometric Divider"),
       summary:
-        "Decorative divider that separates space without closing it.",
+        "Divider that separates space without closing it.",
       finish: "Satin White Duco Paint",
       tag: "Interior Favorite",
       accent: "#7d4d25"
@@ -311,7 +311,7 @@ window.VISHWAKARMA_SITE = {
       image: "assets/img/products/gallery/boutique-display-shelving-01.png",
       gallery: createProductGallery("boutique-display-shelving", "Boutique Display"),
       summary:
-        "Custom retail shelving and display units for shops.",
+        "Retail shelving and display units for shops.",
       finish: "Raw Industrial Wood & Metal mix",
       tag: "Retail Specific",
       accent: "#9a6a45"
@@ -322,7 +322,7 @@ window.VISHWAKARMA_SITE = {
       image: "assets/img/products/gallery/chevron-wall-cladding-01.png",
       gallery: createProductGallery("chevron-wall-cladding", "Chevron Wall Panel"),
       summary:
-        "Chevron panel design for warm feature walls.",
+        "Chevron wall cladding for warm feature walls.",
       finish: "Mixed Stain Woodgrains",
       tag: "Architectural Focus",
       accent: "#c38b52"
@@ -331,19 +331,19 @@ window.VISHWAKARMA_SITE = {
   testimonials: [
     {
       quote:
-        "Our TV unit and CNC panel fit perfectly. Clean work and great finish.",
+        "Our TV unit fit perfectly. Clean work and finish.",
       author: "Rahul Sharma",
       role: "Homeowner"
     },
     {
       quote:
-        "We needed multiple carved doors on time. The finish and consistency were excellent.",
+        "The carved doors were on time and beautifully finished.",
       author: "Vikram Mehta",
       role: "Hotel Project"
     },
     {
       quote:
-        "I shared a reference photo for a mandir and got exactly what I wanted with better storage.",
+        "I shared a mandir reference and got exactly what I wanted.",
       author: "Priya Patel",
       role: "Client"
     }
@@ -352,22 +352,22 @@ window.VISHWAKARMA_SITE = {
     {
       q: "Do you make custom sizes?",
       a:
-        "Yes. We build as per your room size and layout."
+        "Yes. Everything is made to size."
     },
     {
       q: "Can I share my own design?",
       a:
-        "Yes. Share a photo or design and we will guide you."
+        "Yes. Share a photo or design."
     },
     {
       q: "Do you do CNC work?",
       a:
-        "Yes. We handle jali, panel, texture, and carving work."
+        "Yes. We handle jali, panel, and carving work."
     },
     {
       q: "How long does work take?",
       a:
-        "Timeline depends on size and design. We share it before starting."
+        "It depends on size and design. We confirm it first."
     }
   ]
 };
