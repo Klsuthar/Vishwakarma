@@ -89,6 +89,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- GALLERY AND LIGHTBOX CODE ---
     const galleryCategories = [
         {
+            id: "cnc-work",
+            displayName: "CNC Work",
+            folderName: "CNC_Work",
+            imageFiles: ["1.jpg"]
+        },
+        {
             id: "bed",
             displayName: "Bed",
             folderName: "Bed",
@@ -104,28 +110,14 @@ document.addEventListener('DOMContentLoaded', () => {
             folderName: "TV_Unit",
             imageFiles: ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg"]
         },
-        { id: "dining-table", displayName: "Dining Table", folderName: "Dining_Table", imageFiles: ["1.jpg"] },
         { id: "sofa", displayName: "Sofa", folderName: "Sofa", imageFiles: ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg"] },
-        {
-            id: "wooden-ceiling",
-            displayName: "Wooden Ceiling",
-            folderName: "Wooden_Ceiling",
-            imageFiles: ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg", "8.jpg", "9.jpg", "10.jpg", "11.jpg"]
-        },
         { id: "kitchen", displayName: "Kitchen", folderName: "Kitchen", imageFiles: ["1.jpg", "2.jpg", "3.jpg", "4.jpg"] },
         {
             id: "cupboard",
             displayName: "Cupboard",
             folderName: "Cupboard",
             imageFiles: ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg", "8.jpg", "9.jpg"]
-        },
-        {
-            id: "pataisan",
-            displayName: "Pataisan",
-            folderName: "Pataisan",
-            imageFiles: ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg"]
-        },
-        { id: "furniture", displayName: "Furniture", folderName: "Furniture", imageFiles: ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg"] }
+        }
     ];
 
     const galleryGrid = document.querySelector('.gallery-grid');
