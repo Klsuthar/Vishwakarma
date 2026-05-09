@@ -21,23 +21,23 @@ function createProductGallery(slug, title) {
 
 window.VISHWAKARMA_SITE = {
   brand: {
-    name: "Vishwakarma Wood Art & CNC Work",
-    shortName: "Vishwakarma Wood Art",
-    tagLine: "Custom furniture and CNC interiors",
-    heroBadge: "Custom Woodwork",
-    heroTitle: "Warm woodwork for homes and shops.",
+    name: "Vishwakarma Wood & CNC Work",
+    shortName: "Vishwakarma Wood",
+    tagLine: "Furniture, CNC jali, panels and interiors",
+    heroBadge: "Ramsara Workshop",
+    heroTitle: "Custom wood and CNC work for modern homes.",
     heroCopy:
-      "Furniture, doors, mandirs, panels, and CNC work made for your space.",
+      "Beds, wardrobes, TV units, mandirs, partitions, doors and CNC panels made to size with neat finishing.",
     introCopy:
-      "Send a size, photo, or idea on WhatsApp.",
+      "Share a size, site photo, or reference design on WhatsApp for quick discussion.",
     serviceAreaTitle: "Where We Work",
     serviceArea: [
       "Ramsara workshop",
-      "Nearby site visits",
-      "Measurement support"
+      "Vishvkarma Furniture House location",
+      "Nearby measurement and fitting support"
     ],
     footerCopy:
-      "Custom furniture and CNC work from our Ramsara workshop.",
+      "Custom furniture and CNC work from the Vishwakarma workshop at Ramsara.",
     stats: [
       {
         value: "100% Custom",
@@ -58,33 +58,35 @@ window.VISHWAKARMA_SITE = {
     ]
   },
   navigation: [
-    { label: "Home", href: "index.html" },
-    { label: "About", href: "about.html" },
-    { label: "Services", href: "services.html" },
+    { label: "Home", href: "index.html#home" },
+    { label: "Services", href: "index.html#services" },
     { label: "Products", href: "products.html" },
-    { label: "Contact", href: "contact.html" }
+    { label: "About", href: "index.html#about" },
+    { label: "Contact", href: "index.html#contact" }
   ],
   contact: {
-    phoneDisplay: "+91 89493 2413",
-    phoneHref: "tel:+91894932413",
-    whatsappDisplay: "+91 89493 2413",
+    phoneDisplay: "+91 95713 75791",
+    phoneHref: "tel:+919571375791",
+    whatsappDisplay: "+91 95713 75791",
     whatsappHref:
-      "https://wa.me/91894932413?text=Hello%20Vishwakarma%20Wood%20Art%20%26%20CNC%20Work,%20I%20want%20to%20discuss%20a%20project.",
-    emailDisplay: "contact@vishwakarmawoodart.in",
-    emailHref: "mailto:contact@vishwakarmawoodart.in",
-    addressTitle: "Ramsara Workshop",
+      "https://wa.me/919571375791?text=Hello%20Vishwakarma%20Wood%20%26%20CNC%20Work,%20I%20want%20to%20discuss%20a%20wood%20or%20CNC%20project.",
+    emailDisplay: "WhatsApp preferred",
+    emailHref:
+      "https://wa.me/919571375791?text=Hello%20Vishwakarma%20Wood%20%26%20CNC%20Work,%20I%20want%20to%20discuss%20a%20project.",
+    addressTitle: "Vishvkarma Furniture House",
     addressLines: [
-      "Vishwakarma Wood Art & CNC Work",
-      "Ramsara"
+      "Vishwakarma Wood & CNC Work",
+      "Vishvkarma Furniture House, Ramsara",
+      "Rajasthan 331403"
     ],
     hours: [
       { days: "Monday - Saturday", time: "9:00 AM - 8:00 PM" },
       { days: "Sunday", time: "By Appointment" }
     ],
     mapEmbed:
-      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d439.7822741128873!2d74.20079727021172!3d28.044244817810775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3915210001af0683%3A0xa6ef435682f27432!2sVishvkarma%20furniture%20house%20%F0%9F%8F%A0!5e1!3m2!1sen!2sin!4v1774887552998!5m2!1sen!2sin",
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d733.94765728144!2d74.20045706706509!3d28.044485590837862!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3915210001af0683%3A0xa6ef435682f27432!2sVishvkarma%20furniture%20house%20%F0%9F%8F%A0!5e1!3m2!1sen!2sin!4v1778346404421!5m2!1sen!2sin",
     note:
-      "Visit the workshop or send measurements and photos on WhatsApp.",
+      "Visit the workshop at the map location or send measurements and photos on WhatsApp.",
     inquiryChecklist: [
       "Work type",
       "Approx size",
@@ -97,7 +99,7 @@ window.VISHWAKARMA_SITE = {
     {
       label: "WhatsApp",
       href:
-        "https://wa.me/91894932413?text=Hello%20Vishwakarma%20Wood%20Art"
+        "https://wa.me/919571375791?text=Hello%20Vishwakarma%20Wood%20%26%20CNC%20Work"
     },
     { label: "Instagram", href: "#" },
     { label: "Facebook", href: "#" }
@@ -242,8 +244,13 @@ window.VISHWAKARMA_SITE = {
     {
       title: "Royal Oak Bed",
       category: "beds",
-      image: "assets/img/products/gallery/royal-oak-bed-01.png",
-      gallery: createProductGallery("royal-oak-bed", "Royal Oak Bed"),
+      image: "assets/img/WhatsApp Image 2026-03-30 at 2.17.42 PM.jpeg",
+      gallery: [
+        { src: "assets/img/WhatsApp Image 2026-03-30 at 2.17.42 PM.jpeg", alt: "Latest bed and furniture work sample 1" },
+        { src: "assets/img/WhatsApp Image 2026-03-30 at 2.17.41 PM (2).jpeg", alt: "Latest bed and furniture work sample 2" },
+        { src: "assets/img/WhatsApp Image 2026-03-30 at 2.17.41 PM (1).jpeg", alt: "Latest bed and furniture work sample 3" },
+        { src: "assets/img/WhatsApp Image 2026-03-30 at 2.17.40 PM.jpeg", alt: "Latest bed and furniture work sample 4" }
+      ],
       summary:
         "Modern bed with a carved CNC headboard.",
       finish: "Natural Matte Oak Polish",
@@ -253,8 +260,13 @@ window.VISHWAKARMA_SITE = {
     {
       title: "Carved Entrance Door",
       category: "doors",
-      image: "assets/img/products/gallery/grand-entrance-door-01.png",
-      gallery: createProductGallery("grand-entrance-door", "Carved Entrance Door"),
+      image: "assets/img/WhatsApp Image 2026-03-30 at 2.17.40 PM (1).jpeg",
+      gallery: [
+        { src: "assets/img/WhatsApp Image 2026-03-30 at 2.17.40 PM (1).jpeg", alt: "Latest carved door and CNC sample 1" },
+        { src: "assets/img/WhatsApp Image 2026-03-30 at 2.17.39 PM.jpeg", alt: "Latest carved door and CNC sample 2" },
+        { src: "assets/img/WhatsApp Image 2026-03-30 at 2.17.39 PM (1).jpeg", alt: "Latest carved door and CNC sample 3" },
+        { src: "assets/img/WhatsApp Image 2026-03-30 at 2.17.38 PM.jpeg", alt: "Latest carved door and CNC sample 4" }
+      ],
       summary:
         "Solid wood door with bold CNC carving.",
       finish: "Dark Walnut Weatherproof Seal",
@@ -264,8 +276,13 @@ window.VISHWAKARMA_SITE = {
     {
       title: "Fluted Wardrobe",
       category: "wardrobes",
-      image: "assets/img/products/gallery/fluted-wardrobe-01.png",
-      gallery: createProductGallery("fluted-wardrobe", "Fluted Wardrobe"),
+      image: "assets/img/WhatsApp Image 2026-03-30 at 2.17.38 PM (2).jpeg",
+      gallery: [
+        { src: "assets/img/WhatsApp Image 2026-03-30 at 2.17.38 PM (2).jpeg", alt: "Latest wardrobe work sample 1" },
+        { src: "assets/img/WhatsApp Image 2026-03-30 at 2.17.38 PM (1).jpeg", alt: "Latest wardrobe work sample 2" },
+        { src: "assets/img/WhatsApp Image 2026-03-30 at 2.17.37 PM.jpeg", alt: "Latest wardrobe work sample 3" },
+        { src: "assets/img/WhatsApp Image 2026-03-30 at 2.17.36 PM.jpeg", alt: "Latest wardrobe work sample 4" }
+      ],
       summary:
         "Tall storage with a clean fluted front.",
       finish: "PU Paint Finish (Custom Colors)",
@@ -275,8 +292,14 @@ window.VISHWAKARMA_SITE = {
     {
       title: "Floating TV Unit",
       category: "tv-units",
-      image: "assets/img/products/gallery/floating-media-console-01.png",
-      gallery: createProductGallery("floating-media-console", "Floating TV Unit"),
+      image: "assets/img/products/gallery/Tv_unit (5).png",
+      gallery: [
+        { src: "assets/img/products/gallery/Tv_unit (5).png", alt: "Latest TV unit work sample 1" },
+        { src: "assets/img/products/gallery/Tv_unit (4).png", alt: "Latest TV unit work sample 2" },
+        { src: "assets/img/products/gallery/Tv_unit (3).png", alt: "Latest TV unit work sample 3" },
+        { src: "assets/img/products/gallery/Tv_unit (2).png", alt: "Latest TV unit work sample 4" },
+        { src: "assets/img/products/gallery/Tv_unit (1).png", alt: "Latest TV unit work sample 5" }
+      ],
       summary:
         "Wall TV unit with paneling and hidden storage.",
       finish: "Ash Wood veneer",

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vishwakarma Wood & CNC Work - Custom Furniture</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Hind:wght@400;500;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">
+                    <img src="images/logo.png" alt="Vishwakarma Logo">
+                    <div class="brand-text">
+                        <span class="main-name">Vishwakarma</span>
+                        <span class="tagline">Wood & CNC Work</span>
+                    </div>
+                </a>
+                <button class="hamburger" id="hamburger">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#gallery">Gallery</a></li>
+                    <li><a href="index.html#about">About Us</a></li>
+                    <li><a href="index.html#contact">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Service Detail Section -->
+    <section class="service-detail" id="custom-furniture">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="hindi-text">🛠️ कस्टम फर्नीचर - Custom Furniture</h2>
+            </div>
+            <div class="service-content">
+                <div class="service-image">
+                    <img src="images/Furniture/1.jpg" alt="Custom Furniture">
+                </div>
+                <div class="service-text">
+                    <h3>Handcrafted to Your Vision</h3>
+                    <p>Transform your vision into reality with our custom furniture service. Whether it's a single piece or an entire set, our experienced carpenters craft each item to fit your unique style, space, and needs. You supply the materials—wood, fittings, adhesives, etc.—and we deliver precision-built, beautifully finished furniture that’s truly yours.</p>
+                    <a href="index.html#contact" class="btn">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Vishwakarma Wood & CNC Work</h2>
+                    <p>Creating beautiful and functional furniture since 1995</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html#home">Home</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#gallery">Gallery</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="index.html#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="custom-furniture.html">Custom Furniture</a></li>
+                        <li><a href="complete-home-furniture.html">Complete Home Furniture</a></li>
+                        <li><a href="furniture-repair.html">Furniture Repair & Restoration</a></li>
+                        <li><a href="cnc-work.html">CNC Work</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2025 Vishwakarma Wood & CNC Work. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <!-- Bottom Navigation (Mobile) -->
+    <nav class="bottom-nav" id="bottomNav">
+        <a href="index.html#home" class="nav-item active" data-target="home">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+        <a href="index.html#services" class="nav-item" data-target="services">
+            <i class="fas fa-tools"></i>
+            <span>Services</span>
+        </a>
+        <a href="index.html#gallery" class="nav-item" data-target="gallery">
+            <i class="fas fa-image"></i>
+            <span>Gallery</span>
+        </a>
+        <a href="index.html#about" class="nav-item" data-target="about">
+            <i class="fas fa-info-circle"></i>
+            <span>About</span>
+        </a>
+        <a href="index.html#contact" class="nav-item" data-target="contact">
+            <i class="fas fa-envelope"></i>
+            <span>Contact</span>
+        </a>
+        <div class="nav-indicator" id="navIndicator"></div>
+    </nav>
+
+</body>
+
+</html>

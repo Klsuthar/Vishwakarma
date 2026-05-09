@@ -276,18 +276,18 @@
           action: "Open WhatsApp"
         },
         {
-          title: "Email",
+          title: "Message",
           body: site.contact.emailDisplay,
           href: site.contact.emailHref,
-          icon: "EM",
-          action: "Send email"
+          icon: "MS",
+          action: "Send message"
         },
         {
           title: site.contact.addressTitle,
           body: site.contact.addressLines.join(", "),
-          href: "contact.html",
+          href: "index.html#contact",
           icon: "AD",
-          action: "View details"
+          action: "View map"
         }
       ];
 
@@ -402,7 +402,7 @@
       '<div class="container">',
       '<div class="header-shell">',
       '<a class="brand-mark" href="index.html" aria-label="Go to home page">',
-      '<img src="assets/img/brand/luxury_logo.png" alt="Vishwakarma Wood Art & CNC Work logo">',
+      '<img src="assets/img/brand/luxury_logo.png" alt="Vishwakarma Wood & CNC Work logo">',
       "<span>",
       '<strong class="brand-mark__title">' + escapeHtml(site.brand.shortName) + "</strong>",
       '<span class="brand-mark__subtitle">' + escapeHtml(site.brand.tagLine) + "</span>",
@@ -470,7 +470,7 @@
       '<div class="footer-topline">',
       '<div class="footer-lead">',
       '<div class="footer-brand">',
-      '<img src="assets/img/brand/luxury_logo.png" alt="Vishwakarma Wood Art & CNC Work logo">',
+      '<img src="assets/img/brand/luxury_logo.png" alt="Vishwakarma Wood & CNC Work logo">',
       "<div>",
       "<strong>" + escapeHtml(site.brand.name) + "</strong>",
       "</div>",
@@ -655,7 +655,7 @@
       "</ul>",
       '<div class="product-card__actions">',
       '<button class="btn-outline product-card__action" type="button" data-gallery-open>View sample work</button>',
-      '<a class="btn-ghost" href="contact.html">Ask about this work</a>',
+      '<a class="btn-ghost" href="index.html#contact">Ask about this work</a>',
       "</div>",
       "</div>",
       "</article>"
