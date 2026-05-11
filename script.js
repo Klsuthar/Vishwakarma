@@ -1,4 +1,4 @@
-﻿document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
     // Mobile Navigation Toggle
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('navLinks');
@@ -123,90 +123,50 @@
     const galleryGrid = document.querySelector('.gallery-grid');
     const lightbox = document.getElementById('lightbox');
     const lightboxImage = document.getElementById('lightboxImage');
-    const lightboxCaption = document.getElementById('lightboxCaption');
-    const lightboxCloseBtn = document.querySelector('.lightbox-close-btn');
-    const lightboxPrevBtn = document.querySelector('.lightbox-prev-btn');
-    const lightboxNextBtn = document.querySelector('.lightbox-next-btn');
-
-    let currentLightboxImagePaths = [];
-    let currentImageIndex = 0;
-    let categorySlideshowIntervals = [];
-
-    const categoryMeta = {
-        'cnc-work':   { icon: 'fa-cogs',        desc: 'Intricate CNC routing & precision wood cutting patterns.', link: 'cnc-work.html' },
-        'bed':        { icon: 'fa-bed',          desc: 'Custom beds crafted to fit your space & style perfectly.', link: 'custom-furniture.html' },
-        'tv-unit':    { icon: 'fa-tv',           desc: 'Elegant TV units designed for modern living rooms.', link: 'custom-furniture.html' },
-        'sofa':       { icon: 'fa-couch',        desc: 'Comfortable, handcrafted sofas built to last a lifetime.', link: 'custom-furniture.html' },
-        'kitchen':    { icon: 'fa-utensils',     desc: 'Modular kitchens designed for beauty and functionality.', link: 'complete-home-furniture.html' },
-        'cupboard':   { icon: 'fa-door-closed',  desc: 'Spacious, beautifully finished wardrobes & cupboards.', link: 'custom-furniture.html' }
-    };
 
     function populateGallery() {
         if (!galleryGrid) return;
         galleryGrid.innerHTML = '';
-        categorySlideshowIntervals.forEach(clearInterval);
-        categorySlideshowIntervals = [];
-
+        
         galleryCategories.forEach((category, categoryIndex) => {
             if (!category.imageFiles || category.imageFiles.length === 0) return;
 
-            const meta = categoryMeta[category.id] || { icon: 'fa-image', desc: 'Premium handcrafted work.', link: '#gallery' };
             const firstImage = `images/${category.folderName}/${category.imageFiles[0]}`;
+            const imgCount = category.imageFiles.length;
 
             const item = document.createElement('div');
             item.className = 'gallery-item animate-on-scroll scale-up';
-            item.style.transitionDelay = `${categoryIndex * 0.08}s`;
-
-            const flipCard = document.createElement('div');
-            flipCard.className = 'flip-card';
-
-            const front = document.createElement('div');
-            front.className = 'flip-card-front';
+            item.style.transitionDelay = `${categoryIndex * 0.07}s`;
 
             const img = document.createElement('img');
             img.src = firstImage;
             img.alt = category.displayName;
+            img.className = 'gallery-card-img';
             img.onerror = () => { img.style.display = 'none'; };
-            front.appendChild(img);
+            item.appendChild(img);
 
-            const flabel = document.createElement('div');
-            flabel.className = 'flip-card-front-label';
-            flabel.textContent = category.displayName;
-            front.appendChild(flabel);
+            const badge = document.createElement('div');
+            badge.className = 'gallery-count-badge';
+            badge.innerHTML = `<i class="fas fa-images"></i> ${imgCount}`;
+            item.appendChild(badge);
 
-            const back = document.createElement('div');
-            back.className = 'flip-card-back';
+            const overlay = document.createElement('div');
+            overlay.className = 'gallery-card-overlay';
 
-            const iconWrap = document.createElement('div');
-            iconWrap.className = 'flip-back-icon';
-            iconWrap.innerHTML = `<i class="fas ${meta.icon}"></i>`;
-            back.appendChild(iconWrap);
+            const info = document.createElement('div');
+            info.className = 'gallery-card-info';
+            info.innerHTML = `<h3>${category.displayName}</h3><span>Tap to view all</span>`;
+            overlay.appendChild(info);
 
-            const titleEl = document.createElement('h3');
-            titleEl.textContent = category.displayName;
-            back.appendChild(titleEl);
+            const viewBtn = document.createElement('div');
+            viewBtn.className = 'gallery-view-btn';
+            viewBtn.innerHTML = '<i class="fas fa-expand"></i>';
+            overlay.appendChild(viewBtn);
 
-            const descEl = document.createElement('p');
-            descEl.textContent = meta.desc;
-            back.appendChild(descEl);
-
-            const btn = document.createElement('a');
-            btn.href = meta.link;
-            btn.className = 'flip-view-btn';
-            btn.textContent = 'View Gallery';
-            btn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                openLightbox(category.id, 0);
-                e.preventDefault();
-            });
-            back.appendChild(btn);
-
-            flipCard.appendChild(front);
-            flipCard.appendChild(back);
-            item.appendChild(flipCard);
+            item.appendChild(overlay);
 
             item.addEventListener('click', () => {
-                item.classList.toggle('flipped');
+                openLightbox(category.id, 0);
             });
 
             galleryGrid.appendChild(item);
@@ -215,27 +175,39 @@
         initializeScrollAnimations();
     }
 
-    function startItemSlideshow(sliderElement, numImages, intervalTime = 2500) {
-        if (numImages <= 1) return;
-        const images = sliderElement.querySelectorAll('img');
-        let currentIndex = 0;
-        const intervalId = setInterval(() => {
-            if (images[currentIndex]) images[currentIndex].classList.remove('active-slide');
-            currentIndex = (currentIndex + 1) % images.length;
-            if (images[currentIndex]) images[currentIndex].classList.add('active-slide');
-        }, intervalTime);
-        categorySlideshowIntervals.push(intervalId);
-    }
+    /* â”€â”€ LIGHTBOX GLOBALS & ELEMENTS â”€â”€ */
+    const lbCategoryName = document.getElementById('lbCategoryName');
+    const lbCounter   = document.getElementById('lbCounter');
+    const lbCloseBtn  = document.getElementById('lbCloseBtn');
+    const lbPrev      = document.getElementById('lbPrev');
+    const lbNext      = document.getElementById('lbNext');
+    const lbDots      = document.getElementById('lbDots');
 
+    let currentLightboxImagePaths = [];
+    let currentLightboxCategoryName = '';
+    let currentImageIndex = 0;
+
+    /* â”€â”€ LIGHTBOX FUNCTIONS â”€â”€ */
     function openLightbox(categoryId, imgIndex) {
         const category = galleryCategories.find(cat => cat.id === categoryId);
         if (!category || !lightbox || !category.imageFiles || category.imageFiles.length === 0) return;
 
-        currentLightboxImagePaths = category.imageFiles.map(fileName => `images/${category.folderName}/${fileName}`);
+        currentLightboxImagePaths = category.imageFiles.map(f => `images/${category.folderName}/${f}`);
+        currentLightboxCategoryName = category.displayName;
         currentImageIndex = imgIndex;
 
+        if (lbDots) {
+            lbDots.innerHTML = '';
+            category.imageFiles.forEach((_, i) => {
+                const dot = document.createElement('div');
+                dot.className = 'lb-dot' + (i === imgIndex ? ' active' : '');
+                dot.addEventListener('click', () => { currentImageIndex = i; updateLightboxImage(); });
+                lbDots.appendChild(dot);
+            });
+        }
+
         document.body.style.overflow = 'hidden';
-        updateLightboxImage(category.displayName);
+        updateLightboxImage();
         lightbox.classList.add('active');
     }
 
@@ -245,90 +217,73 @@
         document.body.style.overflow = 'auto';
     }
 
-    function updateLightboxImage(categoryDisplayName) {
-        if (currentLightboxImagePaths.length === 0 || !lightboxImage || !lightboxCaption || !lightboxPrevBtn || !lightboxNextBtn) return;
+    function updateLightboxImage() {
+        if (!currentLightboxImagePaths.length || !lightboxImage) return;
+        const total = currentLightboxImagePaths.length;
 
         lightboxImage.src = currentLightboxImagePaths[currentImageIndex];
-        lightboxImage.alt = `${categoryDisplayName} - Image ${currentImageIndex + 1} of ${currentLightboxImagePaths.length}`;
-        lightboxCaption.textContent = `${categoryDisplayName} - Image ${currentImageIndex + 1} of ${currentLightboxImagePaths.length}`;
+        lightboxImage.alt = `${currentLightboxCategoryName} - ${currentImageIndex + 1}`;
 
-        const showNav = currentLightboxImagePaths.length > 1;
-        lightboxPrevBtn.style.display = showNav ? 'block' : 'none';
-        lightboxNextBtn.style.display = showNav ? 'block' : 'none';
+        if (lbCategoryName) lbCategoryName.textContent = currentLightboxCategoryName;
+        if (lbCounter) lbCounter.textContent = `${currentImageIndex + 1} / ${total}`;
+
+        if (lbDots) {
+            lbDots.querySelectorAll('.lb-dot').forEach((dot, i) => {
+                dot.classList.toggle('active', i === currentImageIndex);
+            });
+        }
+
+        if (lbPrev) lbPrev.style.display = total > 1 ? 'flex' : 'none';
+        if (lbNext) lbNext.style.display = total > 1 ? 'flex' : 'none';
     }
 
     function showNextImage() {
         if (currentLightboxImagePaths.length <= 1) return;
         currentImageIndex = (currentImageIndex + 1) % currentLightboxImagePaths.length;
-        const currentCategory = galleryCategories.find(cat => {
-            const pathParts = currentLightboxImagePaths[currentImageIndex].split('/');
-            return pathParts.length > 1 && cat.folderName === pathParts[pathParts.length - 2];
-        });
-        updateLightboxImage(currentCategory ? currentCategory.displayName : 'Image');
+        updateLightboxImage();
     }
 
     function showPrevImage() {
         if (currentLightboxImagePaths.length <= 1) return;
         currentImageIndex = (currentImageIndex - 1 + currentLightboxImagePaths.length) % currentLightboxImagePaths.length;
-        const currentCategory = galleryCategories.find(cat => {
-            const pathParts = currentLightboxImagePaths[currentImageIndex].split('/');
-            return pathParts.length > 1 && cat.folderName === pathParts[pathParts.length - 2];
-        });
-        updateLightboxImage(currentCategory ? currentCategory.displayName : 'Image');
+        updateLightboxImage();
     }
 
-
-    if (lightboxCloseBtn) lightboxCloseBtn.addEventListener('click', closeLightbox);
-    if (lightboxPrevBtn) lightboxPrevBtn.addEventListener('click', showPrevImage);
-    if (lightboxNextBtn) lightboxNextBtn.addEventListener('click', showNextImage);
-
-    document.addEventListener('keydown', (e) => {
-        if (lightbox && lightbox.classList.contains('active')) {
-            if (e.key === 'Escape') {
-                closeLightbox();
-            } else if (e.key === 'ArrowLeft' && currentLightboxImagePaths.length > 1) {
-                showPrevImage();
-            } else if (e.key === 'ArrowRight' && currentLightboxImagePaths.length > 1) {
-                showNextImage();
-            }
-        }
-    });
+    if (lbCloseBtn) lbCloseBtn.addEventListener('click', closeLightbox);
+    if (lbPrev)     lbPrev.addEventListener('click', showPrevImage);
+    if (lbNext)     lbNext.addEventListener('click', showNextImage);
 
     if (lightbox) {
         lightbox.addEventListener('click', (e) => {
-            if (e.target === lightbox) {
-                closeLightbox();
-            }
+            if (e.target === lightbox) closeLightbox();
         });
     }
 
-    let touchstartX = 0;
-    let touchendX = 0;
-    const lightboxContentWrapper = document.querySelector('.lightbox-content-wrapper');
+    document.addEventListener('keydown', (e) => {
+        if (lightbox && lightbox.classList.contains('active')) {
+            if (e.key === 'Escape') closeLightbox();
+            else if (e.key === 'ArrowLeft')  showPrevImage();
+            else if (e.key === 'ArrowRight') showNextImage();
+        }
+    });
 
-    if (lightboxContentWrapper) {
-        lightboxContentWrapper.addEventListener('touchstart', function (event) {
-            touchstartX = event.changedTouches[0].screenX;
+    let touchStartX = 0;
+    let touchStartY = 0;
+    if (lightbox) {
+        lightbox.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].clientX;
+            touchStartY = e.changedTouches[0].clientY;
         }, { passive: true });
 
-        lightboxContentWrapper.addEventListener('touchend', function (event) {
-            touchendX = event.changedTouches[0].screenX;
-            handleSwipe();
+        lightbox.addEventListener('touchend', (e) => {
+            const dx = e.changedTouches[0].clientX - touchStartX;
+            const dy = e.changedTouches[0].clientY - touchStartY;
+            if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 45) {
+                if (dx < 0) showNextImage();
+                else        showPrevImage();
+            }
         }, { passive: true });
     }
-
-    function handleSwipe() {
-        if (currentLightboxImagePaths.length <= 1) return;
-        const swipeThreshold = 50;
-        if (touchendX < touchstartX - swipeThreshold) {
-            showNextImage();
-        }
-        if (touchendX > touchstartX + swipeThreshold) {
-            showPrevImage();
-        }
-    }
-
-
     function initializeScrollAnimations() {
         const animatedElements = document.querySelectorAll('.animate-on-scroll');
         if ("IntersectionObserver" in window) {

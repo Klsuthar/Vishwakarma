@@ -218,15 +218,32 @@
         </div>
     </footer>
 
-    <!-- Lightbox HTML -->
+    <!-- Premium Lightbox -->
     <div id="lightbox" class="lightbox-container">
-        <span class="lightbox-close-btn">×</span>
-        <div class="lightbox-content-wrapper">
-            <img class="lightbox-image" id="lightboxImage" src="" alt="Enlarged furniture">
-            <a class="lightbox-nav lightbox-prev-btn">❮</a>
-            <a class="lightbox-nav lightbox-next-btn">❯</a>
+        <!-- Top bar -->
+        <div class="lb-topbar">
+            <div class="lb-category-name" id="lbCategoryName"></div>
+            <div class="lb-counter" id="lbCounter">1 / 1</div>
+            <button class="lb-close-btn" id="lbCloseBtn" aria-label="Close">
+                <i class="fas fa-times"></i>
+            </button>
         </div>
-        <div class="lightbox-caption" id="lightboxCaption">Image caption</div>
+
+        <!-- Main image area -->
+        <div class="lb-image-area" id="lbImageArea">
+            <button class="lb-arrow lb-prev" id="lbPrev" aria-label="Previous">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <div class="lb-img-wrapper">
+                <img id="lightboxImage" src="" alt="Furniture" class="lightbox-image">
+            </div>
+            <button class="lb-arrow lb-next" id="lbNext" aria-label="Next">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+
+        <!-- Bottom: dot indicators -->
+        <div class="lb-dots" id="lbDots"></div>
     </div>
 
     <script src="script.js"></script>
