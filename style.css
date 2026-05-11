@@ -301,59 +301,80 @@ header {
     width: 100px; 
 }
 
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
+.services-list {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
 }
 
-.service-card {
+.service-split-item {
+    display: flex;
+    align-items: stretch;
+    gap: 40px;
     background-color: var(--white-color);
     border-radius: 16px;
-    padding: 40px 30px;
-    text-align: center;
+    overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
     border: 1px solid rgba(0,0,0,0.02);
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.service-split-item:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08); 
+}
+
+.service-split-item.reverse {
+    flex-direction: row-reverse;
+}
+
+.service-split-image {
+    flex: 1;
+    min-width: 45%;
+    overflow: hidden;
+}
+
+.service-split-image img {
+    width: 100%;
+    height: 100%;
+    min-height: 350px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+.service-split-item:hover .service-split-image img {
+    transform: scale(1.05);
+}
+
+.service-split-text {
+    flex: 1;
+    padding: 50px 40px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-}
-
-.service-card:hover {
-    transform: translateY(-5px) scale(1.02); 
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08); 
-}
-
-.service-card.animated:hover {
-    transform: translateY(-5px) scale(1.02) !important; 
+    align-items: flex-start;
+    justify-content: center;
 }
 
 .service-icon {
     font-size: 2.8rem; 
     color: var(--primary-color);
     margin-bottom: 20px;
-    transition: transform 0.3s ease-in-out;
 }
 
-.service-card:hover .service-icon {
-    transform: rotateY(360deg) scale(1.1);
-}
-
-.service-card h3 {
+.service-split-text h3 {
     font-family: var(--font-heading); 
-    font-size: 1.6rem; 
+    font-size: 2rem; 
     margin-bottom: 15px;
     color: var(--primary-color);
 }
 
-.service-card p {
+.service-split-text p {
     font-family: var(--font-body);
-    flex-grow: 1; 
-    margin-bottom: 20px; 
+    margin-bottom: 30px; 
+    font-size: 1.1rem;
+    color: var(--text-color);
+    line-height: 1.7;
 }
 
 .btn.service-learn-more {
@@ -802,6 +823,26 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 992px) {
+    .service-split-item, .service-split-item.reverse {
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    .service-split-image {
+        width: 100%;
+    }
+    
+    .service-split-image img {
+        min-height: 250px;
+        max-height: 350px;
+    }
+    
+    .service-split-text {
+        padding: 35px 25px;
+        align-items: center;
+        text-align: center;
+    }
+
     .about-content {
         grid-template-columns: 1fr;
     }
