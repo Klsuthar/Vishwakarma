@@ -117,6 +117,30 @@ document.addEventListener('DOMContentLoaded', () => {
             displayName: "Cupboard",
             folderName: "Cupboard",
             imageFiles: ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg", "8.jpg", "9.jpg"]
+        },
+        {
+            id: "mancha",
+            displayName: "Mancha (Plang)",
+            folderName: "Mancha",
+            imageFiles: ["1.jpg"]
+        },
+        {
+            id: "bajot",
+            displayName: "Bajot",
+            folderName: "Bajot",
+            imageFiles: ["1.jpg"]
+        },
+        {
+            id: "door",
+            displayName: "Door",
+            folderName: "Door",
+            imageFiles: ["1.jpg"]
+        },
+        {
+            id: "temple",
+            displayName: "Temple",
+            folderName: "Temple",
+            imageFiles: ["1.jpg"]
         }
     ];
 
