@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+﻿document.addEventListener('DOMContentLoaded', () => {
     // Mobile Navigation Toggle
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('navLinks');
@@ -132,65 +132,84 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentImageIndex = 0;
     let categorySlideshowIntervals = [];
 
+    const categoryMeta = {
+        'cnc-work':   { icon: 'fa-cogs',        desc: 'Intricate CNC routing & precision wood cutting patterns.', link: 'cnc-work.html' },
+        'bed':        { icon: 'fa-bed',          desc: 'Custom beds crafted to fit your space & style perfectly.', link: 'custom-furniture.html' },
+        'tv-unit':    { icon: 'fa-tv',           desc: 'Elegant TV units designed for modern living rooms.', link: 'custom-furniture.html' },
+        'sofa':       { icon: 'fa-couch',        desc: 'Comfortable, handcrafted sofas built to last a lifetime.', link: 'custom-furniture.html' },
+        'kitchen':    { icon: 'fa-utensils',     desc: 'Modular kitchens designed for beauty and functionality.', link: 'complete-home-furniture.html' },
+        'cupboard':   { icon: 'fa-door-closed',  desc: 'Spacious, beautifully finished wardrobes & cupboards.', link: 'custom-furniture.html' }
+    };
+
     function populateGallery() {
         if (!galleryGrid) return;
         galleryGrid.innerHTML = '';
-
         categorySlideshowIntervals.forEach(clearInterval);
         categorySlideshowIntervals = [];
 
         galleryCategories.forEach((category, categoryIndex) => {
-            if (!category.imageFiles || category.imageFiles.length === 0) {
-                console.warn(`No image files listed for category: ${category.displayName}`);
-                return;
-            }
+            if (!category.imageFiles || category.imageFiles.length === 0) return;
+
+            const meta = categoryMeta[category.id] || { icon: 'fa-image', desc: 'Premium handcrafted work.', link: '#gallery' };
+            const firstImage = `images/${category.folderName}/${category.imageFiles[0]}`;
 
             const item = document.createElement('div');
             item.className = 'gallery-item animate-on-scroll scale-up';
-            item.style.transitionDelay = `${categoryIndex * 0.05}s`;
+            item.style.transitionDelay = `${categoryIndex * 0.08}s`;
 
-            const imageContainer = document.createElement('div');
-            imageContainer.className = 'gallery-item-image-container';
+            const flipCard = document.createElement('div');
+            flipCard.className = 'flip-card';
 
-            const slider = document.createElement('div');
-            slider.className = 'gallery-image-slider';
+            const front = document.createElement('div');
+            front.className = 'flip-card-front';
 
-            category.imageFiles.forEach((imageFileName, imgIndex) => {
-                const img = document.createElement('img');
-                img.src = `images/${category.folderName}/${imageFileName}`;
-                img.alt = `${category.displayName} - Image ${imgIndex + 1}`;
-                img.onerror = () => {
-                    console.error(`Error loading image: ${img.src}. Ensure the path is correct and the image exists.`);
-                    img.style.display = 'none';
-                };
-                if (imgIndex === 0) {
-                    img.classList.add('active-slide');
-                }
-                slider.appendChild(img);
+            const img = document.createElement('img');
+            img.src = firstImage;
+            img.alt = category.displayName;
+            img.onerror = () => { img.style.display = 'none'; };
+            front.appendChild(img);
+
+            const flabel = document.createElement('div');
+            flabel.className = 'flip-card-front-label';
+            flabel.textContent = category.displayName;
+            front.appendChild(flabel);
+
+            const back = document.createElement('div');
+            back.className = 'flip-card-back';
+
+            const iconWrap = document.createElement('div');
+            iconWrap.className = 'flip-back-icon';
+            iconWrap.innerHTML = `<i class="fas ${meta.icon}"></i>`;
+            back.appendChild(iconWrap);
+
+            const titleEl = document.createElement('h3');
+            titleEl.textContent = category.displayName;
+            back.appendChild(titleEl);
+
+            const descEl = document.createElement('p');
+            descEl.textContent = meta.desc;
+            back.appendChild(descEl);
+
+            const btn = document.createElement('a');
+            btn.href = meta.link;
+            btn.className = 'flip-view-btn';
+            btn.textContent = 'View Gallery';
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                openLightbox(category.id, 0);
+                e.preventDefault();
             });
-            imageContainer.appendChild(slider);
+            back.appendChild(btn);
 
-            const overlay = document.createElement('div');
-            overlay.className = 'gallery-overlay';
-            const viewIcon = document.createElement('i');
-            viewIcon.className = 'fas fa-search-plus';
-            overlay.appendChild(viewIcon);
-            imageContainer.appendChild(overlay);
+            flipCard.appendChild(front);
+            flipCard.appendChild(back);
+            item.appendChild(flipCard);
 
-            item.appendChild(imageContainer);
-
-            const titleDiv = document.createElement('div');
-            titleDiv.className = 'gallery-item-title';
-            titleDiv.textContent = category.displayName;
-            item.appendChild(titleDiv);
+            item.addEventListener('click', () => {
+                item.classList.toggle('flipped');
+            });
 
             galleryGrid.appendChild(item);
-
-            startItemSlideshow(slider, category.imageFiles.length);
-
-            imageContainer.addEventListener('click', () => {
-                openLightbox(category.id, 0);
-            });
         });
 
         initializeScrollAnimations();
