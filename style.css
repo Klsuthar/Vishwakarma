@@ -321,7 +321,12 @@ header {
     border-radius: 20px;
     overflow: hidden;
     height: 450px;
-    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.2);
+    border: 2px solid rgba(192, 133, 82, 0.3);
+    border-top: 2px solid rgba(192, 133, 82, 0.9);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.8);
+    box-shadow: 
+        0 -15px 40px rgba(0, 0, 0, 0.4),
+        0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 .service-overlay-card:nth-child(1) { top: 90px; z-index: 1; }
