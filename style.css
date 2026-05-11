@@ -309,13 +309,6 @@ header {
     padding-bottom: 50px;
 }
 
-@media (min-width: 768px) {
-    .services-overlay-grid {
-        max-width: 900px;
-        margin: 0 auto;
-    }
-}
-
 .service-overlay-card {
     position: sticky;
     border-radius: 20px;
@@ -333,6 +326,46 @@ header {
 .service-overlay-card:nth-child(2) { top: 110px; z-index: 2; }
 .service-overlay-card:nth-child(3) { top: 130px; z-index: 3; }
 .service-overlay-card:nth-child(4) { top: 150px; z-index: 4; }
+
+@media (min-width: 992px) {
+    .services-overlay-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        padding-bottom: 0;
+    }
+    
+    .service-overlay-card {
+        position: relative; /* Disable sticky for PC */
+        top: auto !important; /* Override inline top/nth-child top */
+        height: 350px; /* Normal height for grid layout */
+        border: 1px solid rgba(0,0,0,0.05); /* Reset 3D border */
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Normal shadow */
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .service-overlay-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+    
+    .service-overlay-content {
+        padding: 40px 30px;
+        background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0) 100%);
+    }
+    
+    .service-overlay-content h3 {
+        font-size: 1.8rem;
+    }
+    
+    .service-overlay-content p {
+        font-size: 1rem;
+    }
+    
+    .service-overlay-content .service-icon {
+        font-size: 2.2rem;
+    }
+}
 
 .service-bg-img {
     position: absolute;
