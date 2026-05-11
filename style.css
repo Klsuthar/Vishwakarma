@@ -301,92 +301,100 @@ header {
     width: 100px; 
 }
 
-.services-list {
+/* Mobile-First Services Sticky Stack */
+.services-overlay-grid {
     display: flex;
     flex-direction: column;
-    gap: 60px;
+    gap: 20px;
+    padding-bottom: 50px;
 }
 
-.service-split-item {
-    display: flex;
-    align-items: stretch;
-    gap: 40px;
-    background-color: var(--white-color);
-    border-radius: 16px;
+@media (min-width: 768px) {
+    .services-overlay-grid {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+}
+
+.service-overlay-card {
+    position: sticky;
+    border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
-    border: 1px solid rgba(0,0,0,0.02);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    height: 450px;
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.2);
 }
 
-.service-split-item:hover {
-    transform: translateY(-5px); 
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08); 
-}
+.service-overlay-card:nth-child(1) { top: 90px; z-index: 1; }
+.service-overlay-card:nth-child(2) { top: 110px; z-index: 2; }
+.service-overlay-card:nth-child(3) { top: 130px; z-index: 3; }
+.service-overlay-card:nth-child(4) { top: 150px; z-index: 4; }
 
-.service-split-item.reverse {
-    flex-direction: row-reverse;
-}
-
-.service-split-image {
-    flex: 1;
-    min-width: 45%;
-    overflow: hidden;
-}
-
-.service-split-image img {
+.service-bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    min-height: 350px;
     object-fit: cover;
-    display: block;
+    z-index: 1;
     transition: transform 0.6s ease;
 }
 
-.service-split-item:hover .service-split-image img {
-    transform: scale(1.05);
+.service-overlay-card:hover .service-bg-img {
+    transform: scale(1.1);
 }
 
-.service-split-text {
-    flex: 1;
-    padding: 50px 40px;
+.service-overlay-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.1) 100%);
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-}
-
-.service-icon {
-    font-size: 2.8rem; 
-    color: var(--primary-color);
-    margin-bottom: 20px;
-}
-
-.service-split-text h3 {
-    font-family: var(--font-heading); 
-    font-size: 2rem; 
-    margin-bottom: 15px;
-    color: var(--primary-color);
-}
-
-.service-split-text p {
-    font-family: var(--font-body);
-    margin-bottom: 30px; 
-    font-size: 1.1rem;
-    color: var(--text-color);
-    line-height: 1.7;
-}
-
-.btn.service-learn-more {
-    margin-top: auto; 
-    background-color: var(--secondary-color);
-    color: var(--dark-color);
-    font-weight: 600;
-}
-
-.btn.service-learn-more:hover {
-    background-color: var(--accent-color);
+    justify-content: flex-end;
+    padding: 30px;
     color: var(--white-color);
+}
+
+.service-overlay-content .service-icon {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+.service-overlay-content h3 {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    color: var(--white-color);
+    margin-bottom: 10px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+.service-overlay-content p {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.service-overlay-content .btn.service-learn-more {
+    align-self: flex-start;
+    padding: 10px 25px;
+    font-size: 0.9rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: var(--white-color);
+    border: none;
+    box-shadow: 0 4px 15px rgba(192, 133, 82, 0.4);
+}
+
+.service-overlay-content .btn.service-learn-more:hover {
+    background: linear-gradient(135deg, var(--accent-color), var(--dark-color));
+    transform: translateY(-3px);
 }
 
 
@@ -823,26 +831,6 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 992px) {
-    .service-split-item, .service-split-item.reverse {
-        flex-direction: column;
-        gap: 0;
-    }
-    
-    .service-split-image {
-        width: 100%;
-    }
-    
-    .service-split-image img {
-        min-height: 250px;
-        max-height: 350px;
-    }
-    
-    .service-split-text {
-        padding: 35px 25px;
-        align-items: center;
-        text-align: center;
-    }
-
     .about-content {
         grid-template-columns: 1fr;
     }
