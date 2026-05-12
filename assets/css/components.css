@@ -1215,6 +1215,17 @@ body.product-lightbox-open {
   margin: 0;
 }
 
+.footer-bottom a {
+  color: var(--accent);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.footer-bottom a:hover,
+.footer-bottom a:focus-visible {
+  color: var(--surface);
+}
+
 .page-note {
   padding: 1rem 1.15rem;
   border: 1px solid rgba(122, 66, 24, 0.1);

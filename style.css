@@ -2003,6 +2003,16 @@ footer {
     font-family: var(--font-body);
 }
 
+.copyright a {
+    color: var(--primary-color);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.copyright a:hover {
+    color: var(--white-color);
+}
+
 /* ── Premium Lightbox ── */
 .lightbox-container {
     display: none;
@@ -2500,7 +2510,7 @@ footer {
 
 /* Styles for Service Detail Pages */
 .service-detail {
-    padding: 80px 0;
+    padding: 160px 0 80px;
     background-color: var(--white-color); 
 }
 
@@ -2554,6 +2564,10 @@ footer {
 }
 
 @media (max-width: 768px) {
+    .service-detail {
+        padding-top: 140px;
+    }
+
     .service-detail .section-title h2 {
         font-size: 2rem;
     }

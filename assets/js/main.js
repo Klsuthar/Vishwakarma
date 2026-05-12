@@ -517,7 +517,7 @@
       "</article>",
       "</div>",
       '<div class="footer-bottom">',
-      "<p>Copyright <span data-current-year></span> " + escapeHtml(site.brand.shortName) + ". All rights reserved.</p>",
+      "<p>Copyright <span data-current-year></span> " + escapeHtml(site.brand.shortName) + ". All rights reserved. Made by <a href=\"https://klsuthar.github.io/kanhaiyalal/\" target=\"_blank\" rel=\"noopener noreferrer\">@kanhaiyalal</a></p>",
       "<p>" + escapeHtml(site.contact.addressLines.join(", ")) + "</p>",
       "</div>",
       "</div>",
