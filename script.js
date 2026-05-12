@@ -348,6 +348,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('animated');
                         // observerInstance.unobserve(entry.target); // Optional
+                    } else if (entry.target.classList.contains('gallery-title-reveal')) {
+                        entry.target.classList.remove('animated');
                     }
                 });
             }, { threshold: 0.1 });

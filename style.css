@@ -595,6 +595,105 @@ h3, h4 {
     width: 100px; 
 }
 
+.gallery .section-title {
+    perspective: 900px;
+}
+
+.gallery-title-reveal {
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(95px) scale(0.72) rotateX(72deg);
+    transform-origin: 50% 100%;
+    filter: blur(18px);
+    text-shadow: 0 0 0 rgba(192, 133, 82, 0);
+    will-change: opacity, transform, filter;
+}
+
+.gallery-title-reveal::before {
+    content: '';
+    position: absolute;
+    top: -30%;
+    bottom: -30%;
+    left: -70%;
+    width: 30%;
+    background: linear-gradient(110deg, transparent, rgba(255, 255, 255, 0.78), transparent);
+    border-radius: 999px;
+    opacity: 0;
+    transform: skewX(-18deg);
+    pointer-events: none;
+}
+
+.gallery-title-reveal::after {
+    height: 5px;
+    border-radius: 999px;
+    opacity: 0;
+    background: linear-gradient(90deg, transparent, var(--primary-color), var(--accent-color), var(--primary-color), transparent);
+    box-shadow: 0 10px 26px rgba(192, 133, 82, 0.45);
+}
+
+.gallery-title-reveal.animated {
+    animation: galleryTitleEntrance 1.05s cubic-bezier(0.16, 1, 0.3, 1) both;
+    text-shadow: 0 16px 34px rgba(192, 133, 82, 0.3);
+}
+
+.gallery-title-reveal.animated::before {
+    animation: galleryTitleSheen 0.95s ease 0.28s forwards;
+}
+
+.gallery-title-reveal.animated::after {
+    animation: galleryTitleUnderline 1.15s cubic-bezier(0.16, 1, 0.3, 1) 0.16s both;
+}
+
+@keyframes galleryTitleEntrance {
+    0% {
+        opacity: 0;
+        transform: translateY(95px) scale(0.72) rotateX(72deg);
+        filter: blur(18px);
+    }
+    42% {
+        opacity: 1;
+        transform: translateY(-18px) scale(1.1) rotateX(-9deg);
+        filter: blur(0);
+    }
+    68% {
+        transform: translateY(8px) scale(0.97) rotateX(3deg);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1) rotateX(0);
+        filter: blur(0);
+    }
+}
+
+@keyframes galleryTitleSheen {
+    0% {
+        left: -70%;
+        opacity: 0;
+    }
+    25% {
+        opacity: 1;
+    }
+    100% {
+        left: 125%;
+        opacity: 0;
+    }
+}
+
+@keyframes galleryTitleUnderline {
+    0% {
+        width: 0;
+        opacity: 0;
+    }
+    58% {
+        width: 220px;
+        opacity: 1;
+    }
+    100% {
+        width: 165px;
+        opacity: 1;
+    }
+}
+
 /* Mobile-First Services Sticky Stack */
 .services-overlay-grid {
     display: flex;
