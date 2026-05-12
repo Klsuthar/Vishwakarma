@@ -92,11 +92,11 @@ h3, h4 {
 
 /* Navigation */
 .header-premium-nav {
-    background-color: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.4);
+    background-color: rgba(13, 13, 13, 0.65); /* dark glassmorphism */
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    box-shadow: 0 10px 40px rgba(197, 139, 91, 0.12), 0 0 20px rgba(0,0,0,0.5); /* soft ambient glow */
+    border: 1px solid rgba(197, 139, 91, 0.3); /* thin warm bronze/gold border */
     position: fixed;
     top: 20px;
     left: 50%;
@@ -112,7 +112,7 @@ h3, h4 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 24px;
+    padding: 14px 28px; /* Increased internal spacing and padding */
 }
 
 .logo {
@@ -141,7 +141,7 @@ h3, h4 {
 .main-name {
     font-family: var(--font-brand);
     font-size: 2.2rem; font-weight: 700;
-    color: var(--primary-color);
+    color: #E7C6A5; /* warm primary color for dark theme */
     line-height: 1;
     transition: color 0.3s ease;
 }
@@ -149,7 +149,7 @@ h3, h4 {
 .tagline {
     font-family: var(--font-body);
     font-size: 0.85rem;
-    color: var(--accent-color);
+    color: #C58B5B;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1.5px;
@@ -158,7 +158,7 @@ h3, h4 {
 }
 
 .logo:hover .main-name {
-    color: var(--accent-color);
+    color: #C58B5B;
 }
 
 .logo h1 { /* Style for H1 if you re-add it in HTML */
@@ -191,7 +191,7 @@ h3, h4 {
 
 .nav-links a {
     text-decoration: none;
-    color: var(--text-color);
+    color: #F5F2EE; /* Light color for dark bg */
     font-weight: 600;
     font-family: var(--font-body);
     font-size: 0.95rem;
@@ -201,31 +201,32 @@ h3, h4 {
 }
 
 .nav-links a:hover {
-    background: rgba(192, 133, 82, 0.1);
-    color: var(--primary-color);
+    background: rgba(197, 139, 91, 0.15);
+    color: #E7C6A5;
 }
 
 .btn-header-cta {
-    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-    color: #fff;
+    background: linear-gradient(135deg, #C58B5B, #8B5A33);
+    color: #FFF;
     padding: 10px 24px;
     border-radius: 50px;
     font-family: var(--font-body);
     font-weight: 600;
     font-size: 0.95rem;
     text-decoration: none;
-    box-shadow: 0 4px 15px rgba(192, 133, 82, 0.3);
+    box-shadow: 0 4px 15px rgba(197, 139, 91, 0.4);
     transition: all 0.3s ease;
     display: inline-flex;
     align-items: center;
     gap: 8px;
+    border: 1px solid rgba(231, 198, 165, 0.3);
 }
 
 .btn-header-cta:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(192, 133, 82, 0.5);
-    background: linear-gradient(135deg, var(--accent-color), var(--dark-color));
-    color: #fff;
+    box-shadow: 0 6px 20px rgba(197, 139, 91, 0.6);
+    background: linear-gradient(135deg, #E7C6A5, #C58B5B);
+    color: #1A1A1A;
 }
 
 .hamburger {
@@ -234,7 +235,7 @@ h3, h4 {
     background: none;
     border: none;
     font-size: 1.5rem;
-    color: var(--primary-color);
+    color: #E7C6A5;
 }
 
 /* Premium Hero Section */
@@ -244,7 +245,7 @@ h3, h4 {
     min-height: 100dvh; /* For mobile browsers */
     display: flex;
     align-items: center;
-    padding-top: 70px; /* header offset */
+    padding-top: 140px; /* Increased header offset to prevent badge overlap */
     overflow: hidden;
     color: var(--white-color);
 }
@@ -273,8 +274,8 @@ h3, h4 {
 .hero-premium-overlay {
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at center, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.85) 100%),
-                linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, transparent 40%, rgba(0,0,0,0.9) 100%);
+    background: radial-gradient(circle at center, rgba(13,13,13,0.4) 0%, rgba(13,13,13,0.95) 100%),
+                linear-gradient(to bottom, rgba(13,13,13,0.8) 0%, transparent 40%, rgba(13,13,13,0.95) 100%);
 }
 
 .hero-premium-container {
@@ -284,201 +285,255 @@ h3, h4 {
     flex-direction: column;
     height: 100%;
     justify-content: center;
-    padding: 30px 20px 40px; /* tighter padding */
+    align-items: center; /* Center content horizontally */
+    text-align: center; /* Center text */
+    padding: 60px 20px 40px; /* Increased top padding for better vertical balance */
     width: 100%;
-    gap: 40px; /* Ensures gap between content and stats */
+    gap: 50px; /* More breathing space */
 }
 
 .hero-premium-content {
-    max-width: 800px;
-    margin: auto 0;
+    max-width: 850px;
+    margin: auto auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .hero-badge {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    background: rgba(255,255,255,0.1);
-    border: 1px solid rgba(192,133,82,0.4);
-    padding: 5px 14px;
+    gap: 10px;
+    background: rgba(13, 13, 13, 0.5);
+    border: 1px solid rgba(197, 139, 91, 0.5); /* Thin golden border */
+    padding: 8px 24px;
     border-radius: 50px;
     font-family: var(--font-body);
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 1px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 2px;
     text-transform: uppercase;
-    margin-bottom: 6px;
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
+    margin-bottom: 24px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    color: #E7C6A5;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Subtle glass effect */
 }
 
 .hero-badge .badge-icon {
-    color: var(--primary-color);
+    color: #C58B5B;
+    font-size: 1.1rem;
 }
 
 .hero-premium h1 {
-    font-family: var(--font-heading);
-    font-size: clamp(2.2rem, 5vw + 1rem, 4rem); /* scales nicely */
-    line-height: 1.1;
-    margin-bottom: 8px;
+    font-family: var(--font-heading); /* Luxury serif heading font */
+    font-size: clamp(2.5rem, 6vw + 1rem, 4.5rem); /* Increased font hierarchy */
+    line-height: 1.15;
+    margin-bottom: 24px;
     font-weight: 700;
+    color: #F5F2EE;
+    letter-spacing: 0.5px;
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Cinematic text depth */
 }
 
 .text-gradient {
-    background: linear-gradient(135deg, #fff 0%, var(--primary-color) 100%);
+    background: linear-gradient(135deg, #E7C6A5 0%, #C58B5B 100%); /* Warm bronze/gold gradient */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .hero-premium p {
-    font-family: var(--font-body);
-    font-size: clamp(0.95rem, 1.5vw + 0.5rem, 1.2rem);
-    line-height: 1.5;
-    color: rgba(255,255,255,0.8);
-    margin-bottom: 22px;
-    max-width: 600px;
+    font-family: var(--font-body); /* Clean modern sans-serif body font */
+    font-size: clamp(1rem, 1.8vw + 0.5rem, 1.25rem);
+    line-height: 1.6;
+    color: rgba(245, 242, 238, 0.85); /* Improved readability */
+    margin-bottom: 35px; /* Better vertical spacing */
+    max-width: 650px;
+    font-weight: 300;
 }
 
 .hero-actions {
     display: flex;
-    gap: 12px;
+    gap: 16px;
     flex-wrap: wrap;
-    margin-bottom: 30px;
+    justify-content: center;
+    margin-bottom: 40px;
 }
 
 /* Custom Hero Buttons */
-.btn-primary-glow, .btn-outline-light {
-    padding: 12px 28px;
-    font-size: 0.95rem;
-    border-radius: 50px;
+.btn-primary-luxury, .btn-secondary-glass {
+    padding: 14px 32px;
+    font-size: 1rem;
+    border-radius: 50px; /* Premium pill-shaped */
     font-family: var(--font-body);
     font-weight: 600;
     text-decoration: none;
     cursor: pointer;
+    letter-spacing: 0.5px;
+    transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-.btn-primary-glow {
-    background: var(--primary-color);
-    color: #fff;
-    box-shadow: 0 4px 16px rgba(192, 133, 82, 0.4);
-    border: none;
-    transition: all 0.3s ease;
+.btn-primary-luxury {
+    background: linear-gradient(135deg, #C58B5B, #8B5A33); /* Warm luxury gradient */
+    color: #FFF;
+    box-shadow: 0 8px 25px rgba(197, 139, 91, 0.3);
+    border: 1px solid rgba(231, 198, 165, 0.4);
 }
 
-.btn-primary-glow:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(192, 133, 82, 0.6);
+.btn-primary-luxury:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(197, 139, 91, 0.5);
+    background: linear-gradient(135deg, #E7C6A5, #C58B5B);
+    color: #1A1A1A;
 }
 
-.btn-outline-light {
-    background: rgba(255,255,255,0.05);
-    color: #fff;
-    border: 1px solid rgba(255,255,255,0.2);
-    backdrop-filter: blur(4px);
+.btn-secondary-glass {
+    background: rgba(26, 26, 26, 0.4);
+    color: #F5F2EE;
+    border: 1px solid rgba(245, 242, 238, 0.2);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    transition: all 0.3s ease;
+    gap: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-.btn-outline-light:hover {
-    background: rgba(255,255,255,0.15);
-    transform: translateY(-2px);
+.btn-secondary-glass:hover {
+    background: rgba(245, 242, 238, 0.1);
+    border: 1px solid rgba(245, 242, 238, 0.4);
+    transform: translateY(-3px);
+    color: #FFF;
 }
 
 /* Hero Stats Glass Panels */
-.hero-stats {
-    display: flex;
-    gap: 12px;
-    flex-wrap: nowrap; /* keep them in a row */
-    margin-top: auto; /* Push to bottom */
-    width: 100%;
-}
-
-.glass-panel {
-    background: rgba(255,255,255,0.03);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 12px;
-    padding: 16px 20px;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+.hero-stats-panel {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 16px;
-    flex: 1; /* Equal width */
-    border-left: 3px solid var(--primary-color);
-    transition: transform 0.3s ease, background 0.3s ease;
+    justify-content: space-around;
+    margin-top: auto;
+    width: 100%;
+    max-width: 1000px;
+    background: rgba(13, 13, 13, 0.45);
+    border: 1px solid rgba(197, 139, 91, 0.3);
+    border-radius: 20px;
+    padding: 24px 30px;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3), inset 0 0 20px rgba(197, 139, 91, 0.05); /* Subtle glow */
 }
 
-.glass-panel:hover {
-    transform: translateY(-5px);
-    background: rgba(255,255,255,0.06);
+.stat-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 18px;
+    flex: 1;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.stat-item:hover {
+    transform: translateY(-3px);
+}
+
+.stat-divider {
+    width: 1px;
+    height: 50px;
+    background: linear-gradient(to bottom, transparent, rgba(197, 139, 91, 0.5), transparent);
 }
 
 .stat-icon {
-    font-size: 2rem;
-    color: var(--primary-color);
-    opacity: 0.9;
+    font-size: 2.2rem;
+    color: #C58B5B; /* Premium bronze color */
+    filter: drop-shadow(0 2px 8px rgba(197, 139, 91, 0.3));
 }
 
 .stat-info {
     display: flex;
     flex-direction: column;
+    text-align: left;
 }
 
 .stat-num {
     font-family: var(--font-heading);
-    font-size: clamp(1.4rem, 2.5vw + 0.5rem, 2rem);
+    font-size: clamp(1.6rem, 2.5vw + 0.5rem, 2.2rem);
     font-weight: 700;
-    color: #fff;
+    color: #E7C6A5;
     line-height: 1;
-    margin-bottom: 4px;
+    margin-bottom: 6px;
 }
 
 .stat-label {
     font-family: var(--font-body);
-    font-size: clamp(0.65rem, 1vw + 0.4rem, 0.8rem);
-    color: rgba(255,255,255,0.6);
+    font-size: clamp(0.75rem, 1vw + 0.4rem, 0.85rem);
+    color: rgba(245, 242, 238, 0.7);
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
+    font-weight: 500;
 }
 
 @media (max-width: 768px) {
     .hero-premium-container {
-        padding-top: 60px;
-        padding-bottom: 20px;
+        padding-top: 40px;
+        padding-bottom: 30px;
+        gap: 30px;
     }
     
     .hero-premium-content {
-        text-align: center;
         margin-top: auto;
     }
     
-    .hero-badge {
-        margin-inline: auto;
-    }
-    
     .hero-actions {
+        flex-direction: column;
+        width: 100%;
+        max-width: 300px;
+        gap: 16px;
+    }
+
+    .btn-primary-luxury, .btn-secondary-glass {
+        width: 100%;
         justify-content: center;
-        margin-bottom: 20px;
     }
     
-    .hero-stats {
-        gap: 8px;
+    .hero-stats-panel {
+        flex-direction: row;
+        padding: 15px 10px;
+        gap: 5px;
+        border-radius: 16px;
+        justify-content: space-between;
     }
     
-    .glass-panel {
-        padding: 12px;
+    .stat-divider {
+        width: 1px;
+        height: 40px;
+        background: linear-gradient(to bottom, transparent, rgba(197, 139, 91, 0.5), transparent);
+    }
+    
+    .stat-item {
         flex-direction: column;
         text-align: center;
-        border-left: none;
-        border-top: 2px solid var(--primary-color);
-        gap: 8px;
+        gap: 6px;
+        width: auto;
+        flex: 1;
+    }
+
+    .stat-info {
+        text-align: center;
     }
     
     .stat-icon {
-        font-size: 1.4rem;
+        font-size: 1.5rem;
+    }
+    
+    .stat-num {
+        font-size: 1.3rem;
+    }
+
+    .stat-label {
+        font-size: 0.65rem;
+        letter-spacing: 0.5px;
     }
 }
 
@@ -1449,20 +1504,22 @@ footer {
     }
 }
 
-/* Bottom Navigation (Mobile) - LinkedIn Style */
+/* Bottom Navigation (Mobile) - Premium Glassmorphism Style */
 .bottom-nav {
     display: none;
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
-    background: #1A1A1A; /* Premium Dark Background */
-    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.3); /* Very subtle shadow */
+    background: rgba(13, 13, 13, 0.85); /* Glassmorphism background */
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(197, 139, 91, 0.2);
     z-index: 1000;
     justify-content: space-between;
     padding: 0;
     padding-bottom: env(safe-area-inset-bottom, 0); /* Handle iPhone X+ safe area */
-    border-top: 1px solid #2A2A2A;
+    border-top: 1px solid rgba(197, 139, 91, 0.3);
 }
 
 .bottom-nav .nav-item {
@@ -1470,51 +1527,54 @@ footer {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: #888888; /* Subtle light gray for inactive */
+    color: rgba(245, 242, 238, 0.5); /* Subtle light color */
     text-decoration: none;
-    font-size: 11px; /* Very small text */
-    font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-size: 11px;
+    font-family: var(--font-body);
     font-weight: 500;
-    transition: color 0.1s ease;
+    transition: all 0.3s ease;
     position: relative;
-    padding: 10px 0 8px 0;
+    padding: 12px 0 10px 0;
     flex: 1;
     text-align: center;
 }
 
 .bottom-nav .nav-item i {
-    font-size: 1.4rem; /* Clean, recognizable icon size */
-    margin-bottom: 4px;
-    color: #888888;
-    transition: color 0.1s ease;
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+    color: rgba(245, 242, 238, 0.5);
+    transition: all 0.3s ease;
 }
 
 /* Active State */
 .bottom-nav .nav-item.active {
-    color: var(--primary-color); /* Golden active text */
+    color: #E7C6A5;
 }
 
 .bottom-nav .nav-item.active i {
-    color: var(--primary-color); /* Golden active icon */
+    color: #C58B5B;
+    transform: translateY(-2px);
+    filter: drop-shadow(0 2px 5px rgba(197, 139, 91, 0.5)); /* Active tab glow */
 }
 
-/* LinkedIn Top Bar Active Indicator */
+/* Premium Top Indicator */
 .bottom-nav .nav-item::before {
     content: '';
     position: absolute;
-    top: -1px; /* Overlap the border-top */
-    left: 20%;
-    right: 20%;
-    height: 2px;
+    top: -1px;
+    left: 25%;
+    right: 25%;
+    height: 3px;
     background-color: transparent;
-    transition: background-color 0.1s ease;
+    border-radius: 0 0 3px 3px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .bottom-nav .nav-item.active::before {
-    background-color: var(--primary-color); /* Golden top indicator line */
+    background-color: #C58B5B;
+    box-shadow: 0 2px 10px rgba(197, 139, 91, 0.6);
 }
 
-/* Remove the old floating indicator display */
 .bottom-nav .nav-indicator {
     display: none;
 }
