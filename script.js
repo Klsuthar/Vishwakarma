@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
+    initTranslateControl();
+
     // Mobile Navigation Toggle
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('navLinks');
@@ -91,12 +93,14 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             id: "cnc-work",
             displayName: "CNC Work",
+            displayNameHi: "सीएनसी वर्क",
             folderName: "CNC_Work",
             imageFiles: ["1.jpeg", "2.jpeg", "3.jpeg", "4.jpeg", "5.jpeg", "6.jpeg", "7.jpeg", "8.jpeg", "9.jpeg", "10.jpeg", "11.jpeg", "12.jpeg", "13.jpeg", "14.jpeg"]
         },
         {
             id: "bed",
             displayName: "Bed",
+            displayNameHi: "बेड",
             folderName: "Bed",
             imageFiles: [
                 "1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg", "8.jpg", "9.jpg", "10.jpg",
@@ -107,46 +111,72 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             id: "tv-unit",
             displayName: "TV Unit",
+            displayNameHi: "टीवी यूनिट",
             folderName: "TV_Unit",
             imageFiles: ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg"]
         },
-        { id: "sofa", displayName: "Sofa", folderName: "Sofa", imageFiles: ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg"] },
-        { id: "kitchen", displayName: "Kitchen", folderName: "Kitchen", imageFiles: ["1.jpg", "2.jpg", "3.jpg", "4.jpg"] },
+        { id: "sofa", displayName: "Sofa", displayNameHi: "सोफा", folderName: "Sofa", imageFiles: ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg"] },
+        { id: "kitchen", displayName: "Kitchen", displayNameHi: "किचन", folderName: "Kitchen", imageFiles: ["1.jpg", "2.jpg", "3.jpg", "4.jpg"] },
         {
             id: "cupboard",
             displayName: "Cupboard",
+            displayNameHi: "अलमारी",
             folderName: "Cupboard",
             imageFiles: ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg", "8.jpg", "9.jpg"]
         },
         {
             id: "mancha",
             displayName: "Mancha (Plang)",
+            displayNameHi: "मांचा (पलंग)",
             folderName: "Mancha",
             imageFiles: ["1.jpg"]
         },
         {
             id: "bajot",
             displayName: "Bajot",
+            displayNameHi: "बाजोट",
             folderName: "Bajot",
             imageFiles: ["1.jpg"]
         },
         {
             id: "door",
             displayName: "Door",
+            displayNameHi: "दरवाजा",
             folderName: "Door",
             imageFiles: ["1.jpg"]
         },
         {
             id: "temple",
             displayName: "Temple",
+            displayNameHi: "मंदिर",
             folderName: "Temple",
-            imageFiles: ["1.jpg"]
+            imageFiles: [
+                "heritage-teak-mandir-01.png",
+                "heritage-teak-mandir-02.png",
+                "heritage-teak-mandir-03.png",
+                "heritage-teak-mandir-04.png",
+                "heritage-teak-mandir-05.png",
+                "heritage-teak-mandir-06.png",
+                "heritage-teak-mandir-07.png"
+            ]
         }
     ];
 
     const galleryGrid = document.querySelector('.gallery-grid');
     const lightbox = document.getElementById('lightbox');
     const lightboxImage = document.getElementById('lightboxImage');
+
+    function getPreferredLanguage() {
+        return localStorage.getItem('preferredLanguage') === 'en' ? 'en' : 'hi';
+    }
+
+    function getCategoryDisplayName(category) {
+        return getPreferredLanguage() === 'hi' && category.displayNameHi ? category.displayNameHi : category.displayName;
+    }
+
+    function getGalleryActionLabel() {
+        return getPreferredLanguage() === 'hi' ? 'सभी देखें' : 'Tap to view all';
+    }
 
     function populateGallery() {
         if (!galleryGrid) return;
@@ -157,6 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const firstImage = `images/${category.folderName}/${category.imageFiles[0]}`;
             const imgCount = category.imageFiles.length;
+            const categoryName = getCategoryDisplayName(category);
 
             const item = document.createElement('div');
             item.className = 'gallery-item animate-on-scroll scale-up';
@@ -164,7 +195,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const img = document.createElement('img');
             img.src = firstImage;
-            img.alt = category.displayName;
+            img.alt = categoryName;
             img.className = 'gallery-card-img';
             img.onerror = () => { img.style.display = 'none'; };
             item.appendChild(img);
@@ -178,8 +209,9 @@ document.addEventListener('DOMContentLoaded', () => {
             overlay.className = 'gallery-card-overlay';
 
             const info = document.createElement('div');
-            info.className = 'gallery-card-info';
-            info.innerHTML = `<h3>${category.displayName}</h3><span>Tap to view all</span>`;
+            info.className = 'gallery-card-info notranslate';
+            info.setAttribute('translate', 'no');
+            info.innerHTML = `<h3>${categoryName}</h3><span>${getGalleryActionLabel()}</span>`;
             overlay.appendChild(info);
 
             const viewBtn = document.createElement('div');
@@ -217,7 +249,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!category || !lightbox || !category.imageFiles || category.imageFiles.length === 0) return;
 
         currentLightboxImagePaths = category.imageFiles.map(f => `images/${category.folderName}/${f}`);
-        currentLightboxCategoryName = category.displayName;
+        currentLightboxCategoryName = getCategoryDisplayName(category);
         currentImageIndex = imgIndex;
 
         if (lbDots) {
@@ -358,6 +390,135 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 });
+
+function initTranslateControl() {
+    const languages = {
+        hi: { label: 'हिन्दी', cookieValue: '/en/hi' },
+        en: { label: 'English', cookieValue: '' }
+    };
+    const savedLanguage = localStorage.getItem('preferredLanguage') || 'hi';
+    const activeLanguage = languages[savedLanguage] ? savedLanguage : 'hi';
+
+    document.documentElement.setAttribute('lang', activeLanguage);
+    lockFixedLanguageText();
+
+    if (activeLanguage === 'hi') {
+        setTranslateCookie(languages.hi.cookieValue);
+    } else {
+        clearTranslateCookie();
+    }
+
+    let hiddenTranslate = document.getElementById('google_translate_element');
+    if (!hiddenTranslate) {
+        hiddenTranslate = document.createElement('div');
+        hiddenTranslate.id = 'google_translate_element';
+        hiddenTranslate.setAttribute('aria-hidden', 'true');
+        document.body.appendChild(hiddenTranslate);
+    }
+
+    if (!document.querySelector('.translate-floating')) {
+        const floatingTranslate = document.createElement('div');
+        floatingTranslate.className = 'translate-floating notranslate';
+        floatingTranslate.setAttribute('translate', 'no');
+        floatingTranslate.innerHTML = `
+            <button class="translate-toggle" type="button" aria-expanded="false" aria-label="Change language">
+                <i class="fas fa-language" aria-hidden="true"></i>
+                <span>भाषा</span>
+                <strong>${languages[activeLanguage].label}</strong>
+            </button>
+            <div class="translate-menu" role="menu">
+                <button type="button" class="${activeLanguage === 'hi' ? 'is-active' : ''}" data-language="hi" role="menuitem">हिन्दी</button>
+                <button type="button" class="${activeLanguage === 'en' ? 'is-active' : ''}" data-language="en" role="menuitem">English</button>
+            </div>
+        `;
+        document.body.appendChild(floatingTranslate);
+
+        const toggle = floatingTranslate.querySelector('.translate-toggle');
+        const menu = floatingTranslate.querySelector('.translate-menu');
+        const activeLabel = toggle.querySelector('strong');
+
+        toggle.addEventListener('click', () => {
+            const isOpen = floatingTranslate.classList.toggle('is-open');
+            toggle.setAttribute('aria-expanded', String(isOpen));
+        });
+
+        menu.querySelectorAll('button[data-language]').forEach(button => {
+            button.addEventListener('click', () => {
+                const selectedLanguage = button.getAttribute('data-language');
+                if (!languages[selectedLanguage]) return;
+
+                localStorage.setItem('preferredLanguage', selectedLanguage);
+                activeLabel.textContent = languages[selectedLanguage].label;
+                menu.querySelectorAll('button').forEach(item => item.classList.toggle('is-active', item === button));
+
+                if (selectedLanguage === 'hi') {
+                    setTranslateCookie(languages.hi.cookieValue);
+                } else {
+                    clearTranslateCookie();
+                }
+
+                window.location.reload();
+            });
+        });
+
+        document.addEventListener('click', event => {
+            if (!floatingTranslate.contains(event.target)) {
+                floatingTranslate.classList.remove('is-open');
+                toggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+    }
+
+    if (!window.googleTranslateElementInit) {
+        window.googleTranslateElementInit = function () {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'hi,en',
+                autoDisplay: false
+            }, 'google_translate_element');
+        };
+    }
+
+    if (!document.querySelector('script[src*="translate_a/element.js"]')) {
+        const translateScript = document.createElement('script');
+        translateScript.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+        translateScript.async = true;
+        document.body.appendChild(translateScript);
+    }
+
+    function setTranslateCookie(value) {
+        const maxAge = 60 * 60 * 24 * 365;
+        document.cookie = `googtrans=${value}; path=/; max-age=${maxAge}`;
+        document.cookie = `googtrans=${value}; path=/; domain=${window.location.hostname}; max-age=${maxAge}`;
+    }
+
+    function clearTranslateCookie() {
+        document.cookie = 'googtrans=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT';
+        document.cookie = `googtrans=; path=/; domain=${window.location.hostname}; expires=Thu, 01 Jan 1970 00:00:00 GMT`;
+    }
+}
+
+function lockFixedLanguageText() {
+    const fixedTextSelectors = [
+        'header',
+        'footer',
+        '.bottom-nav',
+        'h1',
+        'h2',
+        'h3',
+        'h4',
+        '.section-title',
+        '.cl-eyebrow',
+        '.cr-map-label',
+        '.gallery-card-info',
+        '.lb-category-name'
+    ];
+
+    document.querySelectorAll(fixedTextSelectors.join(',')).forEach(element => {
+        element.classList.add('notranslate');
+        element.setAttribute('translate', 'no');
+    });
+}
 
 
 document.addEventListener('DOMContentLoaded', () => {
