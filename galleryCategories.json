@@ -2,14 +2,33 @@
     {
         "id": "cnc-work",
         "displayName": "CNC Work",
+        "displayNameHi": "\u0938\u0940\u090f\u0928\u0938\u0940 \u0935\u0930\u094d\u0915",
         "folderName": "CNC_Work",
         "imageFiles": [
-            "1.jpg"
+            "1.jpeg",
+            "2.jpeg",
+            "3.jpeg",
+            "4.jpeg",
+            "5.jpeg",
+            "6.jpeg",
+            "7.jpeg",
+            "8.jpeg",
+            "9.jpeg",
+            "10.jpeg",
+            "11.jpeg",
+            "12.jpeg",
+            "13.jpeg",
+            "14.jpeg",
+            "15.jpeg",
+            "16.jpeg",
+            "18.jpeg",
+            "19.jpeg"
         ]
     },
     {
         "id": "bed",
         "displayName": "Bed",
+        "displayNameHi": "\u092c\u0947\u0921",
         "folderName": "Bed",
         "imageFiles": [
             "1.jpg",
@@ -44,20 +63,20 @@
     {
         "id": "tv-unit",
         "displayName": "TV Unit",
+        "displayNameHi": "\u091f\u0940\u0935\u0940 \u092f\u0942\u0928\u093f\u091f",
         "folderName": "TV_Unit",
         "imageFiles": [
-            "1.jpg",
-            "2.jpg",
-            "3.jpg",
-            "4.jpg",
-            "5.jpg",
-            "6.jpg",
-            "7.jpg"
+            "Tv_unit (1).png",
+            "Tv_unit (2).png",
+            "Tv_unit (3).png",
+            "Tv_unit (4).png",
+            "Tv_unit (5).png"
         ]
     },
     {
         "id": "sofa",
         "displayName": "Sofa",
+        "displayNameHi": "\u0938\u094b\u092b\u093e",
         "folderName": "Sofa",
         "imageFiles": [
             "1.jpg",
@@ -71,6 +90,7 @@
     {
         "id": "kitchen",
         "displayName": "Kitchen",
+        "displayNameHi": "\u0915\u093f\u091a\u0928",
         "folderName": "Kitchen",
         "imageFiles": [
             "1.jpg",
@@ -82,6 +102,7 @@
     {
         "id": "cupboard",
         "displayName": "Cupboard",
+        "displayNameHi": "\u0905\u0932\u092e\u093e\u0930\u0940",
         "folderName": "Cupboard",
         "imageFiles": [
             "1.jpg",
@@ -93,6 +114,105 @@
             "7.jpg",
             "8.jpg",
             "9.jpg"
+        ]
+    },
+    {
+        "id": "mancha",
+        "displayName": "Mancha (Plang)",
+        "displayNameHi": "\u092e\u0902\u091a\u093e (\u092a\u0932\u0902\u0917)",
+        "folderName": "Mancha",
+        "imageFiles": [
+            "1.jpg"
+        ]
+    },
+    {
+        "id": "bajot",
+        "displayName": "Bajot",
+        "displayNameHi": "\u092c\u093e\u091c\u094b\u091f",
+        "folderName": "Bajot",
+        "imageFiles": [
+            "1.jpg"
+        ]
+    },
+    {
+        "id": "door",
+        "displayName": "Door",
+        "displayNameHi": "\u0926\u0930\u0935\u093e\u091c\u093e",
+        "folderName": "Door",
+        "imageFiles": [
+            "1.jpg"
+        ]
+    },
+    {
+        "id": "temple",
+        "displayName": "Temple",
+        "displayNameHi": "\u092e\u0902\u0926\u093f\u0930",
+        "folderName": "Temple",
+        "imageFiles": [
+            "heritage-teak-mandir-01.png",
+            "heritage-teak-mandir-02.png",
+            "heritage-teak-mandir-03.png",
+            "heritage-teak-mandir-04.png",
+            "heritage-teak-mandir-05.png",
+            "heritage-teak-mandir-06.png",
+            "heritage-teak-mandir-07.png"
+        ]
+    },
+    {
+        "id": "furniture",
+        "displayName": "Furniture",
+        "displayNameHi": "\u092b\u0930\u094d\u0928\u0940\u091a\u0930",
+        "folderName": "Furniture",
+        "imageFiles": [
+            "1.jpg",
+            "2.jpg",
+            "3.jpg",
+            "4.jpg",
+            "5.jpg",
+            "6.jpg"
+        ]
+    },
+    {
+        "id": "dining-table",
+        "displayName": "Dining Table",
+        "displayNameHi": "\u0921\u093e\u0907\u0928\u093f\u0902\u0917 \u091f\u0947\u092c\u0932",
+        "folderName": "Dining_Table",
+        "imageFiles": [
+            "1.jpg"
+        ]
+    },
+    {
+        "id": "partition",
+        "displayName": "Partition",
+        "displayNameHi": "\u092a\u093e\u0930\u094d\u091f\u0940\u0936\u0928",
+        "folderName": "Pataisan",
+        "imageFiles": [
+            "1.jpg",
+            "2.jpg",
+            "3.jpg",
+            "4.jpg",
+            "5.jpg",
+            "6.jpg",
+            "7.jpg"
+        ]
+    },
+    {
+        "id": "wooden-ceiling",
+        "displayName": "Wooden Ceiling",
+        "displayNameHi": "\u0935\u0941\u0921\u0928 \u0938\u0940\u0932\u093f\u0902\u0917",
+        "folderName": "Wooden_Ceiling",
+        "imageFiles": [
+            "1.jpg",
+            "2.jpg",
+            "3.jpg",
+            "4.jpg",
+            "5.jpg",
+            "6.jpg",
+            "7.jpg",
+            "8.jpg",
+            "9.jpg",
+            "10.jpg",
+            "11.jpg"
         ]
     }
 ]

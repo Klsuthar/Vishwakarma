@@ -89,78 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- GALLERY AND LIGHTBOX CODE ---
-    const galleryCategories = [
-        {
-            id: "cnc-work",
-            displayName: "CNC Work",
-            displayNameHi: "सीएनसी वर्क",
-            folderName: "CNC_Work",
-            imageFiles: ["1.jpeg", "2.jpeg", "3.jpeg", "4.jpeg", "5.jpeg", "6.jpeg", "7.jpeg", "8.jpeg", "9.jpeg", "10.jpeg", "11.jpeg", "12.jpeg", "13.jpeg", "14.jpeg"]
-        },
-        {
-            id: "bed",
-            displayName: "Bed",
-            displayNameHi: "बेड",
-            folderName: "Bed",
-            imageFiles: [
-                "1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg", "8.jpg", "9.jpg", "10.jpg",
-                "11.jpg", "12.jpg", "13.jpg", "14.jpg", "15.jpg", "16.jpg", "17.jpg", "18.jpg", "19.jpg", "20.jpg",
-                "21.jpg", "22.jpg", "23.jpg", "24.jpg", "25.jpg", "26.jpg", "27.jpg", "28.jpg", "29.jpg"
-            ]
-        },
-        {
-            id: "tv-unit",
-            displayName: "TV Unit",
-            displayNameHi: "टीवी यूनिट",
-            folderName: "TV_Unit",
-            imageFiles: ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg"]
-        },
-        { id: "sofa", displayName: "Sofa", displayNameHi: "सोफा", folderName: "Sofa", imageFiles: ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg"] },
-        { id: "kitchen", displayName: "Kitchen", displayNameHi: "किचन", folderName: "Kitchen", imageFiles: ["1.jpg", "2.jpg", "3.jpg", "4.jpg"] },
-        {
-            id: "cupboard",
-            displayName: "Cupboard",
-            displayNameHi: "अलमारी",
-            folderName: "Cupboard",
-            imageFiles: ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg", "8.jpg", "9.jpg"]
-        },
-        {
-            id: "mancha",
-            displayName: "Mancha (Plang)",
-            displayNameHi: "मांचा (पलंग)",
-            folderName: "Mancha",
-            imageFiles: ["1.jpg"]
-        },
-        {
-            id: "bajot",
-            displayName: "Bajot",
-            displayNameHi: "बाजोट",
-            folderName: "Bajot",
-            imageFiles: ["1.jpg"]
-        },
-        {
-            id: "door",
-            displayName: "Door",
-            displayNameHi: "दरवाजा",
-            folderName: "Door",
-            imageFiles: ["1.jpg"]
-        },
-        {
-            id: "temple",
-            displayName: "Temple",
-            displayNameHi: "मंदिर",
-            folderName: "Temple",
-            imageFiles: [
-                "heritage-teak-mandir-01.png",
-                "heritage-teak-mandir-02.png",
-                "heritage-teak-mandir-03.png",
-                "heritage-teak-mandir-04.png",
-                "heritage-teak-mandir-05.png",
-                "heritage-teak-mandir-06.png",
-                "heritage-teak-mandir-07.png"
-            ]
-        }
-    ];
+    let galleryCategories = [];
 
     const galleryGrid = document.querySelector('.gallery-grid');
     const lightbox = document.getElementById('lightbox');
@@ -176,6 +105,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function getGalleryActionLabel() {
         return getPreferredLanguage() === 'hi' ? 'सभी देखें' : 'Tap to view all';
+    }
+
+    async function loadGalleryCategories() {
+        try {
+            const response = await fetch('galleryCategories.json', { cache: 'no-cache' });
+
+            if (!response.ok) {
+                throw new Error(`Gallery JSON request failed: ${response.status}`);
+            }
+
+            const categories = await response.json();
+            galleryCategories = Array.isArray(categories) ? categories : [];
+        } catch (error) {
+            console.error('Unable to load galleryCategories.json', error);
+            galleryCategories = [];
+        }
     }
 
     function populateGallery() {
@@ -364,7 +309,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initial population of gallery if on index.html
     if (document.querySelector('.gallery-grid')) { // Only run populateGallery if gallery-grid exists on the current page
-        populateGallery();
+        loadGalleryCategories().then(populateGallery);
     }
     initializeScrollAnimations(); // Initialize scroll animations on all pages
 
