@@ -65,8 +65,8 @@ window.VISHWAKARMA_SITE = {
     { label: "Contact", href: "index.html#contact" }
   ],
   contact: {
-    phoneDisplay: "+91 95713 75791",
-    phoneHref: "tel:+919571375791",
+    phoneDisplay: "+91 89057 57460",
+    phoneHref: "tel:+918905757460",
     whatsappDisplay: "+91 95713 75791",
     whatsappHref:
       "https://wa.me/919571375791?text=Hello%20Vishwakarma%20Wood%20%26%20CNC%20Work,%20I%20want%20to%20discuss%20a%20wood%20or%20CNC%20project.",
@@ -85,6 +85,11 @@ window.VISHWAKARMA_SITE = {
     ],
     mapEmbed:
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d733.94765728144!2d74.20045706706509!3d28.044485590837862!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3915210001af0683%3A0xa6ef435682f27432!2sVishvkarma%20furniture%20house%20%F0%9F%8F%A0!5e1!3m2!1sen!2sin!4v1778346404421!5m2!1sen!2sin",
+    teamMembers: [
+      { name: "Ramdev Suthar", phone: "8949324163" },
+      { name: "Ashok Suthar", phone: "376528717" },
+      { name: "Kanhaiyalal Suthar", phone: "8905757460" }
+    ],
     note:
       "Visit the workshop at the map location or send measurements and photos on WhatsApp.",
     inquiryChecklist: [
