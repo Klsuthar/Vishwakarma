@@ -74,20 +74,6 @@
         ]
     },
     {
-        "id": "sofa",
-        "displayName": "Sofa",
-        "displayNameHi": "\u0938\u094b\u092b\u093e",
-        "folderName": "Sofa",
-        "imageFiles": [
-            "1.jpg",
-            "2.jpg",
-            "3.jpg",
-            "4.jpg",
-            "5.jpg",
-            "6.jpg"
-        ]
-    },
-    {
         "id": "kitchen",
         "displayName": "Kitchen",
         "displayNameHi": "\u0915\u093f\u091a\u0928",
