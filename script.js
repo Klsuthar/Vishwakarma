@@ -346,7 +346,9 @@ function initTranslateControl() {
     const savedLanguage = localStorage.getItem('preferredLanguage') || 'hi';
     const activeLanguage = languages[savedLanguage] ? savedLanguage : 'hi';
 
-    document.documentElement.setAttribute('lang', activeLanguage);
+    // Keep document lang as 'en' so Google Translate knows the source language is English.
+    // Google Translate will set the lang attribute to 'hi' once it executes the translation.
+    document.documentElement.setAttribute('lang', 'en');
     lockFixedLanguageText();
 
     if (activeLanguage === 'hi') {
@@ -446,17 +448,9 @@ function initTranslateControl() {
 }
 
 function lockFixedLanguageText() {
+    // Only lock elements that are bilingual in source or dynamically handled in JS
     const fixedTextSelectors = [
-        'header',
-        'footer',
-        '.bottom-nav',
-        'h1',
-        'h2',
-        'h3',
-        'h4',
-        '.section-title',
-        '.cl-eyebrow',
-        '.cr-map-label',
+        '.hindi-text',
         '.gallery-card-info',
         '.lb-category-name'
     ];
